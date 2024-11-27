@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>S&J 2025</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 
@@ -18,7 +19,21 @@
                 <img src="./Images/280A8775_websize.jpg" alt="Wedding Image 1">
             </div>
         </div>
-        <h1>&#128022; Sebastian and Jade &#128005; </h1>
+
+
+        <!-- Arrow pointing to the translate icon -->
+        <div id="arrow-pointer" class="arrow-animation"></div>
+
+        <!-- Translate Button -->
+        <div id="translate-icon" onclick="showTranslateWidget()">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/language.png" alt="Translate">
+        </div>
+
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element" style="display: none;"></div>
+
+        
+        <h1 class="notranslate">&#128022; Sebastian and Jade &#128005; </h1>
         <h3>20th July 2025</h3>
         <p>Together with our families, we're excited to invite you to our wedding day.</p>
     </header>
@@ -163,7 +178,33 @@
             firefliesContainer.appendChild(firefly);
         }
     });
+    
+    //Google translate
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en', includedLanguages: 'zh-CN,en', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT},
+            'google_translate_element'
+        );
+    }
+
+    function showTranslateWidget() {
+        const widget = document.getElementById('google_translate_element');
+        widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Function to hide Google Translate banner on load
+    function hideGoogleTranslateBanner() {
+        var banner = document.getElementById('goog-gt-banner');
+        if (banner) {
+            banner.style.display = 'none';  // Hide the banner
+        }
+    }
+
+    // Run the hideGoogleTranslateBanner function after the page loads
+    window.addEventListener('load', hideGoogleTranslateBanner);
+    
 
     </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
