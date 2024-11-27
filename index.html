@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&J 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--Fireflys -->
+    <div class="fireflies"></div>
+
+    <!-- Full-screen homepage with slideshow -->
+    <header class="homepage">
+        <div class="slideshow">
+            <div class="slide fade">
+                <img src="./Images/280A8775_websize.jpg" alt="Wedding Image 1">
+            </div>
+        </div>
+        <h1>&#128022; Sebastian and Jade &#128005; </h1>
+        <h3>20th July 2025</h3>
+        <p>Together with our families, we're excited to invite you to our wedding day.</p>
+    </header>
+
+    <!-- Scrollable Sections -->
+     <!-- Vine Divider -->
+    <div class="section-divider"></div>
+
+    <section class="section" id="what-to-wear">
+      <div class="content">
+        <h2>What to Wear</h2>
+        <p>We’d love for you to dress in nature-inspired attire, perfect for our enchanted forest theme!</p>
+    
+        <!-- Mini Sections Under "What to Wear" -->
+        <div class="wear-categories">
+          <div class="wear-category">
+              <h3>Comfy Wear</h3>
+              <p>Dress comfortably so you can enjoy the event without any worries. Light fabrics and breathable materials are perfect for the occasion!</p>
+          </div>
+    
+          <div class="wear-category">
+              <h3>Forest-Inspired Styles</h3>
+              <p>Get into the spirit of the forest with earthy tones, floral prints, and greenery-inspired outfits that blend with the natural surroundings.</p>
+          </div>
+    
+          <div class="wear-category">
+              <h3>Footwear & Accessories</h3>
+              <p>Choose footwear that’s easy to walk in, as we’ll be surrounded by nature. Don’t forget accessories like flower crowns or nature-inspired jewelry to complete your look!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+     <!-- Vine Divider -->
+    <div class="section-divider"></div>
+
+    <!-- New Section: How to Get There -->
+    <section class="section" id="how-to-get-there">
+        <div class="content">
+            <h2>How to Get There</h2>
+            <p>The wedding venue is located at [Venue Address]. Here’s how you can get there:</p>
+            <ul>
+                <li><strong>By Car:</strong> Drive via [Main Road], take a left on [Street Name], and the venue will be on your right.</li>
+                <li><strong>By Public Transport:</strong> Take the [Bus/Train] to [Station Name], and then it's a short walk to the venue.</li>
+            </ul>
+            <p><strong>When You Arrive:</strong> Please head to the main entrance where you’ll be greeted by our wedding coordinators. We’ll gather in the [Designated Area] for the ceremony.</p>
+            <div class="map">
+                <!-- Embed a Google Map -->
+                <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+         <!-- Vine Divider -->
+    <div class="section-divider"></div>
+
+    <!-- RSVP Section with Embedded Google Form -->
+    <section class="section" id="rsvp">
+      <div class="rsvp-content">
+          <div class="rsvp-text">
+              <h2>RSVP</h2>
+              <p>We’d love to know if you can join us! Please RSVP by [date].</p>
+              <p>&#x2192;</p>
+          </div>
+          <div class="iframe-container">
+              <iframe 
+                  src="https://forms.gle/KkHBdXT8tJfuvTtaA" 
+                  width="100%" 
+                  height="1048" 
+                  frameborder="0" 
+                  marginheight="0" 
+                  marginwidth="0">
+                  Loading…
+              </iframe>
+          </div>
+      </div>
+    </section>
+
+    <footer>
+        <p>&copy; SJ WEDDING 2025</p>
+    </footer>
+
+    <script>
+        // Slideshow effect (same as before)
+        let slideIndex = 0;
+        function showSlides() {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((slide) => {
+                slide.style.display = "none";  
+            });
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 6000); // Change image every 6 seconds (slower)
+        }
+        showSlides();
+
+        // Scroll effect to reveal sections with improved fade-out handling
+        const sections = document.querySelectorAll('.section');
+        const windowHeight = window.innerHeight;
+
+        function checkSectionVisibility() {
+            const scrollPosition = window.scrollY + windowHeight;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                // If the section is within the visible range (in view), fade it in
+                if (scrollPosition >= sectionTop + sectionHeight / 4 && scrollPosition <= sectionTop + sectionHeight) {
+                    if (!section.classList.contains('visible')) { // Only add class if not already added
+                        section.classList.add('visible');
+                    }
+                } else {
+                    // Optionally, you can remove the class if you want to reset the fade effect when scrolling up
+                    // section.classList.remove('visible');
+                }
+            });
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', function() {
+            checkSectionVisibility();
+        });
+
+        // Initial check in case sections are already in view
+        checkSectionVisibility();
+
+        //firefly script
+        document.addEventListener('DOMContentLoaded', () => {
+        const firefliesContainer = document.querySelector('.fireflies');
+        const numberOfFireflies = 120; // Fixed number of fireflies
+
+        // Clear any existing fireflies
+        firefliesContainer.innerHTML = '';
+
+        // Create the fireflies dynamically
+        for (let i = 0; i < numberOfFireflies; i++) {
+            const firefly = document.createElement('div');
+            firefly.classList.add('firefly');
+            firefly.style.left = `${Math.random() * 100}vw`; // Random starting position
+            firefly.style.top = `${Math.random() * 100}vh`;
+            firefly.style.animationDuration = `${20 + Math.random() * 4}s`; // Random duration
+            firefliesContainer.appendChild(firefly);
+        }
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* Define the custom font using @font-face */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('SpringLake/springlake.script.otf') format('otf'),
+       url('SpringLake/springlake.script.ttf') format('truetype'); /* You can specify multiple formats for better browser support */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* General styling for the body */
+body {
+  margin: 0;
+  font-family: 'MyCustomFont', sans-serif;
+  background-color: rgba(0, 0, 0, 0); /* 85% opaque black */
+  color: #333;
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling for the entire page */
+}
+
+/* Dark overlay that covers the entire page */
+body::before {
+  content: ""; /* Required for pseudo-element */
+  position: fixed; /* Cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.541); /* Dark overlay (adjust opacity as needed) */
+  z-index: 1; /* Ensure overlay is below the text */
+  pointer-events: none; /* Allow clicks to pass through to underlying content */
+}
+
+
+
+/* Fullscreen homepage header */
+header.homepage {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack content vertically */
+  text-align: center;
+  background-size: cover; /* Background image will cover the full section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent background repetition */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Styling for text in the homepage header */
+header h1, header p, header h3 {
+  position: relative;
+  color: white;
+  z-index: 1; /* Ensure text stays above the background */
+  margin: 0;
+}
+
+header h1 {
+  font-size: 5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+header h3 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 2rem;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Slideshow styling */
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Keeps slideshow behind the text */
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* General section styling for centering (excludes RSVP section) */
+.section {
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  min-height: 100vh; /* Ensure section takes at least full viewport height */
+}
+
+/* Exclude flexbox centering for the RSVP section */
+#rsvp {
+  display: block; /* Remove flexbox */
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 100vh; /* Ensure RSVP section takes at least full viewport height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Fade-in effect for sections */
+.section {
+  opacity: 1; /* Start with the section invisible */
+  transition: none; /* Fade effect when section becomes visible */
+}
+
+.section.visible {
+  opacity: 1; /* When section becomes visible, set opacity to 1 */
+}
+
+/* Ensure all section text is above the overlay */
+.section h2, .section p, .section h3{
+  font-size: 40px;
+  position: relative;
+  z-index: 1; /* Make sure the text is above the overlay */
+  color: white; /* White text color */
+}
+
+.section li{
+  font-size: 30px;
+  position: relative;
+  z-index: 1; /* Make sure the text is above the overlay */
+  color: white; /* White text color */
+}
+
+
+/* Specific background images for each section */
+#what-to-wear {
+  background-image: url('./Images/test.jpg');
+}
+
+#rsvp {
+  background-image: url('./Images/test2.jpg');
+}
+
+#how-to-get-there {
+  background-image: url('./Images/280A8775_websize.jpg');
+}
+
+/* Flexbox for arranging the categories horizontally */
+.wear-categories {
+  display: flex;  /* Make sure flexbox is enabled */
+  justify-content: space-between; /* Distribute space evenly between items */
+  gap: 20px; /* Add space between the categories */
+  margin-top: 20px; /* Add some space between the title and the categories */
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+  width: 100%; /* Ensure container takes full width */
+}
+
+/* Styling for each mini-section */
+.wear-category {
+  flex: 1; /* Allow each section to take equal space */
+  background-color: rgba(255, 255, 255, 0.47); /* Light background */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(112, 112, 112, 0.534); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid rgba(0, 0, 0, 0.2); /* Left line between sections */
+}
+
+/* Remove the left border for the first section */
+.wear-category:first-child {
+  border-left: none;
+}
+
+/* Optional: Adding some space below each category */
+.wear-category h3 {
+  margin-bottom: 10px;
+}
+
+/* Mobile styling: stack categories vertically */
+@media (max-width: 768px) {
+  .wear-categories {
+    flex-direction: column; /* Stack categories vertically on smaller screens */
+    gap: 10px; /* Reduce space between the items on mobile */
+  }
+
+  .wear-category {
+    flex: none; /* Each section takes full width */
+    width: 100%;
+    border-left: none; /* Remove left border on small screens */
+  }
+}
+
+
+/* Remove bullets from the list */
+section#how-to-get-there ul {
+  list-style-type: none; /* Removes the default bullet points */
+  padding-left: 0; /* Optional: Remove left padding to align list items */
+}
+
+
+/* Container for both text and iframe */
+.content {
+  display: block; /* Remove flexbox behavior */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; /* Center the content text */
+}
+
+/* Modify flex styling to target only the RSVP section */
+#rsvp .rsvp-content {
+  display: flex;
+  justify-content: center; /* Horizontally center both the text and iframe */
+  align-items: center; /* Vertically center content */
+  height: 100vh; /* Use full viewport height */
+  flex-wrap: wrap; /* Ensure content wraps in smaller screens */
+  padding: 20px;
+}
+
+/* Text container for the RSVP heading and paragraph */
+#rsvp .rsvp-text {
+  flex: 1; /* Allow text container to take up space */
+  max-width: 500px; /* Control the max width of the text */
+  margin-right: 20px; /* Add space between text and form */
+  text-align: center; /* Center the text inside */
+}
+
+/* Styling for the iframe container */
+#rsvp .iframe-container {
+  flex: 1; /* Allow iframe container to take up space */
+  max-width: 800px; /* Control the max width of the iframe */
+  width: 100%; /* Ensure iframe takes up full width of container */
+  margin-left: 150px; /* Add space between iframe and text */
+}
+
+/* Google Form container */
+#rsvp .iframe-container iframe {
+  position: relative;
+  z-index: 3; /* Above the overlay and fireflies */
+  width: 100%; /* Ensure the iframe fills its container */
+  height: 800px; /* Adjust height as needed */
+  border: none;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Softer, subtler glow effect */
+  background: rgba(255, 255, 255, 0.9); /* Ensure the form has a white background */
+  transform: scale(1.1); /* Adjust the scale value to make the text larger */
+  transform-origin: top; /* Make sure it scales from the top */
+  
+}
+
+#rsvp .iframe-container iframe:hover {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+}
+
+/* Fireflies container */
+.fireflies {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Above the overlay */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual firefly */
+.firefly {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 153, 0.766); /* Soft yellow glow */
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 153, 0.883); /* Glow effect */
+  pointer-events: none; /* Prevent interaction */
+  animation: fireflyMove 10s linear infinite, fireflyFade 1s ease-in-out infinite alternate;
+}
+
+/* Random firefly movement */
+@keyframes fireflyMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(calc(-50vw + 100vw * 0.25), calc(-50vh + 100vh * 0.25));
+  }
+  50% {
+    transform: translate(calc(-50vw + 100vw * 0.5), calc(-50vh + 100vh * 0.5));
+  }
+  75% {
+    transform: translate(calc(-50vw + 100vw * 0.75), calc(-50vh + 100vh * 0.75));
+  }
+  100% {
+    transform: translate(calc(-50vw + 100vw), calc(-50vh + 100vh));
+  }
+}
+
+/* Fading effect for fireflies */
+@keyframes fireflyFade {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333333d3;
+  color: rgba(255, 255, 255, 0.843);
+}
+
+footer p {
+  position: relative; /* Make it positioned relative to its parent */
+  z-index: 2; /* Make sure the text is above the overlay */
+}
