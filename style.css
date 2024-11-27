@@ -7,7 +7,6 @@
   font-style: normal;
 }
 
-
 /* General styling for the body */
 body {
   margin: 0;
@@ -20,7 +19,7 @@ body {
 
 /* Dark overlay that covers the entire page */
 body::before {
-  content: ""; /* Required for pseudo-element */
+  content: "";
   position: fixed; /* Cover the entire viewport */
   top: 0;
   left: 0;
@@ -30,8 +29,6 @@ body::before {
   z-index: 1; /* Ensure overlay is below the text */
   pointer-events: none; /* Allow clicks to pass through to underlying content */
 }
-
-
 
 /* Fullscreen homepage header */
 header.homepage {
@@ -102,7 +99,6 @@ header p {
   object-fit: cover;
 }
 
-
 /* General section styling for centering (excludes RSVP section) */
 .section {
   color: white;
@@ -145,20 +141,19 @@ header p {
 }
 
 /* Ensure all section text is above the overlay */
-.section h2, .section p, .section h3{
+.section h2, .section p, .section h3 {
   font-size: 40px;
   position: relative;
   z-index: 1; /* Make sure the text is above the overlay */
   color: white; /* White text color */
 }
 
-.section li{
+.section li {
   font-size: 30px;
   position: relative;
   z-index: 1; /* Make sure the text is above the overlay */
   color: white; /* White text color */
 }
-
 
 /* Specific background images for each section */
 #what-to-wear {
@@ -175,7 +170,7 @@ header p {
 
 /* Flexbox for arranging the categories horizontally */
 .wear-categories {
-  display: flex;  /* Make sure flexbox is enabled */
+  display: flex; /* Make sure flexbox is enabled */
   justify-content: space-between; /* Distribute space evenly between items */
   gap: 20px; /* Add space between the categories */
   margin-top: 20px; /* Add some space between the title and the categories */
@@ -207,27 +202,12 @@ header p {
   margin-bottom: 10px;
 }
 
-/* Mobile styling: stack categories vertically */
-@media (max-width: 768px) {
-  .wear-categories {
-    flex-direction: column; /* Stack categories vertically on smaller screens */
-    gap: 10px; /* Reduce space between the items on mobile */
-  }
-
-  .wear-category {
-    flex: none; /* Each section takes full width */
-    width: 100%;
-    border-left: none; /* Remove left border on small screens */
-  }
-}
-
 
 /* Remove bullets from the list */
 section#how-to-get-there ul {
   list-style-type: none; /* Removes the default bullet points */
   padding-left: 0; /* Optional: Remove left padding to align list items */
 }
-
 
 /* Container for both text and iframe */
 .content {
@@ -273,15 +253,20 @@ section#how-to-get-there ul {
   border: none;
   display: block;
   margin: 0 auto;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Softer, subtler glow effect */
-  background: rgba(255, 255, 255, 0.9); /* Ensure the form has a white background */
-  transform: scale(1.1); /* Adjust the scale value to make the text larger */
-  transform-origin: top; /* Make sure it scales from the top */
-  
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Softer, subtler glow */
 }
 
 #rsvp .iframe-container iframe:hover {
   box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+}
+
+/* Fireflies animation styling */
+.firefly {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.7;
+  animation: firefly 2s infinite ease-in-out;
 }
 
 /* Fireflies container */
@@ -337,8 +322,7 @@ section#how-to-get-there ul {
   }
 }
 
-
-/* Footer styling */
+/* Footer Styling */
 footer {
   text-align: center;
   padding: 20px;
@@ -347,6 +331,147 @@ footer {
 }
 
 footer p {
-  position: relative; /* Make it positioned relative to its parent */
-  z-index: 2; /* Make sure the text is above the overlay */
+  position: relative; /* Make sure text is above any overlay */
+  z-index: 2; /* Ensure the text is on top */
 }
+
+
+/*moblie*/
+/* Mobile styling: stack categories vertically */
+@media (max-width: 768px) {
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure full width for the entire page */
+    height: 100%; /* Make sure the page takes the full height */
+  }
+
+  header h1 {
+    font-size: 3rem; /* Adjust header font size */
+  }
+
+  header h3 {
+    font-size: 1.5rem; /* Adjust subheader font size */
+  }
+
+  header p {
+    font-size: 1.5rem; /* Adjust paragraph font size */
+  }
+
+  /* Adjust the slideshow image for smaller screens */
+  .slide img {
+    object-fit: cover; /* Ensure images cover the area */
+  }
+
+  .section h2, .section p, .section h3 {
+    font-size: 30px; /* Adjust section title font size */
+  }
+
+  .section li {
+    font-size: 20px; /* Adjust list item font size */
+  }
+
+  .wear-categories {
+    flex-direction: column; /* Stack categories vertically on smaller screens */
+    gap: 10px; /* Reduce space between the items on mobile */
+  }
+
+  .wear-category {
+    flex: none; /* Ensure each section takes full width */
+    width: 100%; /* Ensure full-width layout */
+    border-left: none; /* Remove the left border on mobile */
+  }
+
+  /* Other mobile styling as previously defined */
+  #rsvp {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: auto;
+    margin-top: 0px;
+    width: 100%; /* Ensure full width */
+  }
+  
+    /* Adjust RSVP content layout for mobile */
+    #rsvp .rsvp-content {
+      display: block; /* Force the content to stack vertically */
+      width: 100%; /* Ensure full width for both text and form */
+      text-align: center; /* Center the content */
+    }
+  
+    /* Ensure text and iframe are stacked vertically */
+    #rsvp .rsvp-text {
+      margin-bottom: 20px; /* Add space below the text */
+      max-width: 100%; /* Full width */
+    }
+  
+    #rsvp .iframe-container {
+      width: 90%; /* Limit the width to 90% of the screen */
+      max-width: 500px; /* Set a maximum width for larger devices */
+      position: relative;
+      padding-bottom: 135%; /* Maintain height proportional to width (4:3 aspect ratio) */
+      height: 0; /* Keep height set by padding-bottom */
+      margin: 20px auto; /* Centers the iframe container */
+      margin-right: 20%; /* Add margin-left to shift it more left */
+    }
+    
+    /* Ensure iframe inside the container scales well */
+    #rsvp .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Full width of the container */
+      height: 100%; /* Full height of the container */
+      border: none;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Optional: adds a glow effect */
+    }
+
+  /* Mobile-specific adjustments for "How to Get There" */
+  #how-to-get-there {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('./Images/280A8775_websize.jpg');
+    background-size: cover; /* Ensure image covers the area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Avoid repeating the background */
+    min-height: auto; /* Allow content to shrink */
+    margin: 0; /* Remove any margin that could cause gaps */
+    width: 100%; /* Ensure full width for the container */
+  }
+
+
+  .wear-categories {
+    flex-direction: column; /* Stack categories vertically on smaller screens */
+    gap: 10px; /* Reduce space between the items on mobile */
+    width: 100%; /* Ensure full width */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .wear-category {
+    flex: none; /* Each section takes full width */
+    width: 90%; /* Adjust width to make it smaller than the full container */
+    max-width: 600px; /* Optional: Set a maximum width for the category */
+    margin: 0 auto; /* Center the category within the container */
+    border-left: none; /* Remove left border on small screens */
+  }
+
+  footer {
+    padding: 10px; /* Adjust footer padding */
+  }
+
+  /* Firefly animation adjustments for mobile */
+  .firefly {
+    width: 8px;
+    height: 8px; /* Smaller fireflies on mobile */
+  }
+
+}
+
+
