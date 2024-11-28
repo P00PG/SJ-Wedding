@@ -7,6 +7,70 @@
   font-style: normal;
 }
 
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between controls */
+  margin-top: 10px;
+}
+
+#play-pause {
+  background-color: rgba(237, 145, 8, 0.693);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#play-pause:hover {
+  background-color: rgba(250, 190, 87, 0.932);
+}
+
+  /* Custom slider styling for firefly glow effect */
+  #volume {
+    -webkit-appearance: none; /* Remove default styling */
+    background: rgba(255, 255, 255, 0.2); /* Subtle translucent background */
+    border-radius: 5px;
+    height: 5px;
+    width: 120px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  #volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
+    box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  #volume::-webkit-slider-thumb:hover {
+    background: rgba(255, 221, 29, 0.8); /* Brighter on hover */
+    box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6); /* Glowing effect on hover */
+  }
+
+  #volume::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
+    box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  #volume::-moz-range-thumb:hover {
+    background: rgba(255, 221, 29, 0.8); /* Brighter on hover */
+    box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6); /* Glowing effect on hover */
+  }
+
 /* Translate Icon Styling */
 #translate-icon {
   position: fixed;
