@@ -448,14 +448,20 @@ footer p {
 
   header h1 {
     font-size: 3rem; /* Adjust header font size */
+    max-width: 75%; /* Limit the width of the header */
+    margin: 0 auto; /* Center the header */
   }
 
   header h3 {
     font-size: 1.5rem; /* Adjust subheader font size */
+    max-width: 75%; /* Limit the width of the header */
+    margin: 20px auto; /* Center the header */
   }
 
   header p {
     font-size: 1.5rem; /* Adjust paragraph font size */
+    max-width: 75%; /* Limit the width of the header */
+    margin: 0 auto; /* Center the header */
   }
 
   /* Adjust the slideshow image for smaller screens */
@@ -517,7 +523,7 @@ footer p {
       padding-bottom: 135%; /* Maintain height proportional to width (4:3 aspect ratio) */
       height: 0; /* Keep height set by padding-bottom */
       margin: 20px auto; /* Centers the iframe container */
-      margin-right: 20%; /* Add margin-left to shift it more left */
+      margin-right: 45px; /* Add margin-left to shift it more left */
     }
     
     /* Ensure iframe inside the container scales well */
@@ -575,7 +581,7 @@ footer p {
   @keyframes fireflyPulse {
     0% {
       opacity: 0.2;
-      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.299);
+      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.397);
     }
     25% {
       opacity: 0.6;
