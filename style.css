@@ -26,9 +26,9 @@
 }
 
 #translate-icon img {
-  width: 24px;
-  height: 24px;
-  opacity: 0.8;
+  width: 30px;
+  height: 30px;
+  opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
@@ -45,8 +45,8 @@
   position: fixed;
   top: 60px; /* Position just above the translate icon */
   right: 55px; /* Slightly to the left of the translate icon */
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-left: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
   transform: rotate(45deg); /* Rotate to form an arrow */
@@ -87,7 +87,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.541); /* Dark overlay (adjust opacity as needed) */
+  background: rgba(0, 0, 0, 0.605); /* Dark overlay (adjust opacity as needed) */
   z-index: 1; /* Ensure overlay is below the text */
   pointer-events: none; /* Allow clicks to pass through to underlying content */
 }
@@ -133,6 +133,15 @@ header p {
   font-size: 2rem;
   font-style: italic;
   margin-top: 10px;
+}
+
+/* Glowing effect for the "Sebastian and Jade" text */
+.glowing-text {
+  color: white;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.7),   /* Soft white glow */
+    0 0 10px rgba(197, 197, 197, 0.5),  /* Subtle grayish glow */
+    0 0 15px rgba(250, 250, 250, 0.7);  /* Soft white glow with slightly more spread */
 }
 
 /* Slideshow styling */
@@ -323,14 +332,6 @@ section#how-to-get-there ul {
 }
 
 /* Fireflies animation styling */
-.firefly {
-  position: absolute;
-  border-radius: 50%;
-  background-color: white;
-  opacity: 0.7;
-  animation: firefly 2s infinite ease-in-out;
-}
-
 /* Fireflies container */
 .fireflies {
   position: fixed;
@@ -346,13 +347,13 @@ section#how-to-get-there ul {
 /* Individual firefly */
 .firefly {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 153, 0.766); /* Soft yellow glow */
+  width: 5px;
+  height: 3px;
+  background-color: rgba(255, 221, 29, 0.954); /* Soft yellow glow */
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 153, 0.883); /* Glow effect */
+  box-shadow: 0 0 15px 10px rgba(255, 205, 6, 0.667);  /* Glow effect */
   pointer-events: none; /* Prevent interaction */
-  animation: fireflyMove 10s linear infinite, fireflyFade 1s ease-in-out infinite alternate;
+  animation: fireflyMove 4s linear infinite, fireflyPulse 0.2s ease-in-out infinite;
 }
 
 /* Random firefly movement */
@@ -374,15 +375,29 @@ section#how-to-get-there ul {
   }
 }
 
-/* Fading effect for fireflies */
-@keyframes fireflyFade {
-  0%, 100% {
-    opacity: 0.6;
+@keyframes fireflyPulse {
+  0% {
+    opacity: 0.4;
+    box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.323);
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.769);
   }
   50% {
+    opacity: 0.6;
+    box-shadow: 0 0 15px 8px rgba(255, 205, 6, 0.6);
+  }
+  75% {
     opacity: 1;
+    box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.777);
+  }
+  100% {
+    opacity: 0.4;
+    box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.327);
   }
 }
+
 
 /* Footer Styling */
 footer {
@@ -395,6 +410,11 @@ footer {
 footer p {
   position: relative; /* Make sure text is above any overlay */
   z-index: 2; /* Ensure the text is on top */
+  color: white;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.5),   /* Soft white glow */
+    0 0 10px rgba(197, 197, 197, 0.6),  /* Subtle grayish glow */
+    0 0 15px rgba(250, 250, 250, 0.5);  /* Soft white glow with slightly more spread */
 }
 
 /* Hide the Google Translate pop-up message */
@@ -548,8 +568,31 @@ footer p {
 
   /* Firefly animation adjustments for mobile */
   .firefly {
-    width: 8px;
-    height: 8px; /* Smaller fireflies on mobile */
+    width: 3px;
+    height: 2px; /* Smaller fireflies on mobile */
+  }
+
+  @keyframes fireflyPulse {
+    0% {
+      opacity: 0.2;
+      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.299);
+    }
+    25% {
+      opacity: 0.6;
+      box-shadow: 0 0 15px 6px rgba(255, 205, 6, 0.717);
+    }
+    50% {
+      opacity: 0.4;
+      box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.615);
+    }
+    75% {
+      opacity: 0.6;
+      box-shadow: 0 0 15px 6px rgba(255, 205, 6, 0.753);
+    }
+    100% {
+      opacity: 0.2;
+      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.406);
+    }
   }
 
 }

@@ -33,9 +33,12 @@
         <div id="google_translate_element" style="display: none;"></div>
 
         
-        <h1 class="notranslate">&#128022; Sebastian and Jade &#128005; </h1>
+        <h1 class="notranslate">&#128022;<span class="glowing-text"> Sebastian and Jade </span>&#128005; </h1>
         <h3>20th July 2025</h3>
         <p>Together with our families, we're excited to invite you to our wedding day.</p>
+
+
+
     </header>
 
     <!-- Scrollable Sections -->
@@ -81,6 +84,7 @@
                 <li><strong>By Public Transport:</strong> Take the [Bus/Train] to [Station Name], and then it's a short walk to the venue.</li>
             </ul>
             <p><strong>When You Arrive:</strong> Please head to the main entrance where you’ll be greeted by our wedding coordinators. We’ll gather in the [Designated Area] for the ceremony.</p>
+            <p><strong>You are strongly advised to arrive by [ time ] at the gathering area as there will be a desginated tram to chauffeur you to the designation</strong></p>
 
         </div>
     </section>
@@ -163,21 +167,30 @@
         //firefly script
         document.addEventListener('DOMContentLoaded', () => {
         const firefliesContainer = document.querySelector('.fireflies');
-        const numberOfFireflies = 120; // Fixed number of fireflies
+        const maxFireflies = 120; // Maximum number of fireflies
+        let currentFireflies = 0; // Counter for added fireflies
 
-        // Clear any existing fireflies
-        firefliesContainer.innerHTML = '';
+        // Function to add a single firefly
+        const addFirefly = () => {
+            if (currentFireflies >= maxFireflies) {
+                clearInterval(fireflyInterval); // Stop adding fireflies when max is reached
+                return;
+            }
 
-        // Create the fireflies dynamically
-        for (let i = 0; i < numberOfFireflies; i++) {
             const firefly = document.createElement('div');
             firefly.classList.add('firefly');
             firefly.style.left = `${Math.random() * 100}vw`; // Random starting position
             firefly.style.top = `${Math.random() * 100}vh`;
-            firefly.style.animationDuration = `${20 + Math.random() * 4}s`; // Random duration
+            firefly.style.animationDuration = `${25 + Math.random() * 4}s`; // Random duration
             firefliesContainer.appendChild(firefly);
-        }
+
+            currentFireflies++; // Increment the counter
+        };
+
+        // Add fireflies at intervals (e.g., every 100ms)
+        const fireflyInterval = setInterval(addFirefly, 100);
     });
+
     
     //Google translate
     function googleTranslateElementInit() {
@@ -202,9 +215,10 @@
 
     // Run the hideGoogleTranslateBanner function after the page loads
     window.addEventListener('load', hideGoogleTranslateBanner);
-    
 
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 </body>
 </html>
