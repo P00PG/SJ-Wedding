@@ -16,6 +16,7 @@
 }
 
 #play-pause {
+  font-family: 'MyCustomFont', sans-serif;
   background-color: rgba(237, 145, 8, 0.693);
   color: white;
   border: none;
