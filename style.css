@@ -707,6 +707,14 @@ footer p {
   }
 
     /* Orange firefly pulse adjustments */
+    
+    .orange-firefly {
+      width: 3px;
+      height: 2px; /* Smaller fireflies on mobile */
+      animation-duration: 6s; /* Longer animation duration for smoothness */
+      animation-timing-function: ease-in-out; /* Smoother transition */
+    }
+    
     @keyframes fireflyPulseOrange {
       0% {
         opacity: 0.5;
