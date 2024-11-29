@@ -706,36 +706,35 @@ footer p {
     }
   }
 
-    /* Orange firefly pulse adjustments */
-    
-    .orange-firefly {
-      width: 3px;
-      height: 2px; /* Smaller fireflies on mobile */
-      animation-duration: 6s; /* Longer animation duration for smoothness */
-      animation-timing-function: ease-in-out; /* Smoother transition */
+  /* Orange firefly pulse adjustments */
+
+  .orange-firefly {
+    width: 3px;
+    height: 2px; /* Smaller fireflies on mobile */
+    animation-duration: 6s; /* Longer animation duration for smoothness */
+    animation-timing-function: ease-in-out; /* Smoother transition */
+  }
+
+  @keyframes fireflyPulseOrange {
+    0% {
+      opacity: 0.3;
+      box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
     }
-    
-    @keyframes fireflyPulseOrange {
-      0% {
-        opacity: 0.5;
-        box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
-      }
-      25% {
-        opacity: 0.7;
-        box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.7);
-      }
-      50% {
-        opacity: 0.5;
-        box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.6);
-      }
-      75% {
-        opacity: 0.7;
-        box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.8);
-      }
-      100% {
-        opacity: 0.5;
-        box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
-      }
+    25% {
+      opacity: 0.5;
+      box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.7);
+    }
+    50% {
+      opacity: 0.3;
+      box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.6);
+    }
+    75% {
+      opacity: 0.5;
+      box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.8);
+    }
+    100% {
+      opacity: 0.3;
+      box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
     }
   }
 
