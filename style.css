@@ -17,7 +17,7 @@
 
 #play-pause {
   font-family: 'MyCustomFont', sans-serif;
-  background-color: rgba(237, 145, 8, 0.693);
+  background-color: rgba(171, 114, 30, 0.746);
   color: white;
   border: none;
   border-radius: 5px;
@@ -421,6 +421,7 @@ section#how-to-get-there ul {
   animation: fireflyMove 4s linear infinite, fireflyPulse 0.2s ease-in-out infinite;
 }
 
+
 /* Random firefly movement */
 @keyframes fireflyMove {
   0% {
@@ -460,6 +461,43 @@ section#how-to-get-there ul {
   100% {
     opacity: 0.4;
     box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.327);
+  }
+}
+
+
+/* Softer orange firefly styling */
+.orange-firefly {
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  background-color: rgba(255, 183, 77, 0.9); /* Softer orange glow */
+  border-radius: 50%;
+  box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6); /* Glow effect */
+  pointer-events: none; /* Prevent interaction */
+  animation: fireflyMove 4s linear infinite, fireflyPulseOrange 0.2s ease-in-out infinite;
+}
+
+/* Orange firefly pulsing animation */
+@keyframes fireflyPulseOrange {
+  0% {
+    opacity: 0.4;
+    box-shadow: 0 0 10px 4px rgba(255, 173, 51, 0.3);
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.7);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 15px 8px rgba(255, 173, 51, 0.6);
+  }
+  75% {
+    opacity: 1;
+    box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.8);
+  }
+  100% {
+    opacity: 0.4;
+    box-shadow: 0 0 10px 4px rgba(255, 173, 51, 0.3);
   }
 }
 
@@ -647,24 +685,49 @@ footer p {
 
   @keyframes fireflyPulse {
     0% {
-      opacity: 0.3;
+      opacity: 0.5;
       box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.492);
     }
     25% {
-      opacity: 0.5;
+      opacity: 0.7;
       box-shadow: 0 0 10px 5px rgba(255, 205, 6, 0.784);
     }
     50% {
-      opacity: 0.3;
+      opacity: 0.5;
       box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.66);
     }
     75% {
-      opacity: 0.5;
+      opacity: 0.7;
       box-shadow: 0 0 10px 5px rgba(255, 205, 6, 0.843);
     }
     100% {
-      opacity: 0.3;
+      opacity: 0.5;
       box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.485);
+    }
+  }
+
+    /* Orange firefly pulse adjustments */
+    @keyframes fireflyPulseOrange {
+      0% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
+      }
+      25% {
+        opacity: 0.7;
+        box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.7);
+      }
+      50% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.6);
+      }
+      75% {
+        opacity: 0.7;
+        box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.8);
+      }
+      100% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
+      }
     }
   }
 

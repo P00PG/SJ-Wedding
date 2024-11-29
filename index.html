@@ -182,7 +182,14 @@
             }
 
             const firefly = document.createElement('div');
-            firefly.classList.add('firefly');
+
+            // Randomly assign firefly type: yellow or orange
+            if (Math.random() < 0.5) {
+                firefly.classList.add('firefly'); // Yellow firefly
+            } else {
+                firefly.classList.add('orange-firefly'); // Orange firefly
+            }
+
             firefly.style.left = `${Math.random() * 100}vw`; // Random starting position
             firefly.style.top = `${Math.random() * 100}vh`;
             firefly.style.animationDuration = `${25 + Math.random() * 4}s`; // Random duration
@@ -194,6 +201,7 @@
         // Add fireflies at intervals (e.g., every 100ms)
         const fireflyInterval = setInterval(addFirefly, 100);
     });
+
 
     
     //Google translate
