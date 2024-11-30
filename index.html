@@ -171,7 +171,11 @@
         //firefly script
         document.addEventListener('DOMContentLoaded', () => {
         const firefliesContainer = document.querySelector('.fireflies');
-        const maxFireflies = 120; // Maximum number of fireflies
+        let maxFireflies = 120; // Default for desktop
+        const isMobile = window.innerWidth <= 768; // Define mobile breakpoint
+        if (isMobile) {
+            maxFireflies = 85; // Reduced number for mobile
+        }
         let currentFireflies = 0; // Counter for added fireflies
 
         // Function to add a single firefly
