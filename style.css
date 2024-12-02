@@ -24,6 +24,8 @@
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
+  z-index: 1;
+  opacity: 0.4; /* Adjust to control the dullness */
 }
 
 #play-pause:hover {
@@ -31,22 +33,49 @@
 }
 
   /* Custom slider styling for firefly glow effect */
+  #volume-container {
+    position: relative;
+    width: 120px;
+    height: 40px; /* Adjust to include vine overlap */
+    display: flex; /* Ensures slider aligns with the container */
+    align-items: center; /* Vertically centers the slider */
+    z-index: 1;
+  }
+  
   #volume {
     -webkit-appearance: none; /* Remove default styling */
-    background: rgba(255, 255, 255, 0.2); /* Subtle translucent background */
+    appearance: none;
+    background: rgba(87, 62, 37, 0.63); /* Subtle translucent slider background */
     border-radius: 5px;
-    height: 5px;
-    width: 120px;
+    height: 2px; /* The visible slider track */
+    width: 100%;
     outline: none;
     cursor: pointer;
-    transition: background 0.3s;
+    z-index: 2;
+    position: relative;
+  }
+
+  /* Decorative Vine */
+  #volume-vine {
+    position: absolute;
+    top: 0; /* Align the vine properly with the slider */
+    left: -10px;
+    width: 120%; /* Matches the container's width */
+    height: 40px; /* Matches the container's height */
+    background: url('./Images/vine.png') no-repeat center;
+    background-size: contain; /* Adjusts to fit the container */
+    z-index: 3; /* Behind the slider */
+    pointer-events: none; /* Ensures vine image does not interfere with slider interaction */
+    clip-path: polygon(0 10%, 10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%);
+    opacity: 0.5; /* Adjust to control the dullness */
+
   }
 
   #volume::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
     box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
@@ -56,11 +85,12 @@
   #volume::-webkit-slider-thumb:hover {
     background: rgba(255, 221, 29, 0.8); /* Brighter on hover */
     box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6); /* Glowing effect on hover */
+    opacity: 0.6; /* Adjust to control the dullness */
   }
 
   #volume::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
     box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
@@ -69,6 +99,7 @@
 
   #volume::-moz-range-thumb:hover {
     background: rgba(255, 221, 29, 0.8); /* Brighter on hover */
+    opacity: 0.6; /* Adjust to control the dullness */
     box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6); /* Glowing effect on hover */
   }
 
