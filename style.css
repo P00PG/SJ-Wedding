@@ -11,12 +11,13 @@
 .audio-controls {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between controls */
+  gap: 15px; /* Space between controls */
   margin-top: 10px;
 }
 
 #play-pause {
   font-family: 'MyCustomFont', sans-serif;
+  font-size: 1rem;
   background-color: rgba(171, 114, 30, 0.746);
   color: white;
   border: none;
@@ -35,8 +36,8 @@
   /* Custom slider styling for firefly glow effect */
   #volume-container {
     position: relative;
-    width: 120px;
-    height: 40px; /* Adjust to include vine overlap */
+    width: 150px;
+    height: 60px; /* Adjust to include vine overlap */
     display: flex; /* Ensures slider aligns with the container */
     align-items: center; /* Vertically centers the slider */
     z-index: 1;
@@ -47,7 +48,7 @@
     appearance: none;
     background: rgba(87, 62, 37, 0.63); /* Subtle translucent slider background */
     border-radius: 5px;
-    height: 2px; /* The visible slider track */
+    height: 4px; /* The visible slider track */
     width: 100%;
     outline: none;
     cursor: pointer;
@@ -59,9 +60,9 @@
   #volume-vine {
     position: absolute;
     top: 0; /* Align the vine properly with the slider */
-    left: -10px;
-    width: 120%; /* Matches the container's width */
-    height: 40px; /* Matches the container's height */
+    left: -20px;
+    width: 140%; /* Matches the container's width */
+    height: 60px; /* Matches the container's height */
     background: url('./Images/vine.png') no-repeat center;
     background-size: contain; /* Adjusts to fit the container */
     z-index: 3; /* Behind the slider */
@@ -74,8 +75,8 @@
   #volume::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
     box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
@@ -89,8 +90,8 @@
   }
 
   #volume::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
     box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
@@ -286,6 +287,8 @@ header p {
   min-height: 100vh; /* Ensure section takes at least full viewport height */
 }
 
+
+
 /* Exclude flexbox centering for the RSVP section */
 #rsvp {
   display: block; /* Remove flexbox */
@@ -311,17 +314,82 @@ header p {
 
 /* Ensure all section text is above the overlay */
 .section h2, .section p, .section h3 {
-  font-size: 40px;
+  font-size: 38px;
+  position: relative;
+  z-index: 1; /* Make sure the text is above the overlay */
+  color: white; /* White text color */
+}
+
+.section h2 {
+  font-size: 45px;
   position: relative;
   z-index: 1; /* Make sure the text is above the overlay */
   color: white; /* White text color */
 }
 
 .section li {
-  font-size: 30px;
+  font-size: 28px;
   position: relative;
   z-index: 1; /* Make sure the text is above the overlay */
   color: white; /* White text color */
+}
+
+a {
+  color: #ff6347; /* Bright, noticeable color (Tomato red) */
+  font-weight: bold; /* Make the link text bold */
+  text-decoration: underline; /* Always underlined to signify it's clickable */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+  color: #f5a623; /* Change to a different color (Amber) on hover */
+  text-decoration: none; /* Remove underline on hover for style */
+}
+
+#schedule p, #rsvp p{
+  margin-top: -15px;
+}
+
+/* Styling for the schedule table */
+.schedule-table {
+  width: 90%; /* Adjust width as needed */
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1.9rem;
+  color: white; /* Text color */
+  position: relative;
+  z-index: 2;
+}
+
+.schedule-table th, .schedule-table td {
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft white border */
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle white background for header */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.schedule-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+}
+
+.schedule-table td {
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Soft glow for table data */
+}
+
+/* Glowing effect for borders */
+.schedule-table th, .schedule-table td {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: border-color 0.3s;
+}
+
+.schedule-table tr:hover td {
+  border-color: rgba(255, 255, 255, 0.7); /* Stronger glow on hover */
 }
 
 /* Specific background images for each section */
@@ -337,12 +405,16 @@ header p {
   background-image: url('./Images/280A8775_websize.jpg');
 }
 
+#schedule {
+  background-image: url('./Images//test.jpg'); 
+}
+
 /* Flexbox for arranging the categories horizontally */
 .wear-categories {
   display: flex; /* Make sure flexbox is enabled */
   justify-content: space-between; /* Distribute space evenly between items */
   gap: 20px; /* Add space between the categories */
-  margin-top: 20px; /* Add some space between the title and the categories */
+  margin-top: 5%; /* Add some space between the title and the categories */
   flex-wrap: wrap; /* Allow items to wrap on small screens */
   width: 100%; /* Ensure container takes full width */
 }
@@ -356,7 +428,7 @@ header p {
   box-shadow: 0 4px 8px rgba(112, 112, 112, 0.534); /* Subtle shadow */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
   border-left: 3px solid rgba(0, 0, 0, 0.2); /* Left line between sections */
 }
@@ -368,7 +440,13 @@ header p {
 
 /* Optional: Adding some space below each category */
 .wear-category h3 {
-  margin-bottom: 10px;
+  margin-bottom: 1%;
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+.wear-category p{
+  font-size: 2.3rem;
 }
 
 
@@ -376,6 +454,16 @@ header p {
 section#how-to-get-there ul {
   list-style-type: none; /* Removes the default bullet points */
   padding-left: 0; /* Optional: Remove left padding to align list items */
+}
+
+section#how-to-get-there span{
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.338),   /* Soft white glow */
+    0 0 10px rgba(197, 197, 197, 0.228),  /* Subtle grayish glow */
+    0 0 15px rgba(250, 250, 250, 0.238);  /* Soft white glow with slightly more spread */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: underline; /* Underline the text */
+    
 }
 
 /* Container for both text and iframe */
@@ -388,6 +476,7 @@ section#how-to-get-there ul {
 }
 
 /* Modify flex styling to target only the RSVP section */
+
 #rsvp .rsvp-content {
   display: flex;
   justify-content: center; /* Horizontally center both the text and iframe */
@@ -606,7 +695,11 @@ footer p {
   }
 
   .section h2, .section p, .section h3 {
-    font-size: 30px; /* Adjust section title font size */
+    font-size: 28px; /* Adjust section title font size */
+  }
+
+  .section h2 {
+    font-size: 32px; /* Adjust section title font size */
   }
 
   .section li {
@@ -622,6 +715,12 @@ footer p {
     flex: none; /* Ensure each section takes full width */
     width: 100%; /* Ensure full-width layout */
     border-left: none; /* Remove the left border on mobile */
+  }
+  
+  /* Styling for the schedule table */
+  .schedule-table {
+    width: 100%; /* Make table take full width on smaller screens */
+    font-size: 1.4rem; /* Smaller font size for mobile */
   }
 
   /* Other mobile styling as previously defined */
@@ -648,7 +747,7 @@ footer p {
   
     /* Ensure text and iframe are stacked vertically */
     #rsvp .rsvp-text {
-      margin-bottom: 20px; /* Add space below the text */
+      margin-bottom: 20%; /* Add space below the text */
       max-width: 100%; /* Full width */
     }
   
@@ -770,6 +869,35 @@ footer p {
       box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
     }
   }
+
+    /* Adjusting the play/pause button */
+    #play-pause {
+      font-size: 0.9rem; /* Make the button text smaller */
+      padding: 4px 8px; /* Smaller padding */
+    }
+  
+    /* Adjusting the volume container size */
+    #volume-container {
+      width: 120px; /* Smaller width for smaller screens */
+      height: 45px; /* Adjust height to match */
+    }
+  
+    /* Adjusting the volume slider */
+    #volume {
+      height: 3px; /* Smaller slider track */
+    }
+  
+    /* Adjusting the vine background image */
+    #volume-vine {
+      width: 145%; /* Slightly smaller vine */
+      height: 45px; /* Matches the container's height */
+    }
+  
+    /* Adjusting the slider thumb */
+    #volume::-webkit-slider-thumb, #volume::-moz-range-thumb {
+      width: 12px; /* Smaller thumb */
+      height: 12px; /* Smaller thumb */
+    }
 
 
 }
