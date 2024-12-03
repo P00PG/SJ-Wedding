@@ -725,7 +725,10 @@ footer p {
 
   /* Other mobile styling as previously defined */
   #rsvp {
-    display: block;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Horizontally center the content */
+    justify-content: center; /* Vertically center the content */
     padding: 20px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
@@ -733,8 +736,7 @@ footer p {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: auto;
-    margin-top: 0px;
+    min-height: 100vh; /* Ensure it takes full height of the viewport */
     width: 100%; /* Ensure full width */
   }
   
@@ -743,11 +745,12 @@ footer p {
       display: block; /* Force the content to stack vertically */
       width: 100%; /* Ensure full width for both text and form */
       text-align: center; /* Center the content */
+      
     }
   
     /* Ensure text and iframe are stacked vertically */
     #rsvp .rsvp-text {
-      margin-bottom: 20%; /* Add space below the text */
+      margin-bottom: 15%; /* Add space below the text */
       max-width: 100%; /* Full width */
     }
   
@@ -757,8 +760,8 @@ footer p {
       position: relative;
       padding-bottom: 135%; /* Maintain height proportional to width (4:3 aspect ratio) */
       height: 0; /* Keep height set by padding-bottom */
-      margin: 20px auto; /* Centers the iframe container */
-      margin-right: 45px; /* Add margin-left to shift it more left */
+      margin-left: auto; /* Ensures horizontal centering */
+      margin-right: auto; /* Ensures horizontal centering */
     }
     
     /* Ensure iframe inside the container scales well */
