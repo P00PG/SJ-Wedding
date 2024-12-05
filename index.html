@@ -301,8 +301,14 @@
     const playPauseButton = document.getElementById('play-pause');
     const volumeControl = document.getElementById('volume');
 
-    // Set initial volume to 0.2 (soft volume)
-    audio.volume = 0.2;
+    // Set initial volume based on screen width
+    if (window.innerWidth <= 768) {
+        // For mobile, set the initial volume to a higher value (e.g., 0.5 or 0.6)
+        audio.volume = 0.6;
+    } else {
+        // For larger screens, set the initial volume to a lower value (e.g., 0.2)
+        audio.volume = 0.3;
+    }
     volumeControl.value = audio.volume; // Ensure the slider reflects the audio's volume
 
     // Play/Pause functionality
