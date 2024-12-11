@@ -654,6 +654,100 @@ footer p {
   display: none !important;
 }
 
+/*laptops*/
+@media (min-width: 1024px) and (max-width: 1440px) and (max-height: 1080px){
+
+  /* Adjust font sizes for smaller screens */
+  header h1 {
+    font-size: 3rem; /* Reduce font size */
+  }
+  
+  header h3 {
+    font-size: 1.5rem; /* Reduce font size */
+  }
+
+  header p {
+    font-size: 1.5rem; /* Reduce font size */
+  }
+
+  .section {
+    padding: 40px 60px; /* Increase side padding to 50px (left and right) */
+  }
+
+  /* Adjust text sizes in sections */
+  .section h2, .section p, .section h3 {
+    font-size: 28px; /* Scale down font size */
+    
+  }
+
+  .section h2 {
+    font-size: 36px; /* Adjust for smaller screens */
+  }
+
+  .section li {
+    font-size: 24px; /* Adjust for readability */
+  }
+  
+
+  /* Resize the schedule table */
+  .schedule-table {
+    width: 90%; /* Narrow the table */
+  }
+
+  .schedule-table th {
+    font-size: 1.8rem; /* Adjust header font size */
+  }
+
+  .schedule-table td {
+    font-size: 1.7rem; /* Adjust cell font size */
+  }
+
+
+  /* Container for RSVP content */
+  #rsvp .rsvp-content {
+    justify-content: center;
+    gap: 0px; /* Slightly larger gap for larger screens */
+    flex-direction: row; /* Ensure the text and iframe are in a row layout */
+  }
+
+  /* Ensure the text and iframe have a balanced layout */
+  #rsvp .rsvp-text {
+    max-width: 30%; /* Control the width of the text container */
+    margin-right: 0;
+  }
+
+  #rsvp .iframe-container {
+    margin-left: 5px;
+    height: 95%; /* Adjust the height for laptops to 50% of the parent container */
+  }
+
+  #rsvp .iframe-container iframe {
+    width: 80%;
+    height: 100%;
+  }
+  
+
+  .schedule-table th, .schedule-table td {
+    padding: 8px 12px; /* Adjust padding */
+  }
+
+  .wear-category h3 {
+    font-size: 2.2rem; /* Adjust category header font size */
+  }
+
+  .wear-category p {
+    width: 100% !important;
+    font-size: 2rem; /* Adjust category paragraph font size */
+    padding-bottom: 10%;
+  }
+
+  #what-to-wear p{
+    margin: auto;
+    width: 75%;
+  }
+  
+}
+
 
 /*tablet*/
 @media (max-width: 1024px){
@@ -681,6 +775,7 @@ footer p {
     max-width: 75%; /* Limit the width of the header */
     margin: 0 auto; /* Center the header */
   }
+
 
   .section p, .section h3 {
     font-size: 2.7rem; /* 28px -> 1.75rem */
@@ -710,15 +805,17 @@ footer p {
     border-left: none; /* Remove left border on mobile */
   }
 
-    /* Styling for the schedule table */
-    .schedule-table {
-      width: 100%; /* Make table take full width on smaller screens */
-      font-size: 2.3rem; /* Smaller font size for mobile */
-    }
-  
-    .schedule-table th{
-      font-size: 2.4rem;
-    }
+  /* Styling for the schedule table */
+  .schedule-table {
+    width: 100%; /* Make table take full width on smaller screens */
+    font-size: 2.3rem; /* Smaller font size for mobile */
+  }
+
+  .schedule-table th{
+    font-size: 2.4rem;
+  }
+
+    
 
   /* Adjust RSVP content layout for mobile */
   #rsvp .rsvp-content {
