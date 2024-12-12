@@ -868,58 +868,6 @@ footer p {
   
 }
 
-/* Slideshow settings */
-/* Target iOS devices */
-.ios-device .header, .ios-device .section {
-  width: 100vw !important;  /* Full width */
-  height: 100vh !important; /* Full viewport height */
-  background-size: contain !important;  /* Prevent zooming and cropping */
-  background-position: center center !important; /* Center the image */
-  background-attachment: scroll !important; /* Remove fixed background for iOS */
-  position: relative; /* Keep content in front */
-  z-index: -1; /* Keep background behind content */
-}
-
-/* Slideshow styling for iOS */
-.ios-device .slideshow {
-  position: relative;
-  width: 100%;
-  height: auto;  /* Ensure it adjusts based on content */
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-  z-index: -1; /* Keep slideshow behind the content */
-}
-
-/* Individual slides inside slideshow */
-.ios-device .slideshow .slide {
-  display: block; /* Ensure slides are stacked */
-  width: 100%;  /* Ensure full width */
-  height: 100vh;  /* Take full height of the viewport */
-  position: relative;  /* Keep slides in their position */
-}
-
-/* Fix zoomed-in images in slideshow for iOS */
-.ios-device .slideshow .slide img {
-  width: 100% !important;  /* Ensure image spans full width */
-  height: auto !important; /* Maintain aspect ratio */
-  object-fit: contain !important;  /* Ensure the image fits properly without zooming */
-  object-position: center center !important; /* Keep image centered */
-  background-attachment: scroll !important; /* Remove fixed effect */
-}
-
-/* For header or section background images */
-.ios-device .header, .ios-device .section {
-  background-size: contain !important; /* Avoid zooming in on the image */
-  background-position: center center !important; /* Center the image */
-}
-
-
-/* Adjust the height dynamically for iOS (can be added if needed for viewport height issues) */
-.ios-device .header, .ios-device .section {
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-
 /*moblie*/
 @media (max-width: 768px) {
 
