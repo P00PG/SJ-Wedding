@@ -874,10 +874,7 @@ footer p {
   background-size: cover !important;  /* Adjust the image to cover the area */
   background-position: center !important;  /* Center the image */
   background-repeat: no-repeat !important;  /* Prevent repeating the background image */
-  background-attachment: scroll !important;
 
-  height: 100vh;  /* Makes the section fill the entire height of the viewport */
-  min-height: 300px; /* Fallback for smaller screens */
 }
 
 /*moblie*/
