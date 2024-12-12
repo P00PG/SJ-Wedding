@@ -869,10 +869,10 @@ footer p {
 }
 
 .ios-device {
-  height: 100vh;
-  overflow: hidden;  /* Prevent scrolling issues caused by 100vh */
-  position: relative;
+  height: auto;  /* Allow the height to grow dynamically */
+  position: relative; /* Ensure proper positioning */
 }
+
 
 /* Fix for fullscreen images within header or sections */
 .ios-device .header, .ios-device .section {
