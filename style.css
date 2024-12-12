@@ -868,26 +868,22 @@ footer p {
   
 }
 
+/* Target iOS devices with a max-width of 768px */
 @media screen and (max-width: 768px) and (min-device-pixel-ratio: 2) {
-  /* Specific Safari Fix */
-  @supports (-webkit-overflow-scrolling: touch) {
-    .section img {
-        object-fit: contain;  /* Ensure images fit without zooming */
-        width: 100%;          /* Ensure the image fills the container */
-        height: auto;         /* Maintain aspect ratio */
-        max-width: 100%;      /* Prevent the image from overflowing */
-        max-height: 100%;     /* Prevent the image from zooming in */
-    }
-
-    /* Optionally apply background size to background images */
-    .section {
-        background-size: contain;  /* Ensure background image is contained */
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+  .section img {
+      object-fit: contain !important;  /* Force the image to fit without zooming */
+      width: 100% !important;         /* Ensure the image fills the container */
+      height: auto !important;        /* Maintain aspect ratio */
+      max-width: 100% !important;     /* Prevent overflow */
+      max-height: 100% !important;    /* Prevent zooming in */
   }
-}
 
+  .section {
+    background-size: contain !important; /* Make sure the background image fits properly */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
 
 /*moblie*/
 @media (max-width: 768px) {
