@@ -870,7 +870,7 @@ footer p {
 
 /* Target iOS devices */
 /* For iOS devices specifically */
-.ios-device .slideshow .slide img {
+.ios-device .slide img {
   object-fit: contain !important; /* Ensure the image fits within the container without zooming */
   object-position: center center !important; /* Keep image centered */
   width: 100% !important; /* Ensure the image doesn't overflow */
