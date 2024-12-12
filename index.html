@@ -326,10 +326,19 @@
     });
 
     if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-    // Add a class to the body or the section for styling purposes
-    document.body.classList.add('ios-device');
-    }
+  // Add a class to the body or a specific section for iOS styling
+  document.body.classList.add('ios-device');
 
+  // Dynamically adjust the slideshow images' width and height on iOS
+  const slides = document.querySelectorAll('.slideshow .slide img');
+  slides.forEach(slide => {
+    slide.style.width = '100%';
+    slide.style.height = 'auto';
+    slide.style.objectFit = 'contain';  // Prevent zoom on iOS
+    slide.style.maxHeight = '100vh';    // Ensure the image fits within the viewport
+    slide.style.maxWidth = '100vw';     // Ensure the image doesn't overflow
+  });
+}
 
 
     </script>
