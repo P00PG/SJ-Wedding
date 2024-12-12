@@ -868,7 +868,19 @@ footer p {
   
 }
 
+.ios-device {
+  height: 100vh;
+  overflow: hidden;  /* Prevent scrolling issues caused by 100vh */
+  position: relative;
+}
 
+/* Fix for fullscreen images within header or sections */
+.ios-device .header, .ios-device .section {
+  height: 100vh !important;  /* Ensure these sections take full viewport height */
+  width: 100vw !important;   /* Ensure sections stretch across the entire width */
+  background-size: contain !important; /* Adjust background image size */
+  background-position: center center !important;  /* Ensure image is centered */
+}
 
 /*moblie*/
 @media (max-width: 768px) {
