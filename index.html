@@ -57,7 +57,7 @@
     <!-- Scrollable Sections -->
     <section class="section" id="what-to-wear">
         <div class="content">
-            <h2>this is to show the ios trial and error 3</h2>
+            <h2>this is to show the ios trial and error 4</h2>
           <h2>What to Wear</h2>
           <p>We want you to feel at ease during our celebration, so wear whatever makes you feel comfortable and ready to enjoy the day!</p>
       
@@ -324,6 +324,12 @@
     volumeControl.addEventListener('input', () => {
         audio.volume = volumeControl.value;
     });
+
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+    // Add a class to the body or the section for styling purposes
+    document.body.classList.add('ios-device');
+    }
+
 
 
     </script>
