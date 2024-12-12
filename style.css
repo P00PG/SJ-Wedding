@@ -871,10 +871,8 @@ footer p {
 /* Target iOS devices with a max-width of 768px */
 /* Target iOS devices */
 .ios-device .section {
-  background-size: cover !important;  /* Adjust the image to cover the area */
-  background-position: center !important;  /* Center the image */
-  background-repeat: no-repeat !important;  /* Prevent repeating the background image */
-
+  background-size: cover;
+  background-position: center;
 }
 
 /*moblie*/
