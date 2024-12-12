@@ -869,47 +869,39 @@ footer p {
 }
 
 /* Apply to iOS devices specifically */
-.ios-device .slideshow .slide img {
-  width: 100%;  /* Ensure it takes the full width */
-  height: auto;  /* Maintain aspect ratio */
-  object-fit: contain;  /* Prevent zooming on iOS */
-  object-position: center center;  /* Keep the image centered */
-  max-height: 100vh; /* Ensure the image doesn't exceed viewport height */
-  max-width: 100vw; /* Ensure it doesn't exceed viewport width */
-  display: block; /* Prevent any inline display issues */
-}
-
-/* Make the slideshow container scrollable */
+/* Target iOS devices specifically */
+/* General slideshow styles */
 .ios-device .slideshow {
-  position: relative; /* Set the position to relative for the container */
-  overflow-y: scroll;  /* Allow vertical scrolling */
-  width: 100%;  /* Make sure the slideshow spans the full width */
-  height: auto; /* Allow height to expand based on content */
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure slideshow takes up the full height of the viewport */
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  z-index: -1; /* Keep slideshow behind content */
 }
 
-/* Make sure individual slides are stacked vertically */
+/* Slideshow images for iOS */
+.ios-device .slideshow .slide img {
+  width: 100%;  /* Ensure images span the full width */
+  height: 100vh; /* Set the height to 100vh to ensure the image fills the viewport */
+  object-fit: cover; /* Cover the entire viewport, no gaps */
+  object-position: center center; /* Center the image */
+}
+
+/* Slide items should be stacked */
 .ios-device .slideshow .slide {
-  display: block; /* Ensure each slide takes up full width */
-  width: 100%;  /* Set the slide width to 100% */
-  height: auto; /* Allow height to adjust based on the image's aspect ratio */
+  display: block;
+  width: 100%; /* Ensure each slide takes full width */
+  height: 100vh; /* Set height of each slide to 100vh */
 }
 
-/* Fix background issues for iOS devices */
-.ios-device .section {
-  background-size: contain;  /* Fit the image within the container */
-  background-position: center center;  /* Ensure the background is centered */
-  background-repeat: no-repeat; /* Prevent repetition of the image */
-  height: auto; /* Allow section height to adjust based on content */
-}
-
-
-/* Fix for fullscreen images within header or sections */
+/* Header and section background images */
 .ios-device .header, .ios-device .section {
-  height: 100vh !important;  /* Ensure these sections take full viewport height */
-  width: 100vw !important;   /* Ensure sections stretch across the entire width */
-  background-size: contain !important; /* Adjust background image size */
-  background-position: center center !important;  /* Ensure image is centered */
+  width: 100vw; /* Ensure sections stretch across the entire width */
+  height: 100vh; /* Ensure sections stretch across the entire height */
+  background-size: cover !important; /* Cover the section area */
+  background-position: center center !important; /* Center the background image */
+  z-index: -1; /* Place it behind content */
 }
 
 /*moblie*/
