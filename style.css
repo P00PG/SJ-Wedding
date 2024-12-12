@@ -868,32 +868,39 @@ footer p {
   
 }
 
-.ios-device {
-  height: auto;  /* Allow the height to grow dynamically */
-  position: relative; /* Ensure proper positioning */
-}
-
-/* Slideshow image adjustments for iOS */
+/* Apply to iOS devices specifically */
 .ios-device .slideshow .slide img {
-  width: 100%;  /* Ensure the image takes full width */
-  height: auto;  /* Keep the aspect ratio */
-  object-fit: contain;  /* Prevent zooming and keep the entire image visible */
-  max-height: 100vh; /* Ensure it fits within the viewport height */
-  max-width: 100vw;  /* Ensure it fits within the viewport width */
-  object-position: center center; /* Center the image */
+  width: 100%;  /* Ensure it takes the full width */
+  height: auto;  /* Maintain aspect ratio */
+  object-fit: contain;  /* Prevent zooming on iOS */
+  object-position: center center;  /* Keep the image centered */
+  max-height: 100vh; /* Ensure the image doesn't exceed viewport height */
+  max-width: 100vw; /* Ensure it doesn't exceed viewport width */
+  display: block; /* Prevent any inline display issues */
 }
 
-/* Prevent background issues for iOS */
+/* Make the slideshow container scrollable */
 .ios-device .slideshow {
-  position: relative; /* Allow the slideshow to be positioned properly */
-  overflow: visible;  /* Allow the slideshow to scroll */
-  width: 100vw;  /* Make sure the slideshow takes up full width */
-  height: auto; /* Allow height to adjust based on content */
-  z-index: -1; /* Ensure slideshow stays behind the content */
+  position: relative; /* Set the position to relative for the container */
+  overflow-y: scroll;  /* Allow vertical scrolling */
+  width: 100%;  /* Make sure the slideshow spans the full width */
+  height: auto; /* Allow height to expand based on content */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
 }
 
-.ios-device .slideshow {
-  -webkit-overflow-scrolling: touch;  /* Smooth scrolling */
+/* Make sure individual slides are stacked vertically */
+.ios-device .slideshow .slide {
+  display: block; /* Ensure each slide takes up full width */
+  width: 100%;  /* Set the slide width to 100% */
+  height: auto; /* Allow height to adjust based on the image's aspect ratio */
+}
+
+/* Fix background issues for iOS devices */
+.ios-device .section {
+  background-size: contain;  /* Fit the image within the container */
+  background-position: center center;  /* Ensure the background is centered */
+  background-repeat: no-repeat; /* Prevent repetition of the image */
+  height: auto; /* Allow section height to adjust based on content */
 }
 
 
