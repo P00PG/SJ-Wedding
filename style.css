@@ -873,8 +873,8 @@ footer p {
 .ios-device .slideshow .slide img {
   object-fit: cover !important; /* Ensure the image covers the container */
   object-position: center !important; /* Keep the image centered */
-  max-width: 100%; /* Prevent any stretching */
-  max-height: 100%; /* Prevent any stretching */
+  max-width: 100vw !important; /* Prevent any stretching */
+  max-height: 100vh !important; /* Prevent any stretching */
 }
 
 /* Header Image for iOS */
