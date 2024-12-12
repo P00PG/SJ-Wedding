@@ -873,14 +873,14 @@ footer p {
 .ios-device .slideshow .slide img {
   object-fit: contain;  /* Adjust to fit without zooming */
   object-position: center; /* Center the image */
-  height: auto;  /* Maintain aspect ratio */
+  height: 100vh;  /* Maintain aspect ratio */
   width: 100%;  /* Ensure image fits the width */
 }
 
 .ios-device .section img {
   object-fit: contain !important;  /* Prevent zooming on iOS */
   object-position: center !important; /* Center the image */
-  height: auto;
+  height: 100vh;
   width: 100%;
 }
 
