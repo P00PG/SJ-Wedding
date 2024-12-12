@@ -264,9 +264,9 @@ header p {
 }
 
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Default: cover for desktop */
 }
 
 /* General section styling for centering (excludes RSVP section) */
@@ -759,6 +759,19 @@ footer p {
     height: 100%; /* Make sure the page takes the full height */
   }
 
+  body::before {
+    content: "";
+    position: fixed; /* Ensure overlay stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    background: rgba(0, 0, 0, 0.605);
+    z-index: 1;
+    pointer-events: none;
+
+  }
+
   header h1 {
     font-size: 4rem; /* Adjust header font size */
     margin: 0 auto; /* Center the header */
@@ -855,6 +868,18 @@ footer p {
   
 }
 
+/* For iOS devices */
+@media screen and (max-width: 768px) and (min-device-pixel-ratio: 2) {
+  .section img {
+      object-fit: contain;  /* Ensures image is contained within the box */
+      width: 100%;          /* Make the image responsive */
+      height: auto;         /* Maintain the aspect ratio */
+      max-width: 100%;      /* Ensure the image doesn't overflow */
+      max-height: 100%;     /* Prevent the image from being zoomed or overflow */
+  }
+}
+
+
 /*moblie*/
 @media (max-width: 768px) {
 
@@ -871,6 +896,19 @@ footer p {
     padding: 0;
     width: 100%; /* Ensure full width for the entire page */
     height: 100%; /* Make sure the page takes the full height */
+  }
+
+  body::before {
+    content: "";
+    position: fixed; /* Ensure overlay stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    background: rgba(0, 0, 0, 0.605);
+    z-index: 1;
+    pointer-events: none;
+
   }
 
   header h1 {
@@ -1119,6 +1157,21 @@ footer p {
 
 
 @media (max-width: 530px) {
+
+
+  body::before {
+    content: "";
+    position: fixed; /* Ensure overlay stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    background: rgba(0, 0, 0, 0.605);
+    z-index: 1;
+    pointer-events: none;
+
+  }
+
   #rsvp .iframe-container {
     width: 90%; /* Limit the width to 90% of the screen */
     max-width: 500px; /* Set a maximum width for larger devices */
@@ -1133,6 +1186,23 @@ footer p {
 
 /* Smaller Mobile devices */
 @media (max-width: 480px) { 
+
+
+  body::before {
+    content: "";
+    position: fixed; /* Ensure overlay stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    background: rgba(0, 0, 0, 0.605);
+    z-index: 1;
+    pointer-events: none;
+
+  }
+
+
+
     /* Styling for the schedule table */
     .schedule-table {
       width: 100%; /* Make table take full width on smaller screens */
@@ -1147,6 +1217,19 @@ footer p {
 
 /* Even smaller mobile devices */
 @media (max-width: 380px) {
+
+  body::before {
+    content: "";
+    position: fixed; /* Ensure overlay stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    background: rgba(0, 0, 0, 0.605);
+    z-index: 1;
+    pointer-events: none;
+
+  }
 
   header h1 {
     font-size: 2.5rem; /* Adjust header font size */
