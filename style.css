@@ -870,9 +870,18 @@ footer p {
 
 /* Target iOS devices with a max-width of 768px */
 /* Target iOS devices */
-.ios-device .section {
-  background-size: cover;
-  background-position: center;
+.ios-device .slideshow .slide img {
+  object-fit: contain;  /* Adjust to fit without zooming */
+  object-position: center; /* Center the image */
+  height: auto;  /* Maintain aspect ratio */
+  width: 100%;  /* Ensure image fits the width */
+}
+
+.ios-device .section img {
+  object-fit: contain !important;  /* Prevent zooming on iOS */
+  object-position: center !important; /* Center the image */
+  height: auto;
+  width: 100%;
 }
 
 /*moblie*/
