@@ -411,41 +411,44 @@ if (isIOSDevice()) {
     sections.forEach((section) => {
         const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
-        // If background image exists, set it correctly
         if (backgroundImage && backgroundImage !== 'none') {
             const image = document.createElement('div');
+
+            // Create a background image layer
             image.style.backgroundImage = backgroundImage;
             image.style.position = 'absolute';
             image.style.top = '0';
             image.style.left = '0';
             image.style.width = '100%';
             image.style.height = '100%';
-            image.style.zIndex = '-1'; // Ensure background image stays at the back
+            image.style.zIndex = '-2'; // Layer below the section itself
             image.style.backgroundSize = 'cover';
             image.style.backgroundPosition = 'center';
             image.style.backgroundRepeat = 'no-repeat';
 
-            // Remove the original background image and insert the new one
+            // Remove the original background image
             section.style.backgroundImage = 'none';
-            section.style.position = 'relative'; // Positioning context for the section
+            section.style.position = 'relative'; // Ensure stacking context
 
-            // Insert the background image into the section
+            // Add the image to the section
             section.appendChild(image);
         }
 
-        // Apply appropriate z-index to ensure layering
-        section.style.zIndex = '0'; // Keep section in the middle layer (below content)
-
-        // Ensure the section content stays on top of the background image and overlay
+        // Ensure content is always above the overlay
         const content = section.querySelector('.content');
         if (content) {
-            content.style.position = 'relative'; // Position context for the content
-            content.style.zIndex = '99999'; // Ensure content stays on top of background and overlay
-            // This should ensure the section content isn't buried under the overlay or background image
-            content.style.pointerEvents = 'auto'; // Ensures you can still interact with the content in the section
+            content.style.position = 'relative';
+            content.style.zIndex = '1'; // Bring the content above everything
         }
-
     });
+
+    // Adjust the body overlay for proper layering
+    const bodyOverlay = document.querySelector('body::before');
+    if (bodyOverlay) {
+        // Confirm body overlay is positioned correctly
+        document.body.style.position = 'relative';
+        document.body.style.zIndex = '0'; // Make sure overlay is behind content layers
+    }
 }
 
 
