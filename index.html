@@ -463,6 +463,8 @@ if (isIOSDevice()) {
         // Confirm body overlay is positioned correctly
         document.body.style.position = 'relative';
         document.body.style.zIndex = '1'; // Make sure overlay is behind content layers
+        document.body.style.backgroundColor = ""; // Resets to the original CSS value
+
     }
 }
 
