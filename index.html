@@ -431,49 +431,52 @@
 
     }
 
-    // Only run the following code for iOS devices
-    if (isIOSDevice()) {
-        const sections = document.querySelectorAll('.section');
+// Function to detect if the device is iOS
+function isIOSDevice() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
 
-        sections.forEach((section) => {
-            const backgroundImage = window.getComputedStyle(section).backgroundImage;
+// Only run the following code for iOS devices
+if (isIOSDevice()) {
+    const sections = document.querySelectorAll('.section');
 
-            // If background image exists, set it correctly
-            if (backgroundImage && backgroundImage !== 'none') {
-                const image = document.createElement('div');
-                image.style.backgroundImage = backgroundImage;
-                image.style.position = 'absolute';
-                image.style.top = '0';
-                image.style.left = '0';
-                image.style.width = '100%';
-                image.style.height = '100%';
-                image.style.zIndex = '0'; // Background image stays behind
-                image.style.backgroundSize = 'cover';
-                image.style.backgroundPosition = 'center';
-                image.style.backgroundRepeat = 'no-repeat';
+    sections.forEach((section) => {
+        const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
-                // Remove the original background image and append the new one
-                section.style.backgroundImage = 'none';
-                section.style.position = 'relative'; // Set positioning context for z-index
+        // If background image exists, set it correctly
+        if (backgroundImage && backgroundImage !== 'none') {
+            const image = document.createElement('div');
+            image.style.backgroundImage = backgroundImage;
+            image.style.position = 'absolute';
+            image.style.top = '0';
+            image.style.left = '0';
+            image.style.width = '100%';
+            image.style.height = '100%';
+            image.style.zIndex = '-1'; // Ensure background image stays at the back
+            image.style.backgroundSize = 'cover';
+            image.style.backgroundPosition = 'center';
+            image.style.backgroundRepeat = 'no-repeat';
 
-                // Insert the image container
-                section.appendChild(image);
-            }
+            // Remove the original background image and insert the new one
+            section.style.backgroundImage = 'none';
+            section.style.position = 'relative'; // Positioning context for the section
 
-            // Ensure the section has correct z-index and does not appear greyed out
-            section.style.zIndex = '1'; // Make sure section has z-index of 0 to avoid being overlaid
+            // Insert the background image into the section
+            section.appendChild(image);
+        }
 
-            // Ensure the section content is always on top of the image and body overlay
-            const content = section.querySelector('.content');
-            if (content) {
-                content.style.position = 'relative';
-                content.style.zIndex = '5'; // Content stays above background and overlay
+        // Apply appropriate z-index to ensure layering
+        section.style.zIndex = '0'; // Keep section in the middle layer (below content)
 
-                // Optional: ensure content is visible (in case opacity has been changed)
-                content.style.opacity = '1';
-            }
-        });
-    }
+        // Ensure the section content stays on top of the background image and overlay
+        const content = section.querySelector('.content');
+        if (content) {
+            content.style.position = 'relative'; // Position context for the content
+            content.style.zIndex = '10'; // Ensure content stays on top of background and overlay
+        }
+    });
+}
+
 
 
 
