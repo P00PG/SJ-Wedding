@@ -425,7 +425,9 @@
                 // Set the section styles correctly
                 section.style.backgroundImage = 'none'; // Remove original background
                 section.style.position = 'relative'; // Add positioning context
-                section.style.zIndex = '1'; // Ensure section stays above the image
+                section.style.zIndex = '0'; // Ensure section stays above the image
+
+
 
                 // Append the created div as the background image container
                 section.appendChild(image);
