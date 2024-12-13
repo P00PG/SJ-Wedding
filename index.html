@@ -401,21 +401,16 @@
 
     // Only run the following code for iOS devices
     if (isIOSDevice()) {
-        // Adjust the slideshow for iOS devices
+        // Slideshow adjustments for iOS devices
         const slides = document.querySelectorAll('.slide');
-
-        // Iterate through each slide element to ensure proper positioning
         slides.forEach((slide) => {
-            // Set proper properties for each slide (positioning and dimensions)
             const img = slide.querySelector('img');
             if (img) {
-                // Make sure the images are correctly covered inside their container
-                img.style.objectFit = 'cover'; // Ensure cover fit for slideshow images
-                img.style.height = '100%';      // Ensure image covers the full height
-                img.style.width = '100%';       // Ensure image covers the full width
+                img.style.objectFit = 'cover'; // Ensure images fully cover the container
+                img.style.height = '100%';
+                img.style.width = '100%';
             }
 
-            // Keep slide absolutely positioned with full size
             slide.style.position = 'absolute';
             slide.style.top = '0';
             slide.style.left = '0';
@@ -423,27 +418,26 @@
             slide.style.height = '100%';
         });
 
-    // Slideshow container that wraps the entire slideshow
-    const slideshow = document.querySelector('.slideshow');
+        const slideshow = document.querySelector('.slideshow');
+        if (slideshow) {
+            slideshow.style.position = 'absolute';
+            slideshow.style.top = '0';
+            slideshow.style.left = '0';
+            slideshow.style.width = '100%';
+            slideshow.style.height = '100%';
+            slideshow.style.overflow = 'hidden';
+            slideshow.style.zIndex = '-1'; // Behind the content
+        }
 
-    if (slideshow) {
-        // Ensuring the slideshow retains correct properties
-        slideshow.style.position = 'absolute';
-        slideshow.style.top = '0';
-        slideshow.style.left = '0';
-        slideshow.style.width = '100%';
-        slideshow.style.height = '100%';
-        slideshow.style.overflow = 'hidden'; // Ensure content doesn’t overflow
-        slideshow.style.zIndex = '-1'; // Keeps it behind the content
-    }
+        // Dynamically disable body::before for iOS
+        document.body.style.setProperty('--ios-overlay', 'transparent'); // Use a CSS variable
     }
 
         if (isIOSDevice()) {
-        // For iOS devices, manage the background and opacity with fade-in and the fixed background trick
+        // Specific iOS section handling
         sections.forEach((section) => {
             const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
-            // Only apply to sections that have a background image
             if (backgroundImage && backgroundImage !== 'none') {
                 const image = document.createElement('div');
                 image.style.backgroundImage = backgroundImage;
@@ -456,18 +450,19 @@
                 image.style.backgroundSize = 'cover';
                 image.style.backgroundPosition = 'center';
                 image.style.backgroundRepeat = 'no-repeat';
-                image.style.backgroundColor = 'transparent'; // Ensure background image is displayed correctly
-                
-                // Remove original section background and add a div with the fixed background image
+                image.style.backgroundColor = 'transparent'; // Ensure no overlay
+
                 section.style.backgroundImage = 'none';
                 section.style.position = 'relative';
                 section.style.zIndex = '0';
+                section.style.opacity = '0'; // Start with section invisible for fade-in effect
+
+                section.style.transition = 'opacity 1s ease';
 
                 section.appendChild(image);
-
-                // Call checkSectionVisibility() to trigger fade-in on scroll
-                checkSectionVisibility();
             }
+
+            checkSectionVisibility();
         });
     }
 
