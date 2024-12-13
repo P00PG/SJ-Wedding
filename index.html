@@ -440,8 +440,11 @@ if (isIOSDevice()) {
         const content = section.querySelector('.content');
         if (content) {
             content.style.position = 'relative'; // Position context for the content
-            content.style.zIndex = '10'; // Ensure content stays on top of background and overlay
+            content.style.zIndex = '2'; // Ensure content stays on top of background and overlay
+            // This should ensure the section content isn't buried under the overlay or background image
+            content.style.pointerEvents = 'auto'; // Ensures you can still interact with the content in the section
         }
+
     });
 }
 
