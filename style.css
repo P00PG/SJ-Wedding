@@ -178,17 +178,11 @@ body {
   scroll-behavior: smooth; /* Smooth scrolling for the entire page */
 }
 
-/* Dark overlay that covers the entire page */
+
+
+
 body::before {
-  content: "";
-  position: fixed; /* Cover the entire viewport */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.605); /* Dark overlay (adjust opacity as needed) */
-  z-index: 1; /* Ensure overlay is below the text */
-  pointer-events: none; /* Allow clicks to pass through to underlying content */
+  background: none !important; /* Temporarily removes the overlay */
 }
 
 /* Content is explicitly layered above the section */
@@ -196,6 +190,9 @@ body::before {
     position: relative;
     z-index: 1; /* Content above everything else in the section */
 }
+
+
+
 
 /* Fullscreen homepage header */
 header.homepage {
