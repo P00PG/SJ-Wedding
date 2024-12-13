@@ -458,8 +458,33 @@ if (isIOSDevice()) {
     if (icon) {
         // Change the position of the icon (example for RSVP section)
         icon.style.position = 'absolute'; // Ensure it's absolutely positioned
-        icon.style.top = '20px'; // Adjust top distance as needed (e.g. 20px from the top of the section)
+        icon.style.top = '100px'; // Adjust top distance as needed (e.g. 20px from the top of the section)
         icon.style.right = '20px'; // Adjust the right side (e.g. 20px from the right of the section)
+    }
+}
+
+
+// Only run the following code for iOS devices
+if (isIOSDevice()) {
+    // Find the button and icon elements for specific adjustments
+    const button = document.querySelector('.rsvp-button');
+    const icon = document.querySelector('.icon-1');
+
+    if (button && icon) {
+        // Adjust the icon position specifically for iOS devices
+        const iconPosition = window.getComputedStyle(icon).position;
+        
+        if (iconPosition === 'absolute') {
+            // Apply adjustments like top position shift for iOS devices
+            icon.style.top = '20%';  // Adjust the top positioning for iOS devices
+            icon.style.left = '105%'; // Modify this for horizontal positioning (right)
+
+            // If more dynamic adjustments are needed, tweak as per design
+            icon.style.transform = 'translateY(-50%) rotate(10deg)';
+        }
+
+        // Optionally, you could adjust other button properties here if iOS-specific quirks arise
+        button.style.position = 'relative'; // Ensure button is positioned relative to adjust icon properly
     }
 }
 
