@@ -402,33 +402,6 @@ function isIOSDevice() {
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
-if (isIOSDevice()) {
-    // Add body::before CSS for debugging
-    const debugStyle = document.createElement('style');
-    debugStyle.innerHTML = `
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 255, 0.4); /* Blue overlay for debugging */
-            z-index: 1; /* Keep it in the background */
-        }
-
-            .slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-    `;
-    document.head.appendChild(debugStyle); // Apply the debug overlay style
-}
 
 
 // Only run the following code for iOS devices
@@ -475,7 +448,7 @@ if (isIOSDevice()) {
         // Confirm body overlay is positioned correctly
         document.body.style.position = 'relative';
         document.body.style.zIndex = '1'; // Make sure overlay is behind content layers
-        document.body.style.backgroundColor = ""; // Resets to the original CSS value
+        document.body.style.backgroundColor = "background: rgba(0, 0, 0, 0.605);"; // Resets to the original CSS value
 
     }
 }
