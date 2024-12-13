@@ -395,41 +395,41 @@
         }
     }
 
-
     function isIOSDevice() {
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
+}
 
-    if (isIOSDevice()) {
-        const sections = document.querySelectorAll('.section');
+if (isIOSDevice()) {
+    const sections = document.querySelectorAll('.section');
 
-        sections.forEach((section) => {
-            const backgroundImage = window.getComputedStyle(section).backgroundImage;
+    sections.forEach((section) => {
+        const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
-            // Ensure there is a valid background image
-            if (backgroundImage && backgroundImage !== 'none') {
-                const image = document.createElement('div');
+        if (backgroundImage && backgroundImage !== 'none') {
+            const image = document.createElement('div');
 
-                // Add a div to mimic fixed background behavior
-                image.style.backgroundImage = backgroundImage;
-                image.style.position = 'absolute';
-                image.style.top = '0';
-                image.style.left = '0';
-                image.style.width = '100%';
-                image.style.height = '100%';
-                image.style.zIndex = '-1'; // Send behind the content
-                image.style.backgroundSize = 'cover';
-                image.style.backgroundPosition = 'center';
-                image.style.backgroundColor = 'transparent'; // Ensure no overlay
+            // Set background-image styles
+            image.style.backgroundImage = backgroundImage;
+            image.style.position = 'absolute';
+            image.style.top = '0';
+            image.style.left = '0';
+            image.style.width = '100%';
+            image.style.height = '100%';
+            image.style.zIndex = '-1'; // Send behind content
+            image.style.backgroundSize = 'cover';
+            image.style.backgroundPosition = 'center';
+            image.style.backgroundRepeat = 'no-repeat';
+            image.style.backgroundColor = 'transparent'; // Ensure it's fully transparent
 
-                // Modify the section styles
-                section.style.backgroundImage = 'none'; // Remove the original background
-                section.style.position = 'relative'; // Required for absolute positioning of the image
-                section.appendChild(image);
-            }
-        });
-    }
+            // Ensure the section has the correct positioning
+            section.style.backgroundImage = 'none';
+            section.style.position = 'relative';
 
+            // Append the image as a child to the section
+            section.appendChild(image);
+        }
+    });
+}
 
 
 
