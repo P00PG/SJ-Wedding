@@ -442,16 +442,20 @@ if (isIOSDevice()) {
         }
     });
 
-    // Adjust the body overlay for proper layering
-    const bodyOverlay = document.querySelector('body::before');
-    if (bodyOverlay) {
-        // Confirm body overlay is positioned correctly
-        document.body.style.position = 'relative';
-        document.body.style.zIndex = '1'; // Make sure overlay is behind content layers
-        document.body.style.backgroundColor = "background: rgba(0, 0, 0, 0.605);"; // Resets to the original CSS value
+    // Modify body background color if needed (without using body::before directly)
+    document.body.style.position = 'relative'; // Apply position to body itself
+    document.body.style.zIndex = '0'; // Ensure body is in the correct stacking context
 
-    }
+    // Instead of accessing body::before, modify the body's background color directly
+    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.605)"; // Set dark overlay color for iOS
 }
+
+// Only run the following code for iOS devices
+if (isIOSDevice()) {
+    document.body.classList.add('ios-overlay');
+}
+
+
 
 
 

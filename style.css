@@ -191,6 +191,12 @@ body::before {
   pointer-events: none; /* Allow clicks to pass through to underlying content */
 }
 
+/* Specific styles for iOS overlay */
+body.ios-overlay {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.605); /* Dark overlay */
+  z-index: 0; /* Ensure the body stays below the content layers */
+}
 
 
 
