@@ -399,38 +399,6 @@
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
-    // Only run the following code for iOS devices
-    if (isIOSDevice()) {
-        // Slideshow adjustments for iOS devices
-        const slides = document.querySelectorAll('.slide');
-        slides.forEach((slide) => {
-            const img = slide.querySelector('img');
-            if (img) {
-                img.style.objectFit = 'cover'; // Ensure images fully cover the container
-                img.style.height = '100%';
-                img.style.width = '100%';
-            }
-
-            slide.style.position = 'absolute';
-            slide.style.top = '0';
-            slide.style.left = '0';
-            slide.style.width = '100%';
-            slide.style.height = '100%';
-        });
-
-        const slideshow = document.querySelector('.slideshow');
-        if (slideshow) {
-            slideshow.style.position = 'absolute';
-            slideshow.style.top = '0';
-            slideshow.style.left = '0';
-            slideshow.style.width = '100%';
-            slideshow.style.height = '100%';
-            slideshow.style.overflow = 'hidden';
-            slideshow.style.zIndex = '-1'; // Behind the content
-        }
-
-    }
-
 // Function to detect if the device is iOS
 function isIOSDevice() {
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
