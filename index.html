@@ -431,11 +431,14 @@
 
     }
 
-        if (isIOSDevice()) {
-        // Specific iOS section handling
+    // Only run the following code for iOS devices
+    if (isIOSDevice()) {
+        const sections = document.querySelectorAll('.section');
+
         sections.forEach((section) => {
             const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
+            // If background image exists, set it correctly
             if (backgroundImage && backgroundImage !== 'none') {
                 const image = document.createElement('div');
                 image.style.backgroundImage = backgroundImage;
@@ -444,26 +447,31 @@
                 image.style.left = '0';
                 image.style.width = '100%';
                 image.style.height = '100%';
-                image.style.zIndex = '-1';
+                image.style.zIndex = '0'; // Background image stays behind
                 image.style.backgroundSize = 'cover';
                 image.style.backgroundPosition = 'center';
                 image.style.backgroundRepeat = 'no-repeat';
-                image.style.backgroundColor = 'transparent'; // Ensure no overlay
 
+                // Remove the original background image and append the new one
                 section.style.backgroundImage = 'none';
-                section.style.position = 'relative';
-                section.style.zIndex = '0';
+                section.style.position = 'relative'; // Set positioning context for z-index
 
+                // Insert the image container
                 section.appendChild(image);
             }
 
-            // Make sure section content is always on top of the image and body overlay
+            // Ensure the section has correct z-index and does not appear greyed out
+            section.style.zIndex = '0'; // Make sure section has z-index of 0 to avoid being overlaid
+
+            // Ensure the section content is always on top of the image and body overlay
             const content = section.querySelector('.content');
             if (content) {
                 content.style.position = 'relative';
-                content.style.zIndex = '5'; // Ensures content stays on top of the image and overlay
-            }
+                content.style.zIndex = '5'; // Content stays above background and overlay
 
+                // Optional: ensure content is visible (in case opacity has been changed)
+                content.style.opacity = '1';
+            }
         });
     }
 
