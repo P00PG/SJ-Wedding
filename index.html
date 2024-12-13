@@ -402,6 +402,16 @@ function isIOSDevice() {
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
+if (isIOSDevice()) {
+    const style = document.createElement('style');
+    style.innerHTML = `
+         .content {
+            background: rgba(255, 0, 0, 0.2); /* Red for debugging */
+        }
+    `;
+    document.head.appendChild(style); // Append the styles to the <head> of the document
+}
+
 // Only run the following code for iOS devices
 if (isIOSDevice()) {
     const sections = document.querySelectorAll('.section');
