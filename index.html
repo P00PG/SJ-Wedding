@@ -458,7 +458,7 @@ if (isIOSDevice()) {
     if (icon) {
         // Change the position of the icon (example for RSVP section)
         icon.style.position = 'absolute'; // Ensure it's absolutely positioned
-        icon.style.top = '100px'; // Adjust top distance as needed (e.g. 20px from the top of the section)
+        icon.style.top = '60px'; // Adjust top distance as needed (e.g. 20px from the top of the section)
         icon.style.right = '20px'; // Adjust the right side (e.g. 20px from the right of the section)
     }
 }
@@ -476,8 +476,8 @@ if (isIOSDevice()) {
         
         if (iconPosition === 'absolute') {
             // Apply adjustments like top position shift for iOS devices
-            icon.style.top = '10%';  // Adjust the top positioning for iOS devices
-            icon.style.left = '90%'; // Modify this for horizontal positioning (right)
+            icon.style.top = '0.5%';  // Adjust the top positioning for iOS devices
+            icon.style.left = '85%'; // Modify this for horizontal positioning (right)
 
             // If more dynamic adjustments are needed, tweak as per design
             icon.style.transform = 'translateY(-50%) rotate(10deg)';
