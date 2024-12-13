@@ -414,7 +414,7 @@ if (isIOSDevice()) {
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 255, 0.4); /* Blue overlay for debugging */
-            z-index: -1; /* Keep it in the background */
+            z-index: 1; /* Keep it in the background */
         }
     `;
     document.head.appendChild(debugStyle); // Apply the debug overlay style
