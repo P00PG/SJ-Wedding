@@ -1302,7 +1302,6 @@ footer p {
     justify-content: center; /* Vertically center the content */
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1352,7 +1351,6 @@ footer p {
     display: block;
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
     background-image: url('./Images/280A8775_websize.jpg');
     background-size: cover; /* Ensure image covers the area */
     background-position: center; /* Center the background image */
