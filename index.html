@@ -451,19 +451,17 @@ if (isIOSDevice()) {
     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.605)"; // Set dark overlay color for iOS
 }
 
-// Only run the following code for iOS devices
+// Run this code only for iOS devices
 if (isIOSDevice()) {
-    document.body.classList.add('ios-overlay');
+    const icon = document.querySelector('.icon-1');
+
+    if (icon) {
+        // Change the position of the icon (example for RSVP section)
+        icon.style.position = 'absolute'; // Ensure it's absolutely positioned
+        icon.style.top = '20px'; // Adjust top distance as needed (e.g. 20px from the top of the section)
+        icon.style.right = '20px'; // Adjust the right side (e.g. 20px from the right of the section)
+    }
 }
-
-
-
-
-
-
-
-
-
 
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
