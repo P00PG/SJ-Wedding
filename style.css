@@ -191,6 +191,12 @@ body::before {
   pointer-events: none; /* Allow clicks to pass through to underlying content */
 }
 
+.content {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto; /* Make content interactive */
+}
+
 /* Fullscreen homepage header */
 header.homepage {
   position: relative;
