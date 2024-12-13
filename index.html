@@ -432,27 +432,43 @@
     });
 }
 
-    if (isIOSDevice()) {
-    // Handle iOS-specific slideshow functionality
+// Only run the following code for iOS devices
+if (isIOSDevice()) {
+    // Adjust the slideshow for iOS devices
     const slides = document.querySelectorAll('.slide');
 
+    // Iterate through each slide element to ensure proper positioning
     slides.forEach((slide) => {
-        // Ensure each slide behaves properly with object-fit for iOS
+        // Set proper properties for each slide (positioning and dimensions)
         const img = slide.querySelector('img');
-        
         if (img) {
-            img.style.objectFit = 'cover'; // Ensure cover fit
-            img.style.height = '100%';      // Ensure it takes up the full height
-            img.style.width = '100%';       // Ensure it takes up the full width
+            // Make sure the images are correctly covered inside their container
+            img.style.objectFit = 'cover'; // Ensure cover fit for slideshow images
+            img.style.height = '100%';      // Ensure image covers the full height
+            img.style.width = '100%';       // Ensure image covers the full width
         }
 
-        // Ensure that slide elements are correctly stacked
+        // Keep slide absolutely positioned with full size
         slide.style.position = 'absolute';
         slide.style.top = '0';
         slide.style.left = '0';
         slide.style.width = '100%';
         slide.style.height = '100%';
     });
+
+    // Slideshow container that wraps the entire slideshow
+    const slideshow = document.querySelector('.slideshow');
+
+    if (slideshow) {
+        // Ensuring the slideshow retains correct properties
+        slideshow.style.position = 'absolute';
+        slideshow.style.top = '0';
+        slideshow.style.left = '0';
+        slideshow.style.width = '100%';
+        slideshow.style.height = '100%';
+        slideshow.style.overflow = 'hidden'; // Ensure content doesn’t overflow
+        slideshow.style.zIndex = '-1'; // Keeps it behind the content
+    }
 }
 
 
