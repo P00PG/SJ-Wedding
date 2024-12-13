@@ -453,7 +453,6 @@
                 section.style.backgroundImage = 'none';
                 section.style.position = 'relative';
                 section.style.zIndex = '0';
-                section.style.opacity = '1'; // Start with section invisible for fade-in effect
 
                 section.appendChild(image);
             }
@@ -462,7 +461,7 @@
             const content = section.querySelector('.content');
             if (content) {
                 content.style.position = 'relative';
-                content.style.zIndex = '2'; // Ensures content stays on top of the image and overlay
+                content.style.zIndex = '5'; // Ensures content stays on top of the image and overlay
             }
 
         });
