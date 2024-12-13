@@ -396,70 +396,47 @@
     }
 
     function isIOSDevice() {
-        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
     if (isIOSDevice()) {
-    const sections = document.querySelectorAll('.section');
+        const sections = document.querySelectorAll('.section');
 
-    sections.forEach((section) => {
-        const backgroundImage = window.getComputedStyle(section).backgroundImage;
+        sections.forEach((section) => {
+            const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
-        // Check if backgroundImage exists
-        if (backgroundImage && backgroundImage !== 'none') {
-        const image = document.createElement('div');
+            // Check if backgroundImage exists
+            if (backgroundImage && backgroundImage !== 'none') {
+                const image = document.createElement('div');
 
-        // Add background image and ensure transparency is set correctly
-        image.style.backgroundImage = backgroundImage;
-        image.style.position = 'absolute';
-        image.style.top = '0';
-        image.style.left = '0';
-        image.style.width = '100%';
-        image.style.height = '100%';
-        image.style.zIndex = '-1'; // Send behind the content
-        image.style.backgroundSize = 'cover';
-        image.style.backgroundPosition = 'center';
-        image.style.backgroundRepeat = 'no-repeat';
-        image.style.backgroundColor = 'transparent'; // No overlay color
+                // Add background image and ensure transparency is set correctly
+                image.style.backgroundImage = backgroundImage;
+                image.style.position = 'absolute';
+                image.style.top = '0';
+                image.style.left = '0';
+                image.style.width = '100%';
+                image.style.height = '100%';
+                image.style.zIndex = '-1'; // Send behind the content
+                image.style.backgroundSize = 'cover';
+                image.style.backgroundPosition = 'center';
+                image.style.backgroundRepeat = 'no-repeat';
+                image.style.backgroundColor = 'transparent'; // Check if this works to debug
 
-        // Set the section styles correctly
-        section.style.backgroundImage = 'none'; // Remove original background
-        section.style.position = 'relative'; // Add positioning context
-        section.style.zIndex = '0'; // Ensure section stays above the image
+                // Set the section styles correctly
+                section.style.backgroundImage = 'none'; // Remove original background
+                section.style.position = 'relative'; // Add positioning context
+                section.style.zIndex = '0'; // Ensure section stays above the image
+                section.style.opacity = '1';/* Fade-in effect for sections */
+                section.style.transition = 'none'; /* Fade effect when section becomes visible */
 
-        // Initialize with section invisible (opacity 0)
-        section.style.opacity = '0';  // Start sections as invisible
-        section.style.transition = 'opacity 1s ease'; // Smooth fade-in effect
 
-        // Append the created div as the background image container
-        section.appendChild(image);
 
-        // Check if the section becomes visible upon scroll
-        function checkSectionVisibility() {
-            const windowHeight = window.innerHeight;
-            const scrollPosition = window.scrollY + windowHeight;
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            // If the section is in view, fade it in
-            if (scrollPosition >= sectionTop + sectionHeight / 4 && scrollPosition <= sectionTop + sectionHeight) {
-            if (!section.classList.contains('visible')) {
-                section.classList.add('visible');
-                section.style.opacity = '1'; // Fade it in
+                // Append the created div as the background image container
+                section.appendChild(image);
             }
-            } else {
-            section.style.opacity = '0'; // Optionally, hide section when it's out of view
-            }
-        }
-
-        // Listen for scroll events to check visibility
-        window.addEventListener('scroll', checkSectionVisibility);
-
-        // Initial check in case sections are already in view
-        checkSectionVisibility();
-        }
-    });
+        });
     }
+
 
 
 
