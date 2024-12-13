@@ -1053,15 +1053,14 @@ footer p {
 
   body::before {
     content: "";
-    position: fixed; /* Ensure overlay stays fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ensure full viewport height */
-    background: rgba(0, 0, 0, 0.605);
-    z-index: 1;
-    pointer-events: none;
-
+    height: 100vh;
+    background: var(--ios-overlay, rgba(0, 0, 0, 0.605)); /* Use the variable */
+    z-index: 1; /* Overlay layer */
+    pointer-events: none; /* Let clicks go through */
   }
 
   header h1 {
