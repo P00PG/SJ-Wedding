@@ -438,7 +438,7 @@ if (isIOSDevice()) {
         const content = section.querySelector('.content');
         if (content) {
             content.style.position = 'relative';
-            content.style.zIndex = '1'; // Bring the content above everything
+            content.style.zIndex = '2'; // Bring the content above everything
         }
     });
 
@@ -447,7 +447,7 @@ if (isIOSDevice()) {
     if (bodyOverlay) {
         // Confirm body overlay is positioned correctly
         document.body.style.position = 'relative';
-        document.body.style.zIndex = '0'; // Make sure overlay is behind content layers
+        document.body.style.zIndex = '1'; // Make sure overlay is behind content layers
     }
 }
 
