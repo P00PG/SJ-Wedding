@@ -399,62 +399,29 @@
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
+    // Only run the following code for iOS devices
     if (isIOSDevice()) {
-    // For iOS devices, manage the background and opacity with fade-in and the fixed background trick
-    sections.forEach((section) => {
-        const backgroundImage = window.getComputedStyle(section).backgroundImage;
+        // Adjust the slideshow for iOS devices
+        const slides = document.querySelectorAll('.slide');
 
-        // Only apply to sections that have a background image
-        if (backgroundImage && backgroundImage !== 'none') {
-            const image = document.createElement('div');
-            image.style.backgroundImage = backgroundImage;
-            image.style.position = 'absolute';
-            image.style.top = '0';
-            image.style.left = '0';
-            image.style.width = '100%';
-            image.style.height = '100%';
-            image.style.zIndex = '-1';
-            image.style.backgroundSize = 'cover';
-            image.style.backgroundPosition = 'center';
-            image.style.backgroundRepeat = 'no-repeat';
-            image.style.backgroundColor = 'transparent'; // Ensure background image is displayed correctly
-            
-            // Remove original section background and add a div with the fixed background image
-            section.style.backgroundImage = 'none';
-            section.style.position = 'relative';
-            section.style.zIndex = '0';
+        // Iterate through each slide element to ensure proper positioning
+        slides.forEach((slide) => {
+            // Set proper properties for each slide (positioning and dimensions)
+            const img = slide.querySelector('img');
+            if (img) {
+                // Make sure the images are correctly covered inside their container
+                img.style.objectFit = 'cover'; // Ensure cover fit for slideshow images
+                img.style.height = '100%';      // Ensure image covers the full height
+                img.style.width = '100%';       // Ensure image covers the full width
+            }
 
-            section.appendChild(image);
-
-            // Call checkSectionVisibility() to trigger fade-in on scroll
-            checkSectionVisibility();
-        }
-    });
-}
-
-// Only run the following code for iOS devices
-if (isIOSDevice()) {
-    // Adjust the slideshow for iOS devices
-    const slides = document.querySelectorAll('.slide');
-
-    // Iterate through each slide element to ensure proper positioning
-    slides.forEach((slide) => {
-        // Set proper properties for each slide (positioning and dimensions)
-        const img = slide.querySelector('img');
-        if (img) {
-            // Make sure the images are correctly covered inside their container
-            img.style.objectFit = 'cover'; // Ensure cover fit for slideshow images
-            img.style.height = '100%';      // Ensure image covers the full height
-            img.style.width = '100%';       // Ensure image covers the full width
-        }
-
-        // Keep slide absolutely positioned with full size
-        slide.style.position = 'absolute';
-        slide.style.top = '0';
-        slide.style.left = '0';
-        slide.style.width = '100%';
-        slide.style.height = '100%';
-    });
+            // Keep slide absolutely positioned with full size
+            slide.style.position = 'absolute';
+            slide.style.top = '0';
+            slide.style.left = '0';
+            slide.style.width = '100%';
+            slide.style.height = '100%';
+        });
 
     // Slideshow container that wraps the entire slideshow
     const slideshow = document.querySelector('.slideshow');
@@ -469,7 +436,42 @@ if (isIOSDevice()) {
         slideshow.style.overflow = 'hidden'; // Ensure content doesn’t overflow
         slideshow.style.zIndex = '-1'; // Keeps it behind the content
     }
-}
+    }
+
+        if (isIOSDevice()) {
+        // For iOS devices, manage the background and opacity with fade-in and the fixed background trick
+        sections.forEach((section) => {
+            const backgroundImage = window.getComputedStyle(section).backgroundImage;
+
+            // Only apply to sections that have a background image
+            if (backgroundImage && backgroundImage !== 'none') {
+                const image = document.createElement('div');
+                image.style.backgroundImage = backgroundImage;
+                image.style.position = 'absolute';
+                image.style.top = '0';
+                image.style.left = '0';
+                image.style.width = '100%';
+                image.style.height = '100%';
+                image.style.zIndex = '-1';
+                image.style.backgroundSize = 'cover';
+                image.style.backgroundPosition = 'center';
+                image.style.backgroundRepeat = 'no-repeat';
+                image.style.backgroundColor = 'transparent'; // Ensure background image is displayed correctly
+                
+                // Remove original section background and add a div with the fixed background image
+                section.style.backgroundImage = 'none';
+                section.style.position = 'relative';
+                section.style.zIndex = '0';
+
+                section.appendChild(image);
+
+                // Call checkSectionVisibility() to trigger fade-in on scroll
+                checkSectionVisibility();
+            }
+        });
+    }
+
+
 
 
 
