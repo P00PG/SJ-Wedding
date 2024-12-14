@@ -413,32 +413,29 @@ if (isIOSDevice()) {
         const backgroundImage = window.getComputedStyle(section).backgroundImage;
 
         if (backgroundImage && backgroundImage !== 'none') {
-            // Extract the URL from the CSS background-image property
-            const urlMatch = backgroundImage.match(/url\(["']?(.*?)["']?\)/);
-            const imageUrl = urlMatch ? urlMatch[1] : null;
+            const image = document.createElement('div');
 
-            if (imageUrl) {
-                const img = document.createElement('img');
+            // Create a background image layer
+            image.style.backgroundImage = backgroundImage;
+            image.style.position = 'absolute';
+            image.style.top = '0';
+            image.style.left = '0';
+            image.style.width = '100%';
+            image.style.height = '100%';
+            image.style.zIndex = '-1'; // Layer below the section itself
+            image.style.backgroundSize = 'cover';
+            image.style.backgroundPosition = 'center';
+            image.style.backgroundRepeat = 'no-repeat';
 
-                // Set the image source to the extracted URL
-                img.src = imageUrl;
-                img.style.position = 'absolute';
-                img.style.top = '0';
-                img.style.left = '0';
-                img.style.width = '100%';
-                img.style.height = '100%';
-                img.style.objectFit = 'cover'; // Cover behavior for <img>
-                img.style.zIndex = '-1'; // Layer it behind section content
+            // Remove the original background image
+            section.style.backgroundImage = 'none';
+            section.style.position = 'relative'; // Ensure stacking context
 
-
-                section.style.position = 'relative'; // Ensure stacking context
-
-                // Append the <img> to the section
-                section.appendChild(img);
-            }
+            // Add the image to the section
+            section.appendChild(image);
         }
 
-        // Ensure content is always above the image
+        // Ensure content is always above the overlay
         const content = section.querySelector('.content');
         if (content) {
             content.style.position = 'relative';
