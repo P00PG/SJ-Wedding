@@ -514,6 +514,7 @@ button.rsvp-button {
   border-radius: 8px;
   -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+  
 }
 
 button.rsvp-button:hover {
@@ -566,15 +567,14 @@ button.rsvp-button:hover {
   transition: all 0.5s ease-in-out;
   -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
-}
-
-button:hover .icon-1 {
   -webkit-animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
   animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   transform: rotate(10deg);
 }
+
+
 
 @-webkit-keyframes slay-1 {
   0% {
@@ -625,15 +625,14 @@ button:hover .icon-1 {
   transition: all 1s ease-in-out;
   -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
-}
-
-button:hover .icon-2 {
   -webkit-animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
   animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
   -webkit-transform: rotate(0);
   -ms-transform: rotate(0);
   transform: rotate(0);
 }
+
+
 
 @-webkit-keyframes slay-2 {
   0% {
@@ -684,15 +683,13 @@ button:hover .icon-2 {
   transition: all 1s ease-in-out;
   -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
-}
-
-button:hover .icon-3 {
   -webkit-animation: slay-3 2s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
   animation: slay-3 2s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
   -webkit-transform: rotate(0);
   -ms-transform: rotate(0);
   transform: rotate(0);
 }
+
 
 @-webkit-keyframes slay-3 {
   0% {
@@ -751,12 +748,15 @@ button:hover .icon-3 {
   width: 80%;
   max-width: 800px;
   box-sizing: border-box; /* Ensure padding is included in the width/height */
+ 
 }
 
 .modal iframe {
   width: 100%;  /* Make the iframe fill the container width */
   height: 800px; /* Adjust the height of the iframe as needed */
   border: none; /* Remove the border */
+  border-radius: 2%;
+  box-shadow: 0 0 15px 10px rgba(255, 254, 254, 0.37); /* Subtle shadow */
 }
 
 
@@ -765,7 +765,7 @@ button:hover .icon-3 {
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  top: -10%; /* Adjust this value to move the button higher */
+  top: -5%; /* Adjust this value to move the button higher */
   right: 6%;
 }
 
@@ -1041,6 +1041,12 @@ footer p {
   .modal iframe {
     height: 600px; /* Adjust iframe height for smaller screens */
   }
+
+  .close-btn {
+    top: 2%; /* Adjust this value to move the button higher */
+    right: -5%;
+  }
+  
   
 }
 
@@ -1198,6 +1204,11 @@ footer p {
   .modal iframe {
     height: 500px; /* Adjust iframe height for smaller screens */
   }
+
+  .close-btn {
+    top: -10%; /* Adjust this value to move the button higher */
+  }
+  
   
 }
 

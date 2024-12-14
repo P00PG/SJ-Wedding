@@ -427,9 +427,10 @@ if (isIOSDevice()) {
             image.style.backgroundPosition = 'center';
             image.style.backgroundRepeat = 'no-repeat';
 
-            // Remove the original background image
-            section.style.backgroundImage = 'none';
+
             section.style.position = 'relative'; // Ensure stacking context
+            section.style.backgroundAttachment = "fixed"; // Make background fixed
+
 
             // Add the image to the section
             section.appendChild(image);
