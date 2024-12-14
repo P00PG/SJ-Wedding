@@ -417,7 +417,7 @@ if (isIOSDevice()) {
 
             // Create a background image layer
             image.style.backgroundImage = backgroundImage;
-            image.style.position = 'fixed';
+            image.style.position = 'absolute';
             image.style.top = '0';
             image.style.left = '0';
             image.style.width = '100%';
@@ -427,8 +427,7 @@ if (isIOSDevice()) {
             image.style.backgroundPosition = 'center';
             image.style.backgroundRepeat = 'no-repeat';
 
-            // Remove the original background image
-            section.style.backgroundImage = 'none';
+
             section.style.position = 'relative'; // Ensure stacking context
 
             // Add the image to the section
