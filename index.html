@@ -420,13 +420,13 @@ if (isIOSDevice()) {
             image.style.position = 'absolute';
             image.style.top = '0';
             image.style.left = '0';
-            image.style.width = '100%';
-            image.style.height = '100%';
+
             image.style.zIndex = '-1'; // Layer below the section itself
             image.style.backgroundSize = 'cover';
             image.style.backgroundPosition = 'center';
             image.style.backgroundRepeat = 'no-repeat';
 
+            // Remove the original background image
 
             section.style.position = 'relative'; // Ensure stacking context
 
