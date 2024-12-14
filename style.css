@@ -1659,9 +1659,13 @@ footer p {
   .schedule-table th{
     font-size: 1.1rem;
   }
+  
+}
 
-  
-  
+@supports (-webkit-overflow-scrolling: touch) {
+  section {
+    background-attachment: scroll; /* Adjust specifically for iOS */
+  }
 }
 
 
