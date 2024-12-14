@@ -1662,11 +1662,7 @@ footer p {
   
 }
 
-@supports (-webkit-overflow-scrolling: touch) {
-  section {
-    background-attachment: scroll; /* Adjust specifically for iOS */
-  }
-}
+
 
 
 
