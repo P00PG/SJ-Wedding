@@ -1568,11 +1568,15 @@ footer p {
     /* Smaller font size for mobile */
   }
 
-  body.chinese-text h2,
-  body.chinese-text h3 {
+  body.chinese-text h2 {
     font-size: 2rem;
     /* Smaller font size for h2 and h3 on mobile */
   }
+
+  body.chinese-text h3 {
+    font-size: 1.4rem;
+  }
+
 
   header h1 {
     font-size: 3rem;
