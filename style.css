@@ -2,7 +2,8 @@
 @font-face {
   font-family: 'MyCustomFont';
   src: url('SpringLake/springlake.script.otf') format('otf'),
-       url('SpringLake/springlake.script.ttf') format('truetype'); /* You can specify multiple formats for better browser support */
+    url('SpringLake/springlake.script.ttf') format('truetype');
+  /* You can specify multiple formats for better browser support */
   font-weight: normal;
   font-style: normal;
 }
@@ -11,7 +12,8 @@
 .audio-controls {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between controls */
+  gap: 15px;
+  /* Space between controls */
   margin-top: 10px;
 }
 
@@ -26,85 +28,111 @@
   cursor: pointer;
   transition: background-color 0.3s;
   z-index: 1;
-  opacity: 0.4; /* Adjust to control the dullness */
+  opacity: 0.4;
+  /* Adjust to control the dullness */
 }
 
 #play-pause:hover {
   background-color: rgba(250, 190, 87, 0.932);
 }
 
-  /* Custom slider styling for firefly glow effect */
-  #volume-container {
-    position: relative;
-    width: 150px;
-    height: 60px; /* Adjust to include vine overlap */
-    display: flex; /* Ensures slider aligns with the container */
-    align-items: center; /* Vertically centers the slider */
-    z-index: 1;
-  }
-  
-  #volume {
-    -webkit-appearance: none; /* Remove default styling */
-    appearance: none;
-    background: rgba(87, 62, 37, 0.63); /* Subtle translucent slider background */
-    border-radius: 5px;
-    height: 4px; /* The visible slider track */
-    width: 100%;
-    outline: none;
-    cursor: pointer;
-    z-index: 2;
-    position: relative;
-  }
+/* Custom slider styling for firefly glow effect */
+#volume-container {
+  position: relative;
+  width: 150px;
+  height: 60px;
+  /* Adjust to include vine overlap */
+  display: flex;
+  /* Ensures slider aligns with the container */
+  align-items: center;
+  /* Vertically centers the slider */
+  z-index: 1;
+}
 
-  /* Decorative Vine */
-  #volume-vine {
-    position: absolute;
-    top: 0; /* Align the vine properly with the slider */
-    left: -20px;
-    width: 140%; /* Matches the container's width */
-    height: 60px; /* Matches the container's height */
-    background: url('./Images/vine.png') no-repeat center;
-    background-size: contain; /* Adjusts to fit the container */
-    z-index: 3; /* Behind the slider */
-    pointer-events: none; /* Ensures vine image does not interfere with slider interaction */
-    clip-path: polygon(0 10%, 10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%);
-    opacity: 0.5; /* Adjust to control the dullness */
+#volume {
+  -webkit-appearance: none;
+  /* Remove default styling */
+  appearance: none;
+  background: rgba(87, 62, 37, 0.63);
+  /* Subtle translucent slider background */
+  border-radius: 5px;
+  height: 4px;
+  /* The visible slider track */
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
 
-  }
+/* Decorative Vine */
+#volume-vine {
+  position: absolute;
+  top: 0;
+  /* Align the vine properly with the slider */
+  left: -20px;
+  width: 140%;
+  /* Matches the container's width */
+  height: 60px;
+  /* Matches the container's height */
+  background: url('./Images/vine.png') no-repeat center;
+  background-size: contain;
+  /* Adjusts to fit the container */
+  z-index: 3;
+  /* Behind the slider */
+  pointer-events: none;
+  /* Ensures vine image does not interfere with slider interaction */
+  clip-path: polygon(0 10%, 10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%);
+  opacity: 0.5;
+  /* Adjust to control the dullness */
 
-  #volume::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
-    box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
-    transition: background 0.3s, box-shadow 0.3s;
-  }
+}
 
-  #volume::-webkit-slider-thumb:hover {
-    background: rgba(255, 221, 29, 0.8); /* Brighter on hover */
-    box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6); /* Glowing effect on hover */
-    opacity: 0.6; /* Adjust to control the dullness */
-  }
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 221, 29, 0.5);
+  /* Soft amber glow for the thumb */
+  box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5);
+  /* Soft firefly-like glow */
+  transition: background 0.3s, box-shadow 0.3s;
+}
 
-  #volume::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: rgba(255, 221, 29, 0.5); /* Soft amber glow for the thumb */
-    box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5); /* Soft firefly-like glow */
-    border: none; /* Ensure no border is interfering */
-    outline: none; /* Remove default outline */
-    transition: background 0.3s, box-shadow 0.3s;
-  }
+#volume::-webkit-slider-thumb:hover {
+  background: rgba(255, 221, 29, 0.8);
+  /* Brighter on hover */
+  box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6);
+  /* Glowing effect on hover */
+  opacity: 0.6;
+  /* Adjust to control the dullness */
+}
 
-  #volume::-moz-range-thumb:hover {
-    background: rgba(255, 221, 29, 0.8); /* Brighter on hover */
-    opacity: 0.6; /* Adjust to control the dullness */
-    box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6); /* Glowing effect on hover */
-  }
+#volume::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 221, 29, 0.5);
+  /* Soft amber glow for the thumb */
+  box-shadow: 0 0 10px rgba(255, 221, 29, 0.6), 0 0 20px rgba(255, 255, 153, 0.5);
+  /* Soft firefly-like glow */
+  border: none;
+  /* Ensure no border is interfering */
+  outline: none;
+  /* Remove default outline */
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+#volume::-moz-range-thumb:hover {
+  background: rgba(255, 221, 29, 0.8);
+  /* Brighter on hover */
+  opacity: 0.6;
+  /* Adjust to control the dullness */
+  box-shadow: 0 0 20px rgba(255, 221, 29, 0.9), 0 0 25px rgba(255, 255, 153, 0.6);
+  /* Glowing effect on hover */
+}
 
 /* Translate Icon Styling */
 #translate-icon {
@@ -113,7 +141,8 @@
   right: 10px;
   width: 40px;
   height: 40px;
-  background: rgba(0, 0, 0, 0.5); /* Translucent background */
+  background: rgba(0, 0, 0, 0.5);
+  /* Translucent background */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -132,37 +161,48 @@
 }
 
 #translate-icon:hover {
-  background: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  background: rgba(0, 0, 0, 0.8);
+  /* Darker background on hover */
 }
 
 #translate-icon img:hover {
-  opacity: 1; /* Brighten icon on hover */
+  opacity: 1;
+  /* Brighten icon on hover */
 }
 
 /* Arrow animation */
 #arrow-pointer {
   position: fixed;
-  top: 60px; /* Position just above the translate icon */
-  right: 55px; /* Slightly to the left of the translate icon */
+  top: 60px;
+  /* Position just above the translate icon */
+  right: 55px;
+  /* Slightly to the left of the translate icon */
   width: 20px;
   height: 20px;
   border-left: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
-  transform: rotate(45deg); /* Rotate to form an arrow */
+  transform: rotate(45deg);
+  /* Rotate to form an arrow */
   animation: arrowAnimation 1.5s infinite alternate;
-  z-index: 2; /* Ensure it's above other elements */
+  z-index: 2;
+  /* Ensure it's above other elements */
 }
 
 /* Arrow animation effect */
 @keyframes arrowAnimation {
   0% {
-    transform: rotate(180deg) translateY(0); /* Start position */
+    transform: rotate(180deg) translateY(0);
+    /* Start position */
   }
+
   50% {
-    transform: rotate(180deg) translateY(10px); /* Move downward */
+    transform: rotate(180deg) translateY(10px);
+    /* Move downward */
   }
+
   100% {
-    transform: rotate(180deg) translateY(0); /* Return to start */
+    transform: rotate(180deg) translateY(0);
+    /* Return to start */
   }
 }
 
@@ -172,52 +212,88 @@
 body {
   margin: 0;
   font-family: 'MyCustomFont', sans-serif;
-  background-color: rgba(0, 0, 0, 0); /* 85% opaque black */
+  background-color: rgba(0, 0, 0, 0);
+  /* 85% opaque black */
   color: #333;
-  overflow-x: hidden; /* Disable horizontal scrolling */
-  scroll-behavior: smooth; /* Smooth scrolling for the entire page */
+  overflow-x: hidden;
+  /* Disable horizontal scrolling */
+  scroll-behavior: smooth;
+  /* Smooth scrolling for the entire page */
 }
 
 /* Dark overlay that covers the entire page */
 body::before {
   content: "";
-  position: fixed; /* Cover the entire viewport */
+  position: fixed;
+  /* Cover the entire viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.671); /* Dark overlay (adjust opacity as needed) */
-  z-index: 1; /* Ensure overlay is below the text */
-  pointer-events: none; /* Allow clicks to pass through to underlying content */
+  background: rgba(0, 0, 0, 0.671);
+  /* Dark overlay (adjust opacity as needed) */
+  z-index: 1;
+  /* Ensure overlay is below the text */
+  pointer-events: none;
+  /* Allow clicks to pass through to underlying content */
 }
 
+/* Optionally, target specific elements only */
+body.chinese-text p {
+  font-size: 2.1rem;
+  /* Or set smaller sizes for specific tags */
+}
+
+body.chinese-text h2 {
+  font-size: 3rem;
+}
+
+body.chinese-text h3 {
+  font-size: 2rem;
+}
+
+body.chinese-text footer p {
+  font-size: 0.99rem; /* Smaller font size in Chinese language */
+}
 
 /* Content is explicitly layered above the section */
 .section .content {
-    position: relative;
-    z-index: 1; /* Content above everything else in the section */
+  position: relative;
+  z-index: 1;
+  /* Content above everything else in the section */
 }
 
 /* Fullscreen homepage header */
 header.homepage {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  flex-direction: column; /* Stack content vertically */
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+  flex-direction: column;
+  /* Stack content vertically */
   text-align: center;
-  background-size: cover; /* Background image will cover the full section */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent background repetition */
-  overflow: hidden; /* Prevent overflow */
+  background-size: cover;
+  /* Background image will cover the full section */
+  background-position: center;
+  /* Center the background image */
+  background-repeat: no-repeat;
+  /* Prevent background repetition */
+  overflow: hidden;
+  /* Prevent overflow */
 }
 
 /* Styling for text in the homepage header */
-header h1, header p, header h3 {
+header h1,
+header p,
+header h3 {
   position: relative;
   color: white;
-  z-index: 1; /* Ensure text stays above the background */
+  z-index: 1;
+  /* Ensure text stays above the background */
   margin: 0;
 }
 
@@ -244,10 +320,13 @@ header p {
 /* Glowing effect for the "Sebastian and Jade" text */
 .glowing-text {
   color: white;
-  text-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.7),   /* Soft white glow */
-    0 0 10px rgba(197, 197, 197, 0.5),  /* Subtle grayish glow */
-    0 0 15px rgba(250, 250, 250, 0.7);  /* Soft white glow with slightly more spread */
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.7),
+    /* Soft white glow */
+    0 0 10px rgba(197, 197, 197, 0.5),
+    /* Subtle grayish glow */
+    0 0 15px rgba(250, 250, 250, 0.7);
+  /* Soft white glow with slightly more spread */
 }
 
 /* Slideshow styling */
@@ -258,7 +337,8 @@ header p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Keeps slideshow behind the text */
+  z-index: -1;
+  /* Keeps slideshow behind the text */
 }
 
 .slide {
@@ -271,9 +351,10 @@ header p {
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Default: cover for desktop */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Default: cover for desktop */
 }
 
 /* General section styling for centering (excludes RSVP section) */
@@ -285,103 +366,135 @@ header p {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  display: flex; /* Enable flexbox for centering */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  min-height: 100vh; /* Ensure section takes at least full viewport height */
+  display: flex;
+  /* Enable flexbox for centering */
+  flex-direction: column;
+  /* Stack content vertically */
+  justify-content: center;
+  /* Center content vertically */
+  align-items: center;
+  /* Center content horizontally */
+  min-height: 100vh;
+  /* Ensure section takes at least full viewport height */
 }
 
 
 /* Fade-in effect for sections */
 .section {
-  opacity: 1; /* Start with the section invisible */
-  transition: none; /* Fade effect when section becomes visible */
+  opacity: 1;
+  /* Start with the section invisible */
+  transition: none;
+  /* Fade effect when section becomes visible */
 }
 
 .section.visible {
-  opacity: 1; /* When section becomes visible, set opacity to 1 */
+  opacity: 1;
+  /* When section becomes visible, set opacity to 1 */
 }
 
 /* Ensure all section text is above the overlay */
-.section h2, .section p, .section h3 {
+.section h2,
+.section p,
+.section h3 {
   font-size: 38px;
   position: relative;
-  z-index: 1; /* Make sure the text is above the overlay */
-  color: white; /* White text color */
+  z-index: 1;
+  /* Make sure the text is above the overlay */
+  color: white;
+  /* White text color */
 }
 
 .section h2 {
   font-size: 45px;
   position: relative;
-  z-index: 1; /* Make sure the text is above the overlay */
-  color: white; /* White text color */
+  z-index: 1;
+  /* Make sure the text is above the overlay */
+  color: white;
+  /* White text color */
 }
 
 .section li {
   font-size: 28px;
   position: relative;
-  z-index: 1; /* Make sure the text is above the overlay */
-  color: white; /* White text color */
+  z-index: 1;
+  /* Make sure the text is above the overlay */
+  color: white;
+  /* White text color */
 }
 
 a {
-  color: #ff6347; /* Bright, noticeable color (Tomato red) */
-  font-weight: bold; /* Make the link text bold */
-  text-decoration: underline; /* Always underlined to signify it's clickable */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  color: #ff6347;
+  /* Bright, noticeable color (Tomato red) */
+  font-weight: bold;
+  /* Make the link text bold */
+  text-decoration: underline;
+  /* Always underlined to signify it's clickable */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effect */
 }
 
 a:hover {
-  color: #f5a623; /* Change to a different color (Amber) on hover */
-  text-decoration: none; /* Remove underline on hover for style */
+  color: #f5a623;
+  /* Change to a different color (Amber) on hover */
+  text-decoration: none;
+  /* Remove underline on hover for style */
 }
 
-#schedule p, #rsvp p{
+#schedule p,
+#rsvp p {
   margin-top: -15px;
 }
 
 /* Styling for the schedule table */
 .schedule-table {
-  width: 90%; /* Adjust width as needed */
+  width: 90%;
+  /* Adjust width as needed */
   margin: 20px auto;
   border-collapse: collapse;
   text-align: left;
   font-size: 1.9rem;
-  color: white; /* Text color */
+  color: white;
+  /* Text color */
   position: relative;
   z-index: 2;
 }
 
-.schedule-table th, .schedule-table td {
+.schedule-table th,
+.schedule-table td {
   padding: 10px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft white border */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Soft white border */
   text-align: center;
 }
 
 .schedule-table th {
-  background-color: rgba(255, 255, 255, 0.2); /* Subtle white background for header */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Subtle white background for header */
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.8rem;
 }
 
 .schedule-table tr:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Highlight on hover */
 }
 
 .schedule-table td {
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Soft glow for table data */
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  /* Soft glow for table data */
 }
 
 /* Glowing effect for borders */
-.schedule-table th, .schedule-table td {
+.schedule-table th,
+.schedule-table td {
   border: 1px solid rgba(255, 255, 255, 0.4);
   transition: border-color 0.3s;
 }
 
 .schedule-table tr:hover td {
-  border-color: rgba(255, 255, 255, 0.7); /* Stronger glow on hover */
+  border-color: rgba(255, 255, 255, 0.7);
+  /* Stronger glow on hover */
 }
 
 /* Specific background images for each section */
@@ -398,29 +511,39 @@ a:hover {
 }
 
 #schedule {
-  background-image: url('./Images//test.jpg'); 
+  background-image: url('./Images//test.jpg');
 }
 
 /* Flexbox for arranging the categories horizontally */
 .wear-categories {
-  display: flex; /* Make sure flexbox is enabled */
-  justify-content: space-between; /* Distribute space evenly between items */
-  gap: 20px; /* Add space between the categories */
-  margin-top: 5%; /* Add some space between the title and the categories */
-  flex-wrap: wrap; /* Allow items to wrap on small screens */
-  width: 100%; /* Ensure container takes full width */
+  display: flex;
+  /* Make sure flexbox is enabled */
+  justify-content: space-between;
+  /* Distribute space evenly between items */
+  gap: 20px;
+  /* Add space between the categories */
+  margin-top: 5%;
+  /* Add some space between the title and the categories */
+  flex-wrap: wrap;
+  /* Allow items to wrap on small screens */
+  width: 100%;
+  /* Ensure container takes full width */
 }
 
 /* Styling for each mini-section */
 .wear-category {
-  flex: 1; /* Allow each section to take equal space */
-  background-color: rgba(255, 255, 255, 0.164); /* Light background */
+  flex: 1;
+  /* Allow each section to take equal space */
+  background-color: rgba(255, 255, 255, 0.164);
+  /* Light background */
   padding: 20px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(112, 112, 112, 0.185); /* Subtle shadow */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(112, 112, 112, 0.185);
+  /* Subtle shadow */
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
 
 }
@@ -437,40 +560,50 @@ a:hover {
   font-weight: bold;
 }
 
-.wear-category p{
+.wear-category p {
   font-size: 2.3rem;
 }
 
 
 /* Remove bullets from the list */
 section#how-to-get-there ul {
-  list-style-type: none; /* Removes the default bullet points */
-  padding-left: 0; /* Optional: Remove left padding to align list items */
+  list-style-type: none;
+  /* Removes the default bullet points */
+  padding-left: 0;
+  /* Optional: Remove left padding to align list items */
 }
 
-section#how-to-get-there span{
-  text-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.338),   /* Soft white glow */
-    0 0 10px rgba(197, 197, 197, 0.228),  /* Subtle grayish glow */
-    0 0 15px rgba(250, 250, 250, 0.238);  /* Soft white glow with slightly more spread */
-    font-weight: bold; /* Make the text bold */
-    text-decoration: underline; /* Underline the text */
-    
+section#how-to-get-there span {
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.338),
+    /* Soft white glow */
+    0 0 10px rgba(197, 197, 197, 0.228),
+    /* Subtle grayish glow */
+    0 0 15px rgba(250, 250, 250, 0.238);
+  /* Soft white glow with slightly more spread */
+  font-weight: bold;
+  /* Make the text bold */
+  text-decoration: underline;
+  /* Underline the text */
+
 }
 
 /* Container for both text and iframe */
 .content {
-  display: block; /* Remove flexbox behavior */
+  display: block;
+  /* Remove flexbox behavior */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center; /* Center the content text */
+  text-align: center;
+  /* Center the content text */
 }
 
 /* Modify flex styling to target only the RSVP section */
 #rsvp {
   text-align: center;
-  min-height: 100vh; /* Ensure RSVP section takes at least full viewport height */
+  min-height: 100vh;
+  /* Ensure RSVP section takes at least full viewport height */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -480,25 +613,34 @@ section#how-to-get-there span{
 /* Modify flex styling to target only the RSVP section */
 #rsvp .rsvp-content {
   display: flex;
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center content */
-  height: 100vh; /* Full viewport height */
-  flex-direction: column; /* Stack the text and button vertically */
-  flex-wrap: wrap; /* Ensure content wraps in smaller screens */
+  justify-content: center;
+  /* Horizontally center the content */
+  align-items: center;
+  /* Vertically center content */
+  height: 100vh;
+  /* Full viewport height */
+  flex-direction: column;
+  /* Stack the text and button vertically */
+  flex-wrap: wrap;
+  /* Ensure content wraps in smaller screens */
   padding: 20px;
 }
 
 #rsvp .rsvp-text {
-  text-align: center; /* Center the text inside */
-  margin-bottom: 20px; /* Add space below the text */
-  max-width: 500px; /* Control the max width of the text */
+  text-align: center;
+  /* Center the text inside */
+  margin-bottom: 20px;
+  /* Add space below the text */
+  max-width: 500px;
+  /* Control the max width of the text */
 }
 
 /* Button container */
 .rsvp-button-container {
   z-index: 1;
   display: block;
-  text-align: center; /* Center the button */
+  text-align: center;
+  /* Center the button */
   margin-top: -30px;
 
 }
@@ -514,7 +656,7 @@ button.rsvp-button {
   border-radius: 8px;
   -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
-  
+
 }
 
 button.rsvp-button:hover {
@@ -734,29 +876,41 @@ button.rsvp-button:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Apply blur effect to the background */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari support */
 }
 
 .modal-content {
-  position: absolute; /* Position the modal content absolutely within the modal */
-  top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translate(-50%, -50%); /* Offset by 50% to center it */
+  position: absolute;
+  /* Position the modal content absolutely within the modal */
+  top: 50%;
+  /* Position from the top */
+  left: 50%;
+  /* Position from the left */
+  transform: translate(-50%, -50%);
+  /* Offset by 50% to center it */
   padding: 20px;
   width: 80%;
   max-width: 800px;
-  box-sizing: border-box; /* Ensure padding is included in the width/height */
- 
+  box-sizing: border-box;
+  /* Ensure padding is included in the width/height */
+
 }
 
 .modal iframe {
-  width: 100%;  /* Make the iframe fill the container width */
-  height: 800px; /* Adjust the height of the iframe as needed */
-  border: none; /* Remove the border */
+  width: 100%;
+  /* Make the iframe fill the container width */
+  height: 800px;
+  /* Adjust the height of the iframe as needed */
+  border: none;
+  /* Remove the border */
   border-radius: 2%;
-  box-shadow: 0 0 15px 10px rgba(255, 254, 254, 0.37); /* Subtle shadow */
+  box-shadow: 0 0 15px 10px rgba(255, 254, 254, 0.37);
+  /* Subtle shadow */
 }
 
 
@@ -765,7 +919,8 @@ button.rsvp-button:hover {
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  top: -5%; /* Adjust this value to move the button higher */
+  top: -5%;
+  /* Adjust this value to move the button higher */
   right: 6%;
 }
 
@@ -775,6 +930,7 @@ button.rsvp-button:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
 /* Fireflies animation styling */
 /* Fireflies container */
 .fireflies {
@@ -783,7 +939,8 @@ button.rsvp-button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Above the overlay */
+  z-index: 1;
+  /* Above the overlay */
   pointer-events: none;
   overflow: hidden;
 }
@@ -793,10 +950,13 @@ button.rsvp-button:hover {
   position: absolute;
   width: 5px;
   height: 3px;
-  background-color: rgba(255, 221, 29, 0.954); /* Soft yellow glow */
+  background-color: rgba(255, 221, 29, 0.954);
+  /* Soft yellow glow */
   border-radius: 50%;
-  box-shadow: 0 0 15px 10px rgba(255, 205, 6, 0.667);  /* Glow effect */
-  pointer-events: none; /* Prevent interaction */
+  box-shadow: 0 0 15px 10px rgba(255, 205, 6, 0.667);
+  /* Glow effect */
+  pointer-events: none;
+  /* Prevent interaction */
   animation: fireflyMove 4s linear infinite, fireflyPulse 0.2s ease-in-out infinite;
 }
 
@@ -806,15 +966,19 @@ button.rsvp-button:hover {
   0% {
     transform: translate(0, 0);
   }
+
   25% {
     transform: translate(calc(-50vw + 100vw * 0.25), calc(-50vh + 100vh * 0.25));
   }
+
   50% {
     transform: translate(calc(-50vw + 100vw * 0.5), calc(-50vh + 100vh * 0.5));
   }
+
   75% {
     transform: translate(calc(-50vw + 100vw * 0.75), calc(-50vh + 100vh * 0.75));
   }
+
   100% {
     transform: translate(calc(-50vw + 100vw), calc(-50vh + 100vh));
   }
@@ -825,18 +989,22 @@ button.rsvp-button:hover {
     opacity: 0.4;
     box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.323);
   }
+
   25% {
     opacity: 1;
     box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.769);
   }
+
   50% {
     opacity: 0.6;
     box-shadow: 0 0 15px 8px rgba(255, 205, 6, 0.6);
   }
+
   75% {
     opacity: 1;
     box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.777);
   }
+
   100% {
     opacity: 0.4;
     box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.327);
@@ -849,10 +1017,13 @@ button.rsvp-button:hover {
   position: absolute;
   width: 5px;
   height: 3px;
-  background-color: rgba(255, 183, 77, 0.9); /* Softer orange glow */
+  background-color: rgba(255, 183, 77, 0.9);
+  /* Softer orange glow */
   border-radius: 50%;
-  box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6); /* Glow effect */
-  pointer-events: none; /* Prevent interaction */
+  box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6);
+  /* Glow effect */
+  pointer-events: none;
+  /* Prevent interaction */
   animation: fireflyMove 4s linear infinite, fireflyPulseOrange 0.2s ease-in-out infinite;
 }
 
@@ -862,18 +1033,22 @@ button.rsvp-button:hover {
     opacity: 0.4;
     box-shadow: 0 0 10px 4px rgba(255, 173, 51, 0.3);
   }
+
   25% {
     opacity: 1;
     box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.7);
   }
+
   50% {
     opacity: 0.6;
     box-shadow: 0 0 15px 8px rgba(255, 173, 51, 0.6);
   }
+
   75% {
     opacity: 1;
     box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.8);
   }
+
   100% {
     opacity: 0.4;
     box-shadow: 0 0 10px 4px rgba(255, 173, 51, 0.3);
@@ -890,13 +1065,18 @@ footer {
 }
 
 footer p {
-  position: relative; /* Make sure text is above any overlay */
-  z-index: 2; /* Ensure the text is on top */
+  position: relative;
+  /* Make sure text is above any overlay */
+  z-index: 2;
+  /* Ensure the text is on top */
   color: white;
-  text-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.5),   /* Soft white glow */
-    0 0 10px rgba(197, 197, 197, 0.6),  /* Subtle grayish glow */
-    0 0 15px rgba(250, 250, 250, 0.5);  /* Soft white glow with slightly more spread */
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.5),
+    /* Soft white glow */
+    0 0 10px rgba(197, 197, 197, 0.6),
+    /* Subtle grayish glow */
+    0 0 15px rgba(250, 250, 250, 0.5);
+  /* Soft white glow with slightly more spread */
 }
 
 /* Hide the Google Translate pop-up message */
@@ -912,51 +1092,77 @@ footer p {
 
 
 /*laptops*/
-@media (min-width: 1024px) and (max-width: 1440px) and (max-height: 1080px){
+@media (min-width: 1024px) and (max-width: 1440px) and (max-height: 1080px) {
+
+  body.chinese-text p {
+    font-size: 1.8rem;
+    /* Smaller font size for mobile */
+  }
+
+  body.chinese-text h2 {
+    font-size: 2.5rem;
+    /* Smaller font size for h2 and h3 on mobile */
+  }
+
+  body.chinese-text h3 {
+    font-size: 1.5rem;
+  }
 
   /* Adjust font sizes for smaller screens */
   header h1 {
-    font-size: 3rem; /* Reduce font size */
+    font-size: 3rem;
+    /* Reduce font size */
   }
-  
+
   header h3 {
-    font-size: 1.5rem; /* Reduce font size */
+    font-size: 1.5rem;
+    /* Reduce font size */
   }
 
   header p {
-    font-size: 1.5rem; /* Reduce font size */
+    font-size: 1.5rem;
+    /* Reduce font size */
   }
 
   .section {
-    padding: 40px 60px; /* Increase side padding to 50px (left and right) */
+    padding: 40px 60px;
+    /* Increase side padding to 50px (left and right) */
   }
 
   /* Adjust text sizes in sections */
-  .section h2, .section p, .section h3 {
-    font-size: 28px; /* Scale down font size */
-    
+  .section h2,
+  .section p,
+  .section h3 {
+    font-size: 28px;
+    /* Scale down font size */
+
   }
 
   .section h2 {
-    font-size: 36px; /* Adjust for smaller screens */
+    font-size: 36px;
+    /* Adjust for smaller screens */
   }
 
   .section li {
-    font-size: 24px; /* Adjust for readability */
+    font-size: 24px;
+    /* Adjust for readability */
   }
-  
+
 
   /* Resize the schedule table */
   .schedule-table {
-    width: 90%; /* Narrow the table */
+    width: 90%;
+    /* Narrow the table */
   }
 
   .schedule-table th {
-    font-size: 1.8rem; /* Adjust header font size */
+    font-size: 1.8rem;
+    /* Adjust header font size */
   }
 
   .schedule-table td {
-    font-size: 1.7rem; /* Adjust cell font size */
+    font-size: 1.7rem;
+    /* Adjust cell font size */
   }
 
 
@@ -964,101 +1170,130 @@ footer p {
   #rsvp .rsvp-content {
 
     justify-content: center;
-    gap: 0px; /* Slightly larger gap for larger screens */
-    flex-direction: row; /* Ensure the text and iframe are in a row layout */
+    gap: 0px;
+    /* Slightly larger gap for larger screens */
+    flex-direction: row;
+    /* Ensure the text and iframe are in a row layout */
   }
 
   /* Ensure the text and iframe have a balanced layout */
   #rsvp .rsvp-text {
-    max-width: 30%; /* Control the width of the text container */
+    max-width: 30%;
+    /* Control the width of the text container */
     margin-right: 0;
   }
 
   #rsvp .iframe-container {
     margin-left: 5px;
-    height: 95%; /* Adjust the height for laptops to 50% of the parent container */
+    height: 95%;
+    /* Adjust the height for laptops to 50% of the parent container */
   }
 
   #rsvp .iframe-container iframe {
     width: 65%;
     height: 100%;
   }
-  
 
-  .schedule-table th, .schedule-table td {
-    padding: 8px 12px; /* Adjust padding */
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px 12px;
+    /* Adjust padding */
   }
 
   .wear-category h3 {
-    font-size: 2.2rem; /* Adjust category header font size */
+    font-size: 2.2rem;
+    /* Adjust category header font size */
   }
 
   .wear-category p {
     width: 100% !important;
-    font-size: 2rem; /* Adjust category paragraph font size */
+    font-size: 2rem;
+    /* Adjust category paragraph font size */
     padding-bottom: 10%;
   }
 
-  #what-to-wear p{
+  #what-to-wear p {
     margin: auto;
     width: 75%;
   }
 
   #rsvp .rsvp-content {
-    display: flex; /* Ensure flex is enabled */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    flex-direction: column; /* Ensure text and button stack vertically */
-    height: auto; /* Allow content to adjust its height */
-    padding: 20px; /* Padding to give some space */
+    display: flex;
+    /* Ensure flex is enabled */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
+    flex-direction: column;
+    /* Ensure text and button stack vertically */
+    height: auto;
+    /* Allow content to adjust its height */
+    padding: 20px;
+    /* Padding to give some space */
   }
 
   #rsvp .rsvp-text {
     text-align: center;
-    font-size: 1rem; /* Reduce font size for small screens */
-    margin-bottom: 5%; /* Add space below the text */
-    max-width: 80%; /* Reduce max-width */
+    font-size: 1rem;
+    /* Reduce font size for small screens */
+    margin-bottom: 5%;
+    /* Add space below the text */
+    max-width: 80%;
+    /* Reduce max-width */
   }
 
   .icon-1 {
     animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
-    width: 15%; /* Reduce icon size */
+    width: 15%;
+    /* Reduce icon size */
   }
+
   .icon-2 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-    left: 15%;  /* Adjust the left position */
-    width: 8%; /* Reduce icon size */
+    left: 15%;
+    /* Adjust the left position */
+    width: 8%;
+    /* Reduce icon size */
   }
+
   .icon-3 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-    width: 11%; /* Reduce icon size */
+    width: 11%;
+    /* Reduce icon size */
   }
 
   .modal-content {
-    width: 50%; /* Reduce the width to 95% on small screens */
+    width: 50%;
+    /* Reduce the width to 95% on small screens */
   }
 
   .modal iframe {
-    height: 600px; /* Adjust iframe height for smaller screens */
+    height: 600px;
+    /* Adjust iframe height for smaller screens */
   }
 
   .close-btn {
-    top: 2%; /* Adjust this value to move the button higher */
+    top: 2%;
+    /* Adjust this value to move the button higher */
     right: -5%;
   }
-  
-  
+
+
 }
 
 
 /*tablet*/
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
 
-  body, html {
+  body,
+  html {
     margin: 0;
     padding: 0;
-    width: 100%; /* Ensure full width for the entire page */
-    height: 100%; /* Make sure the page takes the full height */
+    width: 100%;
+    /* Ensure full width for the entire page */
+    height: 100%;
+    /* Make sure the page takes the full height */
   }
 
   body::before {
@@ -1068,294 +1303,432 @@ footer p {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--ios-overlay, rgba(0, 0, 0, 0.605)); /* Use the variable */
-    z-index: 1; /* Overlay layer */
-    pointer-events: none; /* Let clicks go through */
+    background: var(--ios-overlay, rgba(0, 0, 0, 0.605));
+    /* Use the variable */
+    z-index: 1;
+    /* Overlay layer */
+    pointer-events: none;
+    /* Let clicks go through */
   }
 
+  body.chinese-text p {
+    font-size: 1.9rem;
+    /* Smaller font size for mobile */
+  }
+
+  body.chinese-text h2 {
+    font-size: 2.5rem;
+    /* Smaller font size for h2 and h3 on mobile */
+  }
+
+  body.chinese-text h3 {
+    font-size: 1.5rem;
+  }
+
+
   header h1 {
-    font-size: 4rem; /* Adjust header font size */
-    margin: 0 auto; /* Center the header */
+    font-size: 4rem;
+    /* Adjust header font size */
+    margin: 0 auto;
+    /* Center the header */
   }
 
   header h3 {
-    font-size: 2.5rem; /* Adjust subheader font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 20px auto; /* Center the header */
+    font-size: 2.5rem;
+    /* Adjust subheader font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 20px auto;
+    /* Center the header */
   }
 
   header p {
-    font-size: 2.0rem; /* Adjust paragraph font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 0 auto; /* Center the header */
+    font-size: 2.0rem;
+    /* Adjust paragraph font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 0 auto;
+    /* Center the header */
   }
 
 
-  .section p, .section h3 {
-    font-size: 2.7rem; /* 28px -> 1.75rem */
+  .section p,
+  .section h3 {
+    font-size: 2.7rem;
+    /* 28px -> 1.75rem */
   }
 
   .section h2 {
-    font-size: 3.2rem; /* 32px -> 2rem */
+    font-size: 3.2rem;
+    /* 32px -> 2rem */
   }
 
   .section li {
-    font-size: 2rem; /* 20px -> 1.25rem */
+    font-size: 2rem;
+    /* 20px -> 1.25rem */
   }
 
   .wear-categories {
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack categories vertically on smaller screens */
-    gap: 10px; /* Reduce space between the items */
-    align-items: center; /* Center the items horizontally */
-    justify-content: center; /* Optional: centers vertically if there's available space */
+    display: flex;
+    /* Enable flexbox */
+    flex-direction: column;
+    /* Stack categories vertically on smaller screens */
+    gap: 10px;
+    /* Reduce space between the items */
+    align-items: center;
+    /* Center the items horizontally */
+    justify-content: center;
+    /* Optional: centers vertically if there's available space */
   }
-  
+
   .wear-category {
-    flex: none; /* Ensure each section takes full width */
-    width: 90%; /* Adjust width as needed */
-    max-width: 600px; /* Optional: set a maximum width for the category */
-    margin: 0 auto; /* This ensures the category is centered horizontally */
-    border-left: none; /* Remove left border on mobile */
+    flex: none;
+    /* Ensure each section takes full width */
+    width: 90%;
+    /* Adjust width as needed */
+    max-width: 600px;
+    /* Optional: set a maximum width for the category */
+    margin: 0 auto;
+    /* This ensures the category is centered horizontally */
+    border-left: none;
+    /* Remove left border on mobile */
   }
 
   /* Styling for the schedule table */
   .schedule-table {
-    width: 100%; /* Make table take full width on smaller screens */
-    font-size: 2.3rem; /* Smaller font size for mobile */
+    width: 100%;
+    /* Make table take full width on smaller screens */
+    font-size: 2.3rem;
+    /* Smaller font size for mobile */
   }
 
-  .schedule-table th{
+  .schedule-table th {
     font-size: 2.4rem;
   }
 
-    
+
 
   /* Adjust RSVP content layout for mobile */
   #rsvp .rsvp-content {
-    display: block; /* Force the content to stack vertically */
-    text-align: center; /* Center the content */
-    
+    display: block;
+    /* Force the content to stack vertically */
+    text-align: center;
+    /* Center the content */
+
   }
 
   /* Ensure text and iframe are stacked vertically */
   #rsvp .rsvp-text {
-    margin-bottom: 8%; /* Add space below the text */
-    max-width: 100%; /* Full width */
+    margin-bottom: 8%;
+    /* Add space below the text */
+    max-width: 100%;
+    /* Full width */
   }
 
 
   #rsvp .iframe-container {
-    width: 90%; /* Limit the width to 90% of the screen */
-    max-width: 500px; /* Set a maximum width for larger devices */
+    width: 90%;
+    /* Limit the width to 90% of the screen */
+    max-width: 500px;
+    /* Set a maximum width for larger devices */
     position: relative;
-    padding-bottom: 100%; /* Maintain height proportional to width (4:3 aspect ratio) */
-    height: 0; /* Keep height set by padding-bottom */
-    margin-left: auto; /* Ensures horizontal centering */
-    margin-right: auto; /* Ensures horizontal centering */
+    padding-bottom: 100%;
+    /* Maintain height proportional to width (4:3 aspect ratio) */
+    height: 0;
+    /* Keep height set by padding-bottom */
+    margin-left: auto;
+    /* Ensures horizontal centering */
+    margin-right: auto;
+    /* Ensures horizontal centering */
   }
-  
+
   /* Ensure iframe inside the container scales well */
   #rsvp .iframe-container iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
+    width: 100%;
+    /* Full width of the container */
+    height: 100%;
+    /* Full height of the container */
     border: none;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Optional: adds a glow effect */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    /* Optional: adds a glow effect */
   }
 
-  
+
   #rsvp .rsvp-content {
-    display: flex; /* Ensure flex is enabled */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    flex-direction: column; /* Ensure text and button stack vertically */
-    height: auto; /* Allow content to adjust its height */
-    padding: 20px; /* Padding to give some space */
+    display: flex;
+    /* Ensure flex is enabled */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
+    flex-direction: column;
+    /* Ensure text and button stack vertically */
+    height: auto;
+    /* Allow content to adjust its height */
+    padding: 20px;
+    /* Padding to give some space */
   }
 
   #rsvp .rsvp-text {
     text-align: center;
-    font-size: 1rem; /* Reduce font size for small screens */
-    margin-bottom: 5%; /* Add space below the text */
-    max-width: 80%; /* Reduce max-width */
+    font-size: 1rem;
+    /* Reduce font size for small screens */
+    margin-bottom: 5%;
+    /* Add space below the text */
+    max-width: 80%;
+    /* Reduce max-width */
   }
 
   .icon-1 {
     animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
-    width: 15%; /* Reduce icon size */
+    width: 15%;
+    /* Reduce icon size */
   }
+
   .icon-2 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-    left: 15%;  /* Adjust the left position */
-    width: 8%; /* Reduce icon size */
+    left: 15%;
+    /* Adjust the left position */
+    width: 8%;
+    /* Reduce icon size */
   }
+
   .icon-3 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-    width: 11%; /* Reduce icon size */
+    width: 11%;
+    /* Reduce icon size */
   }
 
   .modal-content {
-    width: 50%; /* Reduce the width to 95% on small screens */
+    width: 50%;
+    /* Reduce the width to 95% on small screens */
   }
 
   .modal iframe {
-    height: 500px; /* Adjust iframe height for smaller screens */
+    height: 500px;
+    /* Adjust iframe height for smaller screens */
   }
 
   .close-btn {
-    top: -10%; /* Adjust this value to move the button higher */
+    top: -10%;
+    /* Adjust this value to move the button higher */
   }
-  
-  
+
+
 }
 
 /*moblie*/
 @media (max-width: 768px) {
 
-    .goog-te-banner-frame {
-      display: none !important;
+  body.chinese-text p {
+    font-size: 1.5rem;
+    /* Smaller font size for mobile */
   }
 
-  .goog-te-gadget-icon {
-      display: none !important;
+  body.chinese-text h2 {
+    font-size: 2rem;
+    /* Smaller font size for h2 and h3 on mobile */
   }
 
-  body, html {
+  body.chinese-text h3 {
+    font-size: 1.4rem;
+  }
+
+
+  body,
+  html {
     margin: 0;
     padding: 0;
-    width: 100%; /* Ensure full width for the entire page */
-    height: 100%; /* Make sure the page takes the full height */
+    width: 100%;
+    /* Ensure full width for the entire page */
+    height: 100%;
+    /* Make sure the page takes the full height */
   }
 
   body::before {
     content: "";
-    position: fixed; /* Ensure overlay stays fixed */
+    position: fixed;
+    /* Ensure overlay stays fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ensure full viewport height */
+    height: 100vh;
+    /* Ensure full viewport height */
     background: rgba(0, 0, 0, 0.605);
     z-index: 1;
     pointer-events: none;
 
   }
 
+  body.chinese-text p {
+    font-size: 1.5rem;
+    /* Smaller font size for mobile */
+  }
+
+  body.chinese-text h2,
+  body.chinese-text h3 {
+    font-size: 2rem;
+    /* Smaller font size for h2 and h3 on mobile */
+  }
+
   header h1 {
-    font-size: 3rem; /* Adjust header font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 0 auto; /* Center the header */
+    font-size: 3rem;
+    /* Adjust header font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 0 auto;
+    /* Center the header */
   }
 
   header h3 {
-    font-size: 1.5rem; /* Adjust subheader font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 20px auto; /* Center the header */
+    font-size: 1.5rem;
+    /* Adjust subheader font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 20px auto;
+    /* Center the header */
   }
 
   header p {
-    font-size: 1.5rem; /* Adjust paragraph font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 0 auto; /* Center the header */
+    font-size: 1.5rem;
+    /* Adjust paragraph font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 0 auto;
+    /* Center the header */
   }
 
   /* Adjust the slideshow image for smaller screens */
   .slide img {
-    object-fit: cover; /* Ensure images cover the area */
+    object-fit: cover;
+    /* Ensure images cover the area */
   }
 
-  .section h2, .section p, .section h3 {
-    font-size: 1.75rem; /* 28px -> 1.75rem */
+  .section h2,
+  .section p,
+  .section h3 {
+    font-size: 1.75rem;
+    /* 28px -> 1.75rem */
   }
 
   .section h2 {
-    font-size: 2rem; /* 32px -> 2rem */
+    font-size: 2rem;
+    /* 32px -> 2rem */
   }
 
   .section li {
-    font-size: 1.25rem; /* 20px -> 1.25rem */
+    font-size: 1.25rem;
+    /* 20px -> 1.25rem */
   }
 
   .wear-categories {
-    flex-direction: column; /* Stack categories vertically on smaller screens */
-    gap: 10px; /* Reduce space between the items on mobile */
+    flex-direction: column;
+    /* Stack categories vertically on smaller screens */
+    gap: 10px;
+    /* Reduce space between the items on mobile */
   }
 
   .wear-category {
-    flex: none; /* Ensure each section takes full width */
-    width: 100%; /* Ensure full-width layout */
-    border-left: none; /* Remove the left border on mobile */
-  }
-  
-  /* Styling for the schedule table */
-  .schedule-table {
-    width: 100%; /* Make table take full width on smaller screens */
-    font-size: 1.4rem; /* Smaller font size for mobile */
+    flex: none;
+    /* Ensure each section takes full width */
+    width: 100%;
+    /* Ensure full-width layout */
+    border-left: none;
+    /* Remove the left border on mobile */
   }
 
-  .schedule-table th{
+  /* Styling for the schedule table */
+  .schedule-table {
+    width: 100%;
+    /* Make table take full width on smaller screens */
+    font-size: 1.4rem;
+    /* Smaller font size for mobile */
+  }
+
+  .schedule-table th {
     font-size: 1.4rem;
   }
 
-  .schedule-table th:first-child, 
+  .schedule-table th:first-child,
   .schedule-table td:first-child {
-    width: 30%; /* Adjust the Time column width */
+    width: 30%;
+    /* Adjust the Time column width */
   }
 
 
   /* Other mobile styling as previously defined */
   #rsvp {
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Horizontally center the content */
-    justify-content: center; /* Vertically center the content */
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: center;
+    /* Horizontally center the content */
+    justify-content: center;
+    /* Vertically center the content */
     padding: 20px;
     text-align: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh; /* Ensure it takes full height of the viewport */
-    width: 100%; /* Ensure full width */
+    min-height: 100vh;
+    /* Ensure it takes full height of the viewport */
+    width: 100%;
+    /* Ensure full width */
   }
-  
-    /* Adjust RSVP content layout for mobile */
-    #rsvp .rsvp-content {
-      display: block; /* Force the content to stack vertically */
-      width: 100%; /* Ensure full width for both text and form */
-      text-align: center; /* Center the content */
-      
-    }
-  
-    /* Ensure text and iframe are stacked vertically */
-    #rsvp .rsvp-text {
-      margin-bottom: 8%; /* Add space below the text */
-      max-width: 100%; /* Full width */
-    }
 
-  
-    #rsvp .iframe-container {
-      width: 90%; /* Limit the width to 90% of the screen */
-      max-width: 500px; /* Set a maximum width for larger devices */
-      position: relative;
-      padding-bottom: 100%; /* Maintain height proportional to width (4:3 aspect ratio) */
-      height: 0; /* Keep height set by padding-bottom */
-      margin-left: auto; /* Ensures horizontal centering */
-      margin-right: auto; /* Ensures horizontal centering */
-    }
-    
-    /* Ensure iframe inside the container scales well */
-    #rsvp .iframe-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%; /* Full width of the container */
-      height: 100%; /* Full height of the container */
-      border: none;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Optional: adds a glow effect */
-    }
+  /* Adjust RSVP content layout for mobile */
+  #rsvp .rsvp-content {
+    display: block;
+    /* Force the content to stack vertically */
+    width: 100%;
+    /* Ensure full width for both text and form */
+    text-align: center;
+    /* Center the content */
+
+  }
+
+  /* Ensure text and iframe are stacked vertically */
+  #rsvp .rsvp-text {
+    margin-bottom: 8%;
+    /* Add space below the text */
+    max-width: 100%;
+    /* Full width */
+  }
+
+
+  #rsvp .iframe-container {
+    width: 90%;
+    /* Limit the width to 90% of the screen */
+    max-width: 500px;
+    /* Set a maximum width for larger devices */
+    position: relative;
+    padding-bottom: 100%;
+    /* Maintain height proportional to width (4:3 aspect ratio) */
+    height: 0;
+    /* Keep height set by padding-bottom */
+    margin-left: auto;
+    /* Ensures horizontal centering */
+    margin-right: auto;
+    /* Ensures horizontal centering */
+  }
+
+  /* Ensure iframe inside the container scales well */
+  #rsvp .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Full width of the container */
+    height: 100%;
+    /* Full height of the container */
+    border: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    /* Optional: adds a glow effect */
+  }
 
   /* Mobile-specific adjustments for "How to Get There" */
   #how-to-get-there {
@@ -1363,40 +1736,59 @@ footer p {
     padding: 20px;
     text-align: center;
     background-image: url('./Images/280A8775_websize.jpg');
-    background-size: cover; /* Ensure image covers the area */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Avoid repeating the background */
-    min-height: auto; /* Allow content to shrink */
-    margin: 0; /* Remove any margin that could cause gaps */
-    width: 100%; /* Ensure full width for the container */
+    background-size: cover;
+    /* Ensure image covers the area */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Avoid repeating the background */
+    min-height: auto;
+    /* Allow content to shrink */
+    margin: 0;
+    /* Remove any margin that could cause gaps */
+    width: 100%;
+    /* Ensure full width for the container */
   }
 
 
   .wear-categories {
-    flex-direction: column; /* Stack categories vertically on smaller screens */
-    gap: 10px; /* Reduce space between the items on mobile */
-    width: 100%; /* Ensure full width */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    /* Stack categories vertically on smaller screens */
+    gap: 10px;
+    /* Reduce space between the items on mobile */
+    width: 100%;
+    /* Ensure full width */
+    align-items: center;
+    /* Center items horizontally */
   }
 
   .wear-category {
-    flex: none; /* Each section takes full width */
-    width: 90%; /* Adjust width to make it smaller than the full container */
-    max-width: 600px; /* Optional: Set a maximum width for the category */
-    margin: 0 auto; /* Center the category within the container */
-    border-left: none; /* Remove left border on small screens */
+    flex: none;
+    /* Each section takes full width */
+    width: 90%;
+    /* Adjust width to make it smaller than the full container */
+    max-width: 600px;
+    /* Optional: Set a maximum width for the category */
+    margin: 0 auto;
+    /* Center the category within the container */
+    border-left: none;
+    /* Remove left border on small screens */
   }
 
   footer {
-    padding: 10px; /* Adjust footer padding */
+    padding: 10px;
+    /* Adjust footer padding */
   }
 
   /* Firefly animation adjustments for mobile */
   .firefly {
     width: 3px;
-    height: 2px; /* Smaller fireflies on mobile */
-    animation-duration: 3s; /* Longer animation duration for smoothness */
-    animation-timing-function: ease-in-out; /* Smoother transition */
+    height: 2px;
+    /* Smaller fireflies on mobile */
+    animation-duration: 3s;
+    /* Longer animation duration for smoothness */
+    animation-timing-function: ease-in-out;
+    /* Smoother transition */
   }
 
   @keyframes fireflyPulse {
@@ -1404,18 +1796,22 @@ footer p {
       opacity: 0.6;
       box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.492);
     }
+
     25% {
       opacity: 0.8;
       box-shadow: 0 0 10px 5px rgba(255, 205, 6, 0.784);
     }
+
     50% {
       opacity: 0.6;
       box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.66);
     }
+
     75% {
       opacity: 0.8;
       box-shadow: 0 0 10px 5px rgba(255, 205, 6, 0.843);
     }
+
     100% {
       opacity: 0.6;
       box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.485);
@@ -1426,9 +1822,12 @@ footer p {
 
   .orange-firefly {
     width: 3px;
-    height: 2px; /* Smaller fireflies on mobile */
-    animation-duration: 3s; /* Longer animation duration for smoothness */
-    animation-timing-function: ease-in-out; /* Smoother transition */
+    height: 2px;
+    /* Smaller fireflies on mobile */
+    animation-duration: 3s;
+    /* Longer animation duration for smoothness */
+    animation-timing-function: ease-in-out;
+    /* Smoother transition */
   }
 
   @keyframes fireflyPulseOrange {
@@ -1436,70 +1835,90 @@ footer p {
       opacity: 0.6;
       box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
     }
+
     25% {
       opacity: 0.8;
       box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.7);
     }
+
     50% {
       opacity: 0.6;
       box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.6);
     }
+
     75% {
       opacity: 0.8;
       box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.8);
     }
+
     100% {
       opacity: 0.6;
       box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
     }
   }
 
-    /* Adjusting the play/pause button */
-    #play-pause {
-      font-size: 0.9rem; /* Make the button text smaller */
-      padding: 4px 8px; /* Smaller padding */
-    }
-  
-    /* Adjusting the volume container size */
-    #volume-container {
-      width: 120px; /* Smaller width for smaller screens */
-      height: 45px; /* Adjust height to match */
-    }
-  
-    /* Adjusting the volume slider */
-    #volume {
-      height: 3px; /* Smaller slider track */
-    }
-  
-    /* Adjusting the vine background image */
-    #volume-vine {
-      width: 145%; /* Slightly smaller vine */
-      height: 45px; /* Matches the container's height */
-    }
-  
-    /* Adjusting the slider thumb */
-    #volume::-webkit-slider-thumb, #volume::-moz-range-thumb {
-      width: 12px; /* Smaller thumb */
-      height: 12px; /* Smaller thumb */
-    }
+  /* Adjusting the play/pause button */
+  #play-pause {
+    font-size: 0.9rem;
+    /* Make the button text smaller */
+    padding: 4px 8px;
+    /* Smaller padding */
+  }
 
-    .icon-1 {
-      animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
-      width: 15%; /* Reduce icon size */
-    }
-    .icon-2 {
-      animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-      left: 15%;  /* Adjust the left position */
-      width: 8%; /* Reduce icon size */
-    }
-    .icon-3 {
-      animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-      width: 11%; /* Reduce icon size */
-    }
-  
+  /* Adjusting the volume container size */
+  #volume-container {
+    width: 120px;
+    /* Smaller width for smaller screens */
+    height: 45px;
+    /* Adjust height to match */
+  }
+
+  /* Adjusting the volume slider */
+  #volume {
+    height: 3px;
+    /* Smaller slider track */
+  }
+
+  /* Adjusting the vine background image */
+  #volume-vine {
+    width: 145%;
+    /* Slightly smaller vine */
+    height: 45px;
+    /* Matches the container's height */
+  }
+
+  /* Adjusting the slider thumb */
+  #volume::-webkit-slider-thumb,
+  #volume::-moz-range-thumb {
+    width: 12px;
+    /* Smaller thumb */
+    height: 12px;
+    /* Smaller thumb */
+  }
+
+  .icon-1 {
+    animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
+    width: 15%;
+    /* Reduce icon size */
+  }
+
+  .icon-2 {
+    animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
+    left: 15%;
+    /* Adjust the left position */
+    width: 8%;
+    /* Reduce icon size */
+  }
+
+  .icon-3 {
+    animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
+    width: 11%;
+    /* Reduce icon size */
+  }
 
 
-  
+
+
 
 }
 
@@ -1509,11 +1928,13 @@ footer p {
 
   body::before {
     content: "";
-    position: fixed; /* Ensure overlay stays fixed */
+    position: fixed;
+    /* Ensure overlay stays fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ensure full viewport height */
+    height: 100vh;
+    /* Ensure full viewport height */
     background: rgba(0, 0, 0, 0.605);
     z-index: 1;
     pointer-events: none;
@@ -1522,93 +1943,125 @@ footer p {
 
   .icon-1 {
     animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
-    width: 15%; /* Reduce icon size */
+    width: 15%;
+    /* Reduce icon size */
   }
+
   .icon-2 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-    left: 15%;  /* Adjust the left position */
-    width: 8%; /* Reduce icon size */
+    left: 15%;
+    /* Adjust the left position */
+    width: 8%;
+    /* Reduce icon size */
   }
+
   .icon-3 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-    width: 11%; /* Reduce icon size */
+    width: 11%;
+    /* Reduce icon size */
   }
 
 }
 
 
 /* Smaller Mobile devices */
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 
 
   body::before {
     content: "";
-    position: fixed; /* Ensure overlay stays fixed */
+    position: fixed;
+    /* Ensure overlay stays fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ensure full viewport height */
+    height: 100vh;
+    /* Ensure full viewport height */
     background: rgba(0, 0, 0, 0.605);
     z-index: 1;
     pointer-events: none;
 
   }
-    /* Styling for the schedule table */
-    .schedule-table {
-      width: 100%; /* Make table take full width on smaller screens */
-      font-size: 1.3rem; /* Smaller font size for mobile */
-    }
-  
-    .schedule-table th{
-      font-size: 1.3rem;
-    }
 
-    #rsvp .rsvp-content {
-      display: flex; /* Ensure flex is enabled */
-      justify-content: center; /* Horizontally center the content */
-      align-items: center; /* Vertically center the content */
-      flex-direction: column; /* Ensure text and button stack vertically */
-      height: auto; /* Allow content to adjust its height */
-      padding: 20px; /* Padding to give some space */
-    }
-  
-    #rsvp .rsvp-text {
-      text-align: center;
-      font-size: 0.9rem; /* Reduce font size for small screens */
-      max-width: 80%; /* Reduce max-width */
-    }
+  /* Styling for the schedule table */
+  .schedule-table {
+    width: 100%;
+    /* Make table take full width on smaller screens */
+    font-size: 1.3rem;
+    /* Smaller font size for mobile */
+  }
+
+  .schedule-table th {
+    font-size: 1.3rem;
+  }
+
+  #rsvp .rsvp-content {
+    display: flex;
+    /* Ensure flex is enabled */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
+    flex-direction: column;
+    /* Ensure text and button stack vertically */
+    height: auto;
+    /* Allow content to adjust its height */
+    padding: 20px;
+    /* Padding to give some space */
+  }
+
+  #rsvp .rsvp-text {
+    text-align: center;
+    font-size: 0.9rem;
+    /* Reduce font size for small screens */
+    max-width: 80%;
+    /* Reduce max-width */
+  }
 
 
-    button.rsvp-button {
-      font-size: 13px; /* Reduce font size even more */
-      padding: 10px 24px; /* Reduce padding */
-      width: 100%; /* Make the button full width on mobile */
-      box-sizing: border-box; /* Ensure padding is included in width */
-    }
+  button.rsvp-button {
+    font-size: 13px;
+    /* Reduce font size even more */
+    padding: 10px 24px;
+    /* Reduce padding */
+    width: 100%;
+    /* Make the button full width on mobile */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+  }
 
-    .icon-1 {
-      animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
-      width: 18px; /* Reduce icon size */
-    }
-    .icon-2 {
-      animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-      left: 17px;  /* Adjust the left position */
-      width: 9px; /* Reduce icon size */
-    }
-    .icon-3 {
-      animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
-      width: 12px; /* Reduce icon size */
-    }
+  .icon-1 {
+    animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
+    width: 18px;
+    /* Reduce icon size */
+  }
 
-    .modal-content {
-      width: 95%; /* Reduce the width to 95% on small screens */
-      max-width: 100%; /* Allow modal to use 100% width on very small screens */
-    }
-  
-    .modal iframe {
-      height: 500px; /* Adjust iframe height for smaller screens */
-    }
-  
+  .icon-2 {
+    animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
+    left: 17px;
+    /* Adjust the left position */
+    width: 9px;
+    /* Reduce icon size */
+  }
+
+  .icon-3 {
+    animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
+    width: 12px;
+    /* Reduce icon size */
+  }
+
+  .modal-content {
+    width: 95%;
+    /* Reduce the width to 95% on small screens */
+    max-width: 100%;
+    /* Allow modal to use 100% width on very small screens */
+  }
+
+  .modal iframe {
+    height: 500px;
+    /* Adjust iframe height for smaller screens */
+  }
+
 }
 
 /* Even smaller mobile devices */
@@ -1616,11 +2069,13 @@ footer p {
 
   body::before {
     content: "";
-    position: fixed; /* Ensure overlay stays fixed */
+    position: fixed;
+    /* Ensure overlay stays fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ensure full viewport height */
+    height: 100vh;
+    /* Ensure full viewport height */
     background: rgba(0, 0, 0, 0.605);
     z-index: 1;
     pointer-events: none;
@@ -1628,44 +2083,48 @@ footer p {
   }
 
   header h1 {
-    font-size: 2.5rem; /* Adjust header font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 0 auto; /* Center the header */
+    font-size: 2.5rem;
+    /* Adjust header font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 0 auto;
+    /* Center the header */
   }
 
   header h3 {
-    font-size: 1.3rem; /* Adjust subheader font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 20px auto; /* Center the header */
+    font-size: 1.3rem;
+    /* Adjust subheader font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 20px auto;
+    /* Center the header */
   }
 
   header p {
-    font-size: 1.3rem; /* Adjust paragraph font size */
-    max-width: 75%; /* Limit the width of the header */
-    margin: 0 auto; /* Center the header */
+    font-size: 1.3rem;
+    /* Adjust paragraph font size */
+    max-width: 75%;
+    /* Limit the width of the header */
+    margin: 0 auto;
+    /* Center the header */
   }
 
-  .rsvp-text p{
-    font-size: 1.625rem; /* 26px -> 1.625rem */
+  .rsvp-text p {
+    font-size: 1.625rem;
+    /* 26px -> 1.625rem */
   }
 
 
   /* Styling for the schedule table */
   .schedule-table {
-    width: 100%; /* Make table take full width on smaller screens */
-    font-size: 1.05rem; /* Smaller font size for mobile */
+    width: 100%;
+    /* Make table take full width on smaller screens */
+    font-size: 1.05rem;
+    /* Smaller font size for mobile */
   }
 
-  .schedule-table th{
+  .schedule-table th {
     font-size: 1.1rem;
   }
-  
+
 }
-
-
-
-
-
-
-
-
