@@ -104,11 +104,14 @@
                     convenience..
                 </li>
             </ul>
-            <p class="arrival"><strong>When You Arrive:</strong> Please head to the main entrance where you’ll be greeted by
+            <p class="arrival"><strong>When You Arrive:</strong> Please head to the main entrance where you’ll be
+                greeted by
                 our wedding coordinators. We’ll gather in the [Designated Area] for the ceremony.</p>
-              <p class="arrival-note"><span style="font-size: 0.8em; text-decoration: none;">&#10071;</span><strong>You are
-                  strongly advised to arrive by <span>5:45pm</span> at the gathering area as there will be a desginated tram to
-                  chauffeur you to the designation</strong></p>
+            <p class="arrival-note"><span style="font-size: 0.8em; text-decoration: none;">&#10071;</span><strong>You
+                    are
+                    strongly advised to arrive by <span>5:45pm</span> at the gathering area as there will be a
+                    desginated tram to
+                    chauffeur you to the designation</strong></p>
 
         </div>
     </section>
@@ -429,132 +432,132 @@
 
 
 
-    // Current language
-    let currentLanguage = 'en';
+        // Current language
+        let currentLanguage = 'en';
 
-    // Function to toggle language
-    function toggleLanguage() {
-      // Toggle language
-      currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
+        // Function to toggle language
+        function toggleLanguage() {
+            // Toggle language
+            currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
 
-      // Fetch translations
-      const t = translations[currentLanguage];
+            // Fetch translations
+            const t = translations[currentLanguage];
 
-      // Apply language class to body
-      if (currentLanguage === 'zh') {
-        document.body.classList.add("chinese-text"); // Apply this class when Chinese is selected
-      } else {
-        document.body.classList.remove("chinese-text"); // Remove the class when English is selected
-      }
+            // Apply language class to body
+            if (currentLanguage === 'zh') {
+                document.body.classList.add("chinese-text"); // Apply this class when Chinese is selected
+            } else {
+                document.body.classList.remove("chinese-text"); // Remove the class when English is selected
+            }
 
-      // Update header
-      document.querySelector("h3").innerText = t.weddingDate;
-      document.querySelector("header p").innerText = t.inviteMessage;
-      document.querySelector("#play-pause").innerText = t.playbutton;
+            // Update header
+            document.querySelector("h3").innerText = t.weddingDate;
+            document.querySelector("header p").innerText = t.inviteMessage;
+            document.querySelector("#play-pause").innerText = t.playbutton;
 
-      // Update "What to Wear" section
-      document.querySelector("#what-to-wear h2").innerText = t.whatToWear.title;
-      document.querySelector("#what-to-wear p").innerText = t.whatToWear.message;
-      document.querySelectorAll(".wear-category").forEach((category, index) => {
-        const headings = [t.whatToWear.comforttitle, t.whatToWear.freetitle, t.whatToWear.footweartitle];
-        const paragraphs = [t.whatToWear.comfort, t.whatToWear.free, t.whatToWear.footwear];
-        category.querySelector("h3").innerText = headings[index]; // Translate heading
-        category.querySelector("p").innerText = paragraphs[index]; // Translate paragraph
-      });
+            // Update "What to Wear" section
+            document.querySelector("#what-to-wear h2").innerText = t.whatToWear.title;
+            document.querySelector("#what-to-wear p").innerText = t.whatToWear.message;
+            document.querySelectorAll(".wear-category").forEach((category, index) => {
+                const headings = [t.whatToWear.comforttitle, t.whatToWear.freetitle, t.whatToWear.footweartitle];
+                const paragraphs = [t.whatToWear.comfort, t.whatToWear.free, t.whatToWear.footwear];
+                category.querySelector("h3").innerText = headings[index]; // Translate heading
+                category.querySelector("p").innerText = paragraphs[index]; // Translate paragraph
+            });
 
-      // Update title
-      document.querySelector("#how-to-get-there h2").innerText = t.howToGetThere.title;
+            // Update title
+            document.querySelector("#how-to-get-there h2").innerText = t.howToGetThere.title;
 
-      // Update venue
-      document.querySelectorAll("#how-to-get-there p")[0].innerHTML = t.howToGetThere.venue; // Target the first <p>
+            // Update venue
+            document.querySelectorAll("#how-to-get-there p")[0].innerHTML = t.howToGetThere.venue; // Target the first <p>
 
-      // Update directions (ul)
-      document.querySelector("#how-to-get-there ul").innerHTML = t.howToGetThere.directions;
+            // Update directions (ul)
+            document.querySelector("#how-to-get-there ul").innerHTML = t.howToGetThere.directions;
 
-      // Update arrival info
-      document.querySelector(".arrival").innerHTML = t.howToGetThere.arrival;
+            // Update arrival info
+            document.querySelector(".arrival").innerHTML = t.howToGetThere.arrival;
 
-      // Update arrival note
-      document.querySelector(".arrival-note").innerHTML = t.howToGetThere.arrivalNote;
+            // Update arrival note
+            document.querySelector(".arrival-note").innerHTML = t.howToGetThere.arrivalNote;
 
 
 
-      // Update Schedule
-      document.querySelector("#schedule h2").innerText = t.schedule.title;
+            // Update Schedule
+            document.querySelector("#schedule h2").innerText = t.schedule.title;
 
-      // Update venue
-      document.querySelectorAll("#schedule p")[0].innerHTML = t.schedule.itinerary;
-      const schedule = t.schedule;
-      const scheduleTable = document.querySelector(".schedule-table tbody");
+            // Update venue
+            document.querySelectorAll("#schedule p")[0].innerHTML = t.schedule.itinerary;
+            const schedule = t.schedule;
+            const scheduleTable = document.querySelector(".schedule-table tbody");
 
-      // Clear existing table content
-      scheduleTable.innerHTML = "";
+            // Clear existing table content
+            scheduleTable.innerHTML = "";
 
-      // Get the thead element (if exists)
-      let thead = scheduleTable.closest("table").querySelector("thead");
+            // Get the thead element (if exists)
+            let thead = scheduleTable.closest("table").querySelector("thead");
 
-      // If thead doesn't exist, create it and add the headers
-      if (!thead) {
-        thead = document.createElement("thead");
-        const headerRow = document.createElement("tr");
+            // If thead doesn't exist, create it and add the headers
+            if (!thead) {
+                thead = document.createElement("thead");
+                const headerRow = document.createElement("tr");
 
-        const timeHeader = document.createElement("th");
-        timeHeader.innerText = t.schedule.scheduleheader[0];  // "时间" or "Time"
-        const activityHeader = document.createElement("th");
-        activityHeader.innerText = t.schedule.scheduleheader[1];  // "活动" or "Activity"
+                const timeHeader = document.createElement("th");
+                timeHeader.innerText = t.schedule.scheduleheader[0];  // "时间" or "Time"
+                const activityHeader = document.createElement("th");
+                activityHeader.innerText = t.schedule.scheduleheader[1];  // "活动" or "Activity"
 
-        headerRow.appendChild(timeHeader);
-        headerRow.appendChild(activityHeader);
-        thead.appendChild(headerRow);
+                headerRow.appendChild(timeHeader);
+                headerRow.appendChild(activityHeader);
+                thead.appendChild(headerRow);
 
-        // Append the thead to the table
-        scheduleTable.closest("table").prepend(thead);
-      } else {
-        // If thead already exists, just update its content
-        const ths = thead.querySelectorAll("th");
-        ths[0].innerText = t.schedule.scheduleheader[0];
-        ths[1].innerText = t.schedule.scheduleheader[1];
-      }
+                // Append the thead to the table
+                scheduleTable.closest("table").prepend(thead);
+            } else {
+                // If thead already exists, just update its content
+                const ths = thead.querySelectorAll("th");
+                ths[0].innerText = t.schedule.scheduleheader[0];
+                ths[1].innerText = t.schedule.scheduleheader[1];
+            }
 
-      // Loop over schedule times and create rows for tbody
-      schedule.times.forEach(row => {
-        const tr = document.createElement("tr");
+            // Loop over schedule times and create rows for tbody
+            schedule.times.forEach(row => {
+                const tr = document.createElement("tr");
 
-        const timeTd = document.createElement("td");
-        const activityTd = document.createElement("td");
+                const timeTd = document.createElement("td");
+                const activityTd = document.createElement("td");
 
-        timeTd.innerText = row[0];  // The time in the row
-        activityTd.innerText = row[1];  // The activity in the row
+                timeTd.innerText = row[0];  // The time in the row
+                activityTd.innerText = row[1];  // The activity in the row
 
-        tr.appendChild(timeTd);
-        tr.appendChild(activityTd);
-        scheduleTable.appendChild(tr);
-      });
+                tr.appendChild(timeTd);
+                tr.appendChild(activityTd);
+                scheduleTable.appendChild(tr);
+            });
 
-      //rsvp section
-      document.querySelector("#rsvp h2").innerText = t.rsvp.title; // Update the RSVP title
-      document.querySelector("#rsvp p").innerText = t.rsvp.rsvpmessage; // Update the RSVP message
-      document.querySelector("#rsvpButton .button-text").innerText = t.rsvpbutton.title; // Update only the button's text
+            //rsvp section
+            document.querySelector("#rsvp h2").innerText = t.rsvp.title; // Update the RSVP title
+            document.querySelector("#rsvp p").innerText = t.rsvp.rsvpmessage; // Update the RSVP message
+            document.querySelector("#rsvpButton .button-text").innerText = t.rsvpbutton.title; // Update only the button's text
 
-      function updateRSVPButton() {
-        const rsvpButton = document.getElementById("rsvpButton");
+            function updateRSVPButton() {
+                const rsvpButton = document.getElementById("rsvpButton");
 
-        // Correctly target the .button-text inside the button
-        const textSpan = rsvpButton.querySelector(".button-text");
-        const rsvpMessage = translations[currentLanguage]?.rsvpbutton?.title || "RSVP HERE";
+                // Correctly target the .button-text inside the button
+                const textSpan = rsvpButton.querySelector(".button-text");
+                const rsvpMessage = translations[currentLanguage]?.rsvpbutton?.title || "RSVP HERE";
 
-        if (textSpan) {
-          // Update the text inside the button while keeping the SVG
-          textSpan.textContent = rsvpMessage;
-        } else {
-          console.error("RSVP button text span not found.");
+                if (textSpan) {
+                    // Update the text inside the button while keeping the SVG
+                    textSpan.textContent = rsvpMessage;
+                } else {
+                    console.error("RSVP button text span not found.");
+                }
+            }
+
+            // Call update function if language or content needs to be updated
+            updateRSVPButton(); // Use this wherever needed to update the button text dynamically
+
         }
-      }
-
-      // Call update function if language or content needs to be updated
-      updateRSVPButton(); // Use this wherever needed to update the button text dynamically
-
-    }
 
         //music
         const audio = document.getElementById('audio');
@@ -625,8 +628,6 @@
             }
         }
 
-        // Attach the toggleLanguage function to the translate button
-        document.querySelector("#translateButton").addEventListener("click", toggleLanguage);
 
         // Function to detect if the device is iOS
         function isIOSDevice() {
@@ -717,6 +718,10 @@
                 button.style.position = 'relative'; // Ensure button is positioned relative to adjust icon properly
             }
         }
+
+        // Attach the toggleLanguage function to the translate button
+        document.querySelector("#translateButton").addEventListener("click", toggleLanguage);
+
 
     </script>
 
