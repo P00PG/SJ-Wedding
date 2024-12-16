@@ -1104,9 +1104,14 @@ footer p {
     /* Smaller font size for h2 and h3 on mobile */
   }
 
-  body.chinese-text h3 {
+  body.chinese-text header h3 {
     font-size: 1.5rem;
   }
+
+  body.chinese-text .wear-category h3 {
+    font-size: 2.1rem;
+  }
+
 
   /* Adjust font sizes for smaller screens */
   header h1 {
@@ -1321,8 +1326,12 @@ footer p {
     /* Smaller font size for h2 and h3 on mobile */
   }
 
-  body.chinese-text h3 {
+  body.chinese-text header h3 {
     font-size: 1.5rem;
+  }
+
+  body.chinese-text .wear-category h3 {
+    font-size: 2.2rem;
   }
 
 
@@ -1564,17 +1573,21 @@ footer p {
   }
 
   body.chinese-text p {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     /* Smaller font size for mobile */
   }
 
   body.chinese-text h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     /* Smaller font size for h2 and h3 on mobile */
   }
 
-  body.chinese-text h3 {
-    font-size: 1.4rem;
+  body.chinese-text header h3 {
+    font-size: 1.5rem;
+  }
+
+  body.chinese-text .wear-category h3 {
+    font-size: 2rem;
   }
 
 
@@ -1943,6 +1956,24 @@ footer p {
     z-index: 1;
     pointer-events: none;
 
+  }
+
+  body.chinese-text p {
+    font-size: 1.5rem;
+    /* Smaller font size for mobile */
+  }
+
+  body.chinese-text h2 {
+    font-size: 2.1rem;
+    /* Smaller font size for h2 and h3 on mobile */
+  }
+
+  body.chinese-text header h3 {
+    font-size: 1.5rem;
+  }
+
+  body.chinese-text .wear-category h3 {
+    font-size: 1.7rem;
   }
 
   .icon-1 {
