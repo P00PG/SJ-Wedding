@@ -234,59 +234,26 @@
     </footer>
 
     <script>
-// Slideshow effect
-let slideIndex = 0;
 
-function showSlides() {
+document.addEventListener('DOMContentLoaded', () => {
+  // Slideshow functionality
+  let slideIndex = 0;
+  function showSlides() {
     const slides = document.querySelectorAll('.slide');
     slides.forEach((slide) => {
-        slide.style.display = "none";
+      slide.style.display = "none";
     });
     slideIndex++;
     if (slideIndex > slides.length) {
-        slideIndex = 1;
+      slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-}
+  }
+  setInterval(showSlides, 6000); // Change image every 6 seconds
+  showSlides();
 
-// Start the slideshow
-setInterval(showSlides, 6000); // Change image every 6 seconds
-showSlides(); // Initial call to display the first slide
-
-// Scroll effect to reveal sections with improved fade-out handling
-const sections = document.querySelectorAll('.section');
-const windowHeight = window.innerHeight;
-
-function checkSectionVisibility() {
-    const scrollPosition = window.scrollY + windowHeight;
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        // If the section is within the visible range (in view), fade it in
-        if (scrollPosition >= sectionTop + sectionHeight / 4 && scrollPosition <= sectionTop + sectionHeight) {
-            if (!section.classList.contains('visible')) {
-                section.classList.add('visible');
-            }
-        } else {
-            section.classList.remove('visible'); // Optionally reset fade effect when scrolling out
-        }
-    });
-}
-
-// Add scroll event listener
-window.addEventListener('scroll', checkSectionVisibility);
-// Initial check when the page loads
-checkSectionVisibility();
-
-        // Listen for scroll events
-        window.addEventListener('scroll', function () {
-            checkSectionVisibility();
-        });
-
-        // Initial check in case sections are already in view
-        checkSectionVisibility();
+  // Scroll effect to reveal sections is no longer needed
+});
 
         //firefly script
         document.addEventListener('DOMContentLoaded', () => {
