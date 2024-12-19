@@ -235,26 +235,50 @@
 
     <script>
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Slideshow functionality
-  let slideIndex = 0;
-  function showSlides() {
-    const slides = document.querySelectorAll('.slide');
-    slides.forEach((slide) => {
-      slide.style.display = "none";
-    });
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
-  }
-  setInterval(showSlides, 6000); // Change image every 6 seconds
-  showSlides();
+        // Slideshow effect (same as before)
+        let slideIndex = 0;
+        function showSlides() {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((slide) => {
+                slide.style.display = "none";
+            });
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 6000); // Change image every 6 seconds (slower)
+        }
+        showSlides();
 
-  // Scroll effect to reveal sections is no longer needed
-});
+        // Scroll effect to reveal sections with improved fade-out handling
+        const sections = document.querySelectorAll('.section');
+        const windowHeight = window.innerHeight;
 
+        function checkSectionVisibility() {
+            const scrollPosition = window.scrollY + windowHeight;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                // If the section is within the visible range (in view), fade it in
+                if (scrollPosition >= sectionTop + sectionHeight / 4 && scrollPosition <= sectionTop + sectionHeight) {
+                    if (!section.classList.contains('visible')) { // Only add class if not already added
+                        section.classList.add('visible');
+                    }
+                } else {
+                    // Optionally, you can remove the class if you want to reset the fade effect when scrolling up
+                    // section.classList.remove('visible');
+                }
+            });
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', function () {
+            checkSectionVisibility();
+        });
+
+        // Initial check in case sections are already in view
+        checkSectionVisibility();
         //firefly script
         document.addEventListener('DOMContentLoaded', () => {
             const firefliesContainer = document.querySelector('.fireflies');

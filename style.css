@@ -1009,7 +1009,7 @@ button.rsvp-button:hover {
     opacity: 0.5;
     box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.3);
   }
-  
+
 
   50% {
     opacity: 0.8;
@@ -1310,7 +1310,7 @@ footer p {
     font-size: 2.2rem;
   }
 
-   .firefly {
+  .firefly {
     width: 4px;
     height: 2px;
 
@@ -1840,7 +1840,7 @@ footer p {
     /* Adjust footer padding */
   }
 
- 
+
   /* Adjusting the play/pause button */
   #play-pause {
     font-size: 0.9rem;
