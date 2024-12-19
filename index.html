@@ -282,39 +282,61 @@
         //firefly script
         document.addEventListener('DOMContentLoaded', () => {
             const firefliesContainer = document.querySelector('.fireflies');
-            let maxFireflies = 120; // Default for desktop
-            const isMobile = window.innerWidth <= 768; // Define mobile breakpoint
-            if (isMobile) {
-                maxFireflies = 85; // Reduced number for mobile
-            }
-            let currentFireflies = 0; // Counter for added fireflies
+            let maxFireflies = 110;
+            const isMobile = window.innerWidth <= 1200;
 
-            // Function to add a single firefly
-            const addFirefly = () => {
+            if (isMobile) {
+                maxFireflies = 75;
+            }
+
+            let currentFireflies = 0;
+            let fireflyBatchSize = 3;
+
+            const addFirefliesBatch = () => {
                 if (currentFireflies >= maxFireflies) {
-                    clearInterval(fireflyInterval); // Stop adding fireflies when max is reached
+                    clearInterval(fireflyInterval);
                     return;
                 }
 
-                const firefly = document.createElement('div');
+                for (let i = 0; i < fireflyBatchSize; i++) {
+                    if (currentFireflies >= maxFireflies) {
+                        break;
+                    }
 
-                // Randomly assign firefly type: yellow or orange
-                if (Math.random() < 0.5) {
-                    firefly.classList.add('firefly'); // Yellow firefly
-                } else {
-                    firefly.classList.add('orange-firefly'); // Orange firefly
+                    const firefly = document.createElement('div');
+                    firefly.className = Math.random() < 0.5 ? 'firefly' : 'orange-firefly';
+
+                    // Start with 0 opacity
+                    firefly.style.opacity = '0';
+
+                    firefly.style.left = `${Math.random() * 100}vw`;
+                    firefly.style.top = `${Math.random() * 100}vh`;
+
+                    firefly.style.setProperty('--end-x', `${Math.random() * 200 - 100}vw`);
+                    firefly.style.setProperty('--end-y', `${Math.random() * 200 - 100}vh`);
+
+                    if (isMobile) {
+                        firefly.style.animationDuration = `${10 + Math.random() * 5}s`;
+                    } else {
+                        firefly.style.animationDuration = `${10 + Math.random() * 15}s`;
+                    }
+
+                    firefliesContainer.appendChild(firefly);
+
+                    // Fade in the firefly
+                    requestAnimationFrame(() => {
+                        firefly.style.transition = 'opacity 1s ease-in';
+                        firefly.style.opacity = '0.5';
+                    });
+
+                    currentFireflies++;
                 }
-
-                firefly.style.left = `${Math.random() * 100}vw`; // Random starting position
-                firefly.style.top = `${Math.random() * 100}vh`;
-                firefly.style.animationDuration = `${25 + Math.random() * 4}s`; // Random duration
-                firefliesContainer.appendChild(firefly);
-
-                currentFireflies++; // Increment the counter
             };
 
-            // Add fireflies at intervals (e.g., every 100ms)
-            const fireflyInterval = setInterval(addFirefly, 100);
+            // Determine the interval time based on the device type
+            const intervalTime = isMobile ? 400 : 200;  // Increase the interval time for mobile
+
+            const fireflyInterval = setInterval(addFirefliesBatch, intervalTime);
         });
 
 

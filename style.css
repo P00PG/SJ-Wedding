@@ -9,6 +9,7 @@
 }
 
 
+
 .audio-controls {
   display: flex;
   align-items: center;
@@ -253,7 +254,8 @@ body.chinese-text h3 {
 }
 
 body.chinese-text footer p {
-  font-size: 0.99rem; /* Smaller font size in Chinese language */
+  font-size: 0.99rem;
+  /* Smaller font size in Chinese language */
 }
 
 /* Content is explicitly layered above the section */
@@ -940,118 +942,92 @@ button.rsvp-button:hover {
   width: 100%;
   height: 100%;
   z-index: 1;
-  /* Above the overlay */
   pointer-events: none;
   overflow: hidden;
 }
 
-/* Individual firefly */
+/* Base firefly styles */
 .firefly {
   position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
   width: 5px;
   height: 3px;
-  background-color: rgba(255, 221, 29, 0.954);
-  /* Soft yellow glow */
-  border-radius: 50%;
-  box-shadow: 0 0 15px 10px rgba(255, 205, 6, 0.667);
-  /* Glow effect */
-  pointer-events: none;
-  /* Prevent interaction */
-  animation: fireflyMove 4s linear infinite, fireflyPulse 0.2s ease-in-out infinite;
+  background-color: rgba(255, 255, 0, 0.685);
+  box-shadow: 0 0 15px 10px rgba(255, 255, 0, 0.548);
+  opacity: 0;
+  /* Separate the animations and delay the movement */
+  animation:
+    fadeIn 3s ease forwards,
+    moveFirefly linear infinite 1s,
+    fireflyPulse 4s ease-in-out infinite 1s;
+  /* Delay pulse until fade-in completes */
 }
 
+/* Orange firefly */
+.orange-firefly {
+  width: 5px;
+  height: 3px;
+  background-color: rgba(255, 183, 77, 0.9);
+  box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6);
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation:
+    fadeIn 3s ease forwards,
+    moveFirefly linear infinite 1s,
+    orangePulse 4s ease-in-out infinite 1s;
+  /* Delay pulse until fade-in completes */
+}
 
-/* Random firefly movement */
-@keyframes fireflyMove {
+@keyframes moveFirefly {
   0% {
     transform: translate(0, 0);
   }
 
-  25% {
-    transform: translate(calc(-50vw + 100vw * 0.25), calc(-50vh + 100vh * 0.25));
+  100% {
+    transform: translate(var(--end-x), var(--end-y));
   }
+}
 
-  50% {
-    transform: translate(calc(-50vw + 100vw * 0.5), calc(-50vh + 100vh * 0.5));
-  }
-
-  75% {
-    transform: translate(calc(-50vw + 100vw * 0.75), calc(-50vh + 100vh * 0.75));
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
 
   100% {
-    transform: translate(calc(-50vw + 100vw), calc(-50vh + 100vh));
+    opacity: 0.5;
+    /* Reduced maximum opacity for softer appearance */
   }
 }
 
 @keyframes fireflyPulse {
-  0% {
-    opacity: 0.4;
-    box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.323);
-  }
 
-  25% {
-    opacity: 1;
-    box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.769);
+  0%,
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.3);
   }
+  
 
   50% {
-    opacity: 0.6;
-    box-shadow: 0 0 15px 8px rgba(255, 205, 6, 0.6);
-  }
-
-  75% {
-    opacity: 1;
-    box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.777);
-  }
-
-  100% {
-    opacity: 0.4;
-    box-shadow: 0 0 10px 4px rgba(255, 205, 6, 0.327);
+    opacity: 0.8;
+    box-shadow: 0 0 25px 12px rgba(255, 205, 6, 0.7);
   }
 }
 
+@keyframes orangePulse {
 
-/* Softer orange firefly styling */
-.orange-firefly {
-  position: absolute;
-  width: 5px;
-  height: 3px;
-  background-color: rgba(255, 183, 77, 0.9);
-  /* Softer orange glow */
-  border-radius: 50%;
-  box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6);
-  /* Glow effect */
-  pointer-events: none;
-  /* Prevent interaction */
-  animation: fireflyMove 4s linear infinite, fireflyPulseOrange 0.2s ease-in-out infinite;
-}
-
-/* Orange firefly pulsing animation */
-@keyframes fireflyPulseOrange {
-  0% {
-    opacity: 0.4;
+  0%,
+  100% {
+    opacity: 0.5;
     box-shadow: 0 0 10px 4px rgba(255, 173, 51, 0.3);
-  }
-
-  25% {
-    opacity: 1;
-    box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.7);
   }
 
   50% {
-    opacity: 0.6;
-    box-shadow: 0 0 15px 8px rgba(255, 173, 51, 0.6);
-  }
-
-  75% {
-    opacity: 1;
-    box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.8);
-  }
-
-  100% {
-    opacity: 0.4;
-    box-shadow: 0 0 10px 4px rgba(255, 173, 51, 0.3);
+    opacity: 0.8;
+    box-shadow: 0 0 25px 12px rgba(255, 173, 51, 0.753);
   }
 }
 
@@ -1333,6 +1309,73 @@ footer p {
   body.chinese-text .wear-category h3 {
     font-size: 2.2rem;
   }
+
+   .firefly {
+    width: 4px;
+    height: 2px;
+
+    /* Remove the animation-duration here since it's set in JavaScript */
+    /* Remove opacity setting here since it conflicts with animations */
+  }
+
+
+  .orange-firefly {
+    width: 4px;
+    height: 2px;
+  }
+
+  /* Mobile-specific firefly pulse animation */
+  @keyframes fireflyPulse {
+
+    0%,
+    100% {
+      opacity: 0.5;
+      box-shadow: 0 0 6px 2px rgba(255, 205, 6, 0.24);
+    }
+
+    25% {
+      opacity: 0.6;
+      box-shadow: 0 0 14px 6px rgba(255, 205, 6, 0.452);
+    }
+
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 14px 6px rgba(255, 205, 6, 0.616);
+    }
+  }
+
+  /* Mobile-specific orange pulse animation */
+  @keyframes orangePulse {
+
+    /* Changed from fireflyPulseOrange to match main CSS */
+    0%,
+    100% {
+      opacity: 0.5;
+      box-shadow: 0 0 6px 2px rgba(255, 173, 51, 0.397);
+    }
+
+    25% {
+      opacity: 0.6;
+      box-shadow: 0 0 14px 6px rgba(255, 173, 51, 0.452);
+    }
+
+    50% {
+      opacity: 0.9;
+      box-shadow: 0 0 14px 6px rgba(255, 173, 51, 0.884);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.5;
+      /* Slightly lower opacity for mobile */
+    }
+  }
+
 
 
   header h1 {
@@ -1797,83 +1840,7 @@ footer p {
     /* Adjust footer padding */
   }
 
-  /* Firefly animation adjustments for mobile */
-  .firefly {
-    width: 3px;
-    height: 2px;
-    /* Smaller fireflies on mobile */
-    animation-duration: 3s;
-    /* Longer animation duration for smoothness */
-    animation-timing-function: ease-in-out;
-    /* Smoother transition */
-  }
-
-  @keyframes fireflyPulse {
-    0% {
-      opacity: 0.6;
-      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.492);
-    }
-
-    25% {
-      opacity: 0.8;
-      box-shadow: 0 0 10px 5px rgba(255, 205, 6, 0.784);
-    }
-
-    50% {
-      opacity: 0.6;
-      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.66);
-    }
-
-    75% {
-      opacity: 0.8;
-      box-shadow: 0 0 10px 5px rgba(255, 205, 6, 0.843);
-    }
-
-    100% {
-      opacity: 0.6;
-      box-shadow: 0 0 5px 2px rgba(255, 205, 6, 0.485);
-    }
-  }
-
-  /* Orange firefly pulse adjustments */
-
-  .orange-firefly {
-    width: 3px;
-    height: 2px;
-    /* Smaller fireflies on mobile */
-    animation-duration: 3s;
-    /* Longer animation duration for smoothness */
-    animation-timing-function: ease-in-out;
-    /* Smoother transition */
-  }
-
-  @keyframes fireflyPulseOrange {
-    0% {
-      opacity: 0.6;
-      box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
-    }
-
-    25% {
-      opacity: 0.8;
-      box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.7);
-    }
-
-    50% {
-      opacity: 0.6;
-      box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.6);
-    }
-
-    75% {
-      opacity: 0.8;
-      box-shadow: 0 0 10px 5px rgba(255, 173, 51, 0.8);
-    }
-
-    100% {
-      opacity: 0.6;
-      box-shadow: 0 0 5px 2px rgba(255, 173, 51, 0.4);
-    }
-  }
-
+ 
   /* Adjusting the play/pause button */
   #play-pause {
     font-size: 0.9rem;
