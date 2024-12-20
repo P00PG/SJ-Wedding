@@ -15,6 +15,13 @@
     <!--Fireflys -->
     <div class="fireflies"></div>
 
+    <!--Firefly cursor-->
+    <div id="firefly-container">
+        <div class="fireflyCursor blue-firefly" id="fireflyCursor1"></div>
+        <div class="fireflyCursor pink-firefly" id="fireflyCursor2"></div>
+    </div>
+
+
     <!-- Full-screen homepage with slideshow -->
     <header class="homepage">
         <div class="slideshow">
@@ -235,7 +242,7 @@
 
     <script>
 
-        // Slideshow effect (same as before)
+        // Slideshow effect
         let slideIndex = 0;
         function showSlides() {
             const slides = document.querySelectorAll('.slide');
@@ -248,6 +255,21 @@
             setTimeout(showSlides, 6000); // Change image every 6 seconds (slower)
         }
         showSlides();
+
+        // Get firefly container and fireflies
+        const container = document.getElementById("firefly-container");
+
+        // Ensure pointer events are none for the firefly container
+        container.style.pointerEvents = 'none';
+
+        // Move the firefly container with the mouse
+        document.addEventListener("mousemove", (e) => {
+            const mouseX = e.clientX; // Use clientX to get the mouse position within the browser window
+            const mouseY = e.clientY; // Use clientY to get the mouse position within the browser window
+
+            // Update position of the container
+            container.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        });
 
         // Scroll effect to reveal sections with improved fade-out handling
         const sections = document.querySelectorAll('.section');
@@ -277,8 +299,6 @@
             checkSectionVisibility();
         });
 
-        // Initial check in case sections are already in view
-        checkSectionVisibility();
         //firefly script
         document.addEventListener('DOMContentLoaded', () => {
             const firefliesContainer = document.querySelector('.fireflies');
@@ -626,7 +646,10 @@
             updatePlayPauseButton();
         });
 
-
+        // Volume control functionality
+        volumeControl.addEventListener('input', (event) => {
+            audio.volume = event.target.value; // Update the audio volume based on the slider value
+        });
 
         // Get the modal and the button
         var modal = document.getElementById("rsvpModal");

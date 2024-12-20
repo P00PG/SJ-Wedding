@@ -26,7 +26,7 @@
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
-  cursor: pointer;
+  cursor: none;
   transition: background-color 0.3s;
   z-index: 1;
   opacity: 0.4;
@@ -61,7 +61,7 @@
   /* The visible slider track */
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: none;
   z-index: 2;
   position: relative;
 }
@@ -162,7 +162,9 @@
 }
 
 #translate-icon:hover {
+  cursor: none;
   background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
   /* Darker background on hover */
 }
 
@@ -220,6 +222,7 @@ body {
   /* Disable horizontal scrolling */
   scroll-behavior: smooth;
   /* Smooth scrolling for the entire page */
+  cursor: none;
 }
 
 /* Dark overlay that covers the entire page */
@@ -238,6 +241,105 @@ body::before {
   pointer-events: none;
   /* Allow clicks to pass through to underlying content */
 }
+
+#firefly-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.fireflyCursor {
+  position: absolute;
+  width: 5px;
+  /* Width for fairy body */
+  height: 15px;
+  /* Height for fairy body */
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Default white glow */
+  border-radius: 50%;
+  /* Round body */
+  animation: horizontalCircle 1s linear infinite;
+  /* Circular motion */
+}
+
+.fireflyCursor::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  /* Width for head */
+  height: 5px;
+  /* Height for head */
+  border-radius: 50%;
+  /* Round head */
+  top: -7px;
+  /* Position the head above the body */
+  left: 0;
+  background-color: inherit;
+}
+
+
+/* Pastel blue firefly styling */
+.blue-firefly {
+  background-color: rgba(173, 216, 230, 0.8);
+  /* Soft pastel blue */
+  box-shadow: 0 0 20px 6px rgba(173, 216, 230, 0.8),
+    /* Subtle inner glow */
+    0 0 40px 10px rgba(135, 206, 235, 0.6),
+    /* Milder mid-level glow */
+    0 0 70px 15px rgba(176, 224, 230, 0.4);
+  /* Softer outer glow */
+}
+
+/* Pastel pink firefly styling */
+.pink-firefly {
+  background-color: rgba(255, 182, 193, 0.8);
+  /* Soft pastel pink */
+  box-shadow: 0 0 20px 6px rgba(255, 182, 193, 0.8),
+    /* Subtle inner glow */
+    0 0 40px 10px rgba(255, 192, 203, 0.6),
+    /* Milder mid-level glow */
+    0 0 70px 15px rgba(255, 218, 233, 0.4);
+  /* Softer outer glow */
+}
+
+/* Keyframes for horizontal circular motion */
+@keyframes horizontalCircle {
+  0% {
+    transform: translate(-10px, 0);
+  }
+
+  25% {
+    transform: translate(-5px, -2.5px);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+
+  75% {
+    transform: translate(-5px, 2.5px);
+  }
+
+  100% {
+    transform: translate(-10px, 0);
+  }
+}
+
+/* Staggered motion for the second firefly */
+#fireflyCursor2 {
+  animation-delay: -0.5s;
+  /* Stagger delay for smoother interaction */
+}
+
+/* Firefly effect when hovering over a button */
+button:hover .fireflyCursor {
+  display: block;
+}
+
 
 /* Optionally, target specific elements only */
 body.chinese-text p {
@@ -440,6 +542,7 @@ a:hover {
   /* Change to a different color (Amber) on hover */
   text-decoration: none;
   /* Remove underline on hover for style */
+  cursor: none;
 }
 
 #schedule p,
@@ -665,6 +768,7 @@ button.rsvp-button:hover {
   border: 1px solid #f3b182;
   background: linear-gradient(85deg, #fec195, #fcc196, #fabd92, #fac097, #fac39c);
   animation: wind 2s ease-in-out infinite;
+  cursor: none;
 }
 
 
