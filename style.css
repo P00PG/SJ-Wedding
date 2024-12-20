@@ -1312,17 +1312,22 @@ footer p {
   .firefly {
     width: 4px;
     height: 2px;
-
-    /* Remove the animation-duration here since it's set in JavaScript */
-    /* Remove opacity setting here since it conflicts with animations */
+    -webkit-animation: fireflyPulse 2s infinite ease-in-out;
+    animation: 
+      fadeIn 3s ease forwards,
+      moveFirefly linear infinite 1s,
+      fireflyPulse 2s infinite ease-in-out;
   }
-
 
   .orange-firefly {
     width: 4px;
     height: 2px;
+    -webkit-animation: orangePulse 2s infinite ease-in-out;
+    animation:     
+    fadeIn 3s ease forwards,
+    moveFirefly linear infinite 1s,
+    orangePulse 2s infinite ease-in-out;
   }
-
   /* Mobile-specific firefly pulse animation */
   @keyframes fireflyPulse {
 
