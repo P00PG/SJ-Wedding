@@ -262,14 +262,22 @@
         // Ensure pointer events are none for the firefly container
         container.style.pointerEvents = 'none';
 
-        // Move the firefly container with the mouse
-        document.addEventListener("mousemove", (e) => {
-            const mouseX = e.clientX; // Use clientX to get the mouse position within the browser window
-            const mouseY = e.clientY; // Use clientY to get the mouse position within the browser window
+        // Check if the device is a mobile phone or tablet
+        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-            // Update position of the container
-            container.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        });
+        if (!isMobile) {
+            // Move the firefly container with the mouse
+            document.addEventListener("mousemove", (e) => {
+                const mouseX = e.clientX; // Use clientX to get the mouse position within the browser window
+                const mouseY = e.clientY; // Use clientY to get the mouse position within the browser window
+
+                // Update position of the container
+                container.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+            });
+        } else {
+            // Optional: You can hide the firefly container entirely on mobile devices to avoid performance issues.
+            container.style.display = 'none';
+        }
 
         // Scroll effect to reveal sections with improved fade-out handling
         const sections = document.querySelectorAll('.section');
