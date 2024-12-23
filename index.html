@@ -312,9 +312,16 @@
             const firefliesContainer = document.querySelector('.fireflies');
             let maxFireflies = 120;
             const isMobile = window.innerWidth <= 1024;
+            const isLaptop = window.innerWidth >= 1024 && 
+                 window.innerWidth <= 1440 &&
+                 window.innerHeight <= 1080;
 
             if (isMobile) {
                 maxFireflies = 85;
+            }
+
+            else if (isLaptop) {
+                maxFireflies = 100;
             }
 
             let currentFireflies = 0;
