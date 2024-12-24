@@ -242,6 +242,11 @@
 
     <script>
 
+        // Function to detect if the device is iOS
+        function isIOSDevice() {
+            return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+
         // Slideshow effect
         let slideIndex = 0;
         function showSlides() {
@@ -262,8 +267,9 @@
         // Ensure pointer events are none for the firefly container
         container.style.pointerEvents = 'none';
 
-        // Check if the device is a mobile phone or tablet
-        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+        const isMobile = /Mobi|Android/i.test(navigator.userAgent) ||
+            (/Macintosh/i.test(navigator.userAgent) && 'ontouchend' in document) ||
+            isIOSDevice();
 
         if (!isMobile) {
             // Move the firefly container with the mouse
@@ -312,9 +318,9 @@
             const firefliesContainer = document.querySelector('.fireflies');
             let maxFireflies = 120;
             const isMobile = window.innerWidth <= 1024;
-            const isLaptop = window.innerWidth >= 1024 && 
-                 window.innerWidth <= 1440 &&
-                 window.innerHeight <= 1080;
+            const isLaptop = window.innerWidth >= 1024 &&
+                window.innerWidth <= 1440 &&
+                window.innerHeight <= 1080;
 
             if (isMobile) {
                 maxFireflies = 85;
@@ -368,8 +374,15 @@
                 }
             };
 
-            // Determine the interval time based on the device type
-            const intervalTime = isMobile ? 400 : 200;  // Increase the interval time for mobile
+            let intervalTime;
+
+            if (isMobile) {
+                intervalTime = 400; // Increase the interval time for mobile
+            } else if (isLaptop) {
+                intervalTime = 300; // Moderate interval for laptops
+            } else {
+                intervalTime = 200; // Faster interval for desktops
+            }
 
             const fireflyInterval = setInterval(addFirefliesBatch, intervalTime);
         });
@@ -687,13 +700,6 @@
                 modal.style.display = "none";
             }
         }
-
-
-        // Function to detect if the device is iOS
-        function isIOSDevice() {
-            return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        }
-
 
 
         // Only run the following code for iOS devices

@@ -1395,10 +1395,6 @@ footer p {
     /* Let clicks go through */
   }
 
-  #firefly-container {
-    display: none;
-    /* Hide the firefly container on small screens */
-  }
 
   body.chinese-text p {
     font-size: 1.9rem;
