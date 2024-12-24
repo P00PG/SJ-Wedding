@@ -242,9 +242,10 @@
 
     <script>
 
-        // Function to detect if the device is iOS
+        // Enhanced function to detect if the device is iOS
         function isIOSDevice() {
-            return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            return /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+                (/Macintosh/i.test(navigator.userAgent) && 'ontouchend' in document);
         }
 
         // Slideshow effect
@@ -268,7 +269,6 @@
         container.style.pointerEvents = 'none';
 
         const isMobile = /Mobi|Android/i.test(navigator.userAgent) ||
-            (/Macintosh/i.test(navigator.userAgent) && 'ontouchend' in document) ||
             isIOSDevice();
 
         if (!isMobile) {
