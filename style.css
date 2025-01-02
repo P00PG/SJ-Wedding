@@ -545,6 +545,19 @@ a:hover {
   cursor: none;
 }
 
+.designatedlocation {
+  display: flex;
+  flex-wrap: wrap; /* Allows images to wrap onto the next line if necessary */
+  justify-content: center; /* Centers images on the page */
+  gap: 10px; /* Adds spacing between images */
+}
+
+.designatedlocation img {
+  width: 200px; /* Default size for larger screens */
+  max-width: 100%; /* Ensures images don’t overflow their container */
+  height: auto; /* Maintains aspect ratio */
+}
+
 #schedule p,
 #rsvp p {
   margin-top: -15px;
