@@ -549,7 +549,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap; /* Allows images to wrap onto the next line if necessary */
   justify-content: center; /* Centers images on the page */
-  gap: 10px; /* Adds spacing between images */
+  gap: 20px; /* Adds spacing between images */
 }
 
 .designatedlocation img {
@@ -2230,6 +2230,8 @@ footer p {
     height: 500px;
     /* Adjust iframe height for smaller screens */
   }
+
+  
 
 }
 
