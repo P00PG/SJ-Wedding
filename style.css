@@ -9,7 +9,6 @@
 }
 
 
-
 .audio-controls {
   display: flex;
   align-items: center;
@@ -215,15 +214,14 @@
 body {
   margin: 0;
   font-family: 'MyCustomFont', sans-serif;
-  background-color: rgba(0, 0, 0, 0);
-  /* 85% opaque black */
+  background-color: rgba(0, 0, 0, 0); /* 85% opaque black */
   color: #333;
-  overflow-x: hidden;
-  /* Disable horizontal scrolling */
-  scroll-behavior: smooth;
-  /* Smooth scrolling for the entire page */
-  cursor: none;
+  overflow-y: scroll; /* Hide both horizontal and vertical scrollbars */
+  height: 100vh; /* Ensure full height */
+  scroll-behavior: smooth; /* Smooth scrolling for the entire page */
+  cursor: none; /* Hide the cursor */
 }
+
 
 /* Dark overlay that covers the entire page */
 body::before {
@@ -240,6 +238,21 @@ body::before {
   /* Ensure overlay is below the text */
   pointer-events: none;
   /* Allow clicks to pass through to underlying content */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* For IE/Edge */
+body {
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 #firefly-container {
@@ -348,7 +361,7 @@ body.chinese-text p {
 }
 
 body.chinese-text h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 body.chinese-text h3 {
@@ -549,7 +562,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap; /* Allows images to wrap onto the next line if necessary */
   justify-content: center; /* Centers images on the page */
-  gap: 20px; /* Adds spacing between images */
+  gap: 10px; /* Adds spacing between images */
 }
 
 .designatedlocation img {
@@ -583,6 +596,8 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
   /* Soft white border */
   text-align: center;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+
 }
 
 .schedule-table th {
@@ -1621,8 +1636,9 @@ footer p {
     /* Smaller font size for mobile */
   }
 
-  .schedule-table th {
+  .schedule-table th , .schedule-table td{
     font-size: 2.4rem;
+    white-space: normal; /* Prevents text from wrapping to the next line */
   }
 
 
@@ -1788,7 +1804,7 @@ footer p {
   }
 
   body.chinese-text h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     /* Smaller font size for h2 and h3 on mobile */
   }
 
@@ -1875,8 +1891,9 @@ footer p {
     /* Smaller font size for mobile */
   }
 
-  .schedule-table th {
+  .schedule-table th  .schedule-table td{
     font-size: 1.4rem;
+    white-space: normal; /* Prevents text from wrapping to the next line */
   }
 
   .schedule-table th:first-child,
@@ -2098,7 +2115,7 @@ footer p {
   }
 
   body.chinese-text h2 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     /* Smaller font size for h2 and h3 on mobile */
   }
 
@@ -2160,8 +2177,9 @@ footer p {
     /* Smaller font size for mobile */
   }
 
-  .schedule-table th {
+  .schedule-table th, .schedule-table td {
     font-size: 1.3rem;
+    white-space: normal; /* Prevents text from wrapping to the next line */
   }
 
   #rsvp .rsvp-content {
@@ -2230,8 +2248,6 @@ footer p {
     height: 500px;
     /* Adjust iframe height for smaller screens */
   }
-
-  
 
 }
 

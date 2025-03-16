@@ -171,9 +171,11 @@
                     <a href="https://www.mandai.com/en/plan-your-visit/getting-to-and-around/getting-to-our-mandai-wildlife-parks.html">Getting Here page.</a> This will provide you with the most accurate and updated information for your convenience.</li>
                 </ul>`,
                     arrival: `
-                <p><strong>When You Arrive:</strong> Please head to the main entrance where you’ll be greeted by our wedding coordinators. We’ll gather in the [Designated Area] for the ceremony.</p>`,
+                <p><strong>When You Arrive:</strong> Please head to the <span> Main entrance of the Night Safari </span> where you’ll be
+                greeted by
+                our wedding coordinators. We will gather there before boarding the tram to the tipi tent for the ceremony.</p>`,
                     arrivalNote: `
-                <p><span style="font-size: 0.8em; text-decoration: none;">&#10071;</span><strong>You are strongly advised to arrive by <span>5:45pm</span> at the gathering area as there will be a designated tram to chauffeur you to the destination.</strong></p>`
+                <p><span style="font-size: 0.8em; text-decoration: none;">&#10071;</span><strong>You are highly encouraged to arrive by <span>5:45pm</span> at the entrance as the designated tram will depart at <span>6:00pm</span> to take you to the venue.</strong></p>`
                 },
                 schedule: {
                     title: "Schedule",
