@@ -1,3 +1,4 @@
+
 /* Define the custom font using @font-face */
 @font-face {
   font-family: 'MyCustomFont';
@@ -632,7 +633,7 @@ a:hover {
 
 /* Specific background images for each section */
 #what-to-wear {
-  background-image: url('./Images/test.jpg');
+  background-image: url('./Images/test3.png');
 }
 
 #rsvp {
@@ -1866,6 +1867,7 @@ footer p {
     font-size: 1.25rem;
     /* 20px -> 1.25rem */
   }
+  
 
   .wear-categories {
     flex-direction: column;

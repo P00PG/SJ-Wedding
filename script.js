@@ -470,6 +470,10 @@
                 if (backgroundImage && backgroundImage !== 'none') {
                     const image = document.createElement('div');
 
+                    if (backgroundImage.includes('test3.png')) {
+                        backgroundImage = 'url("Images/testmobile.png")'; // Replace with better image for section 1
+                    } 
+
                     // Create a background image layer
                     image.style.backgroundImage = backgroundImage;
                     image.style.position = 'absolute';
