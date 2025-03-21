@@ -802,6 +802,18 @@ button.rsvp-button:hover {
     background-image: url('./images/S&JMobile\ -\ 768px/Rsvp.jpg'); /* Fourth section background */
   }
 
+
+  .firefly {
+    width: 3px;
+    height: 1px;
+  }
+
+  .orange-firefly {
+    width: 3px;
+    height: 1px;
+  }
+
+
 }
 
 @media (max-width: 480px) {
