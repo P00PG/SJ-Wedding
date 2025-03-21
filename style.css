@@ -804,12 +804,12 @@ button.rsvp-button:hover {
 
 
   .firefly {
-    width: 3px;
+    width: 2px;
     height: 1px;
   }
 
   .orange-firefly {
-    width: 3px;
+    width: 2px;
     height: 1px;
   }
 
@@ -847,5 +847,6 @@ button.rsvp-button:hover {
     height: 500px;
     /* Adjust iframe height for smaller screens */
   }
+
 
 }
