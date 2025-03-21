@@ -227,8 +227,8 @@ body {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  width: 5px;
-  height: 3px;
+  width: 4px;
+  height: 2px;
   background-color: rgba(255, 255, 0, 0.685);
   box-shadow: 0 0 15px 10px rgba(255, 255, 0, 0.548);
   opacity: 0;
@@ -242,8 +242,8 @@ body {
 
 /* Orange firefly */
 .orange-firefly {
-  width: 5px;
-  height: 3px;
+  width: 4px;
+  height: 2px;
   background-color: rgba(255, 183, 77, 0.9);
   box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6);
   position: absolute;
