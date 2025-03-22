@@ -11,7 +11,7 @@
 <body>
     <!-- Fireflies -->
     <div class="fireflies"></div>
-    
+
     <!-- Firefly cursor -->
     <div id="firefly-container">
         <div class="fireflyCursor blue-firefly" id="fireflyCursor1"></div>
@@ -23,14 +23,35 @@
         <audio id="audio" preload="auto">
             <source src="./music/LWA.mp3" type="audio/mpeg">
         </audio>
-        
+
     </section>
-    
-    <section class="section section-two"></section>
-    
-    <section class="section section-three"></section>
-    
-    <section class="section section-four"></section>
+
+    <section class="section section-two">
+        <!-- Transparent Button 1 -->
+        <button class="transparent-trigger1" id="button1"></button>
+        <!-- Image Modal 1 -->
+        <div id="imageModal1" class="modal">
+            <div class="modal-content-image">
+                <span class="close-btn" onclick="closeImageModal(1)">&times;</span>
+                <img id="modalImage1" src="./images/ModalImages/What to Wear.png" alt="Image 1">
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-three">
+    </section>
+
+    <section class="section section-four">
+        <!-- Transparent Button 1 -->
+        <button class="transparent-trigger2" id="button2"></button>
+        <!-- Image Modal 1 -->
+        <div id="imageModal2" class="modal">
+            <div class="modal-content-image">
+                <span class="close-btn" onclick="closeImageModal(2)">&times;</span>
+                <img id="modalImage1" src="./images/ModalImages/SchdueleModal.png" alt="Image 1">
+            </div>
+        </div>
+    </section>
 
     <section class="section section-five">
         <!-- RSVP Button with SVG Icons -->
@@ -68,16 +89,16 @@
         </div>
     </section>
 
-        <!-- Modal Popover for Google Form -->
-        <div id="rsvpModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" id="closeModal">&times;</span>
-                <iframe src="https://forms.gle/KkHBdXT8tJfuvTtaA" width="100%" height="500px" frameborder="0">
-                    Loading…
-                </iframe>
-            </div>
+    <!-- Modal Popover for Google Form -->
+    <div id="rsvpModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <iframe src="https://forms.gle/KkHBdXT8tJfuvTtaA" width="100%" height="500px" frameborder="0">
+                Loading…
+            </iframe>
         </div>
-    
+    </div>
+
 
     <script src="script.js" defer></script>
 </body>

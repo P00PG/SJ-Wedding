@@ -1,9 +1,10 @@
 /* Define the custom font using @font-face */
 @font-face {
   font-family: 'MyCustomFont';
-  src:url('Madelyn/madelyn/madelyn/Madelyn.otf') format('opentype'), /* OpenType file */
-  url('Madelyn/madelyn/madelyn/MadelynDoodles.otf') format('opentype'),
-  url('Madelyn/madelyn/madelyn/MadelynFill.otf') format('opentype');
+  src: url('Madelyn/madelyn/madelyn/Madelyn.otf') format('opentype'),
+    /* OpenType file */
+    url('Madelyn/madelyn/madelyn/MadelynDoodles.otf') format('opentype'),
+    url('Madelyn/madelyn/madelyn/MadelynFill.otf') format('opentype');
   /* You can specify multiple formats for better browser support */
   font-weight: normal;
   font-style: normal;
@@ -14,24 +15,30 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: scroll; /* Hide both horizontal and vertical scrollbars */
-  height: 100vh; /* Ensure full height */
-  scroll-behavior: smooth; /* Smooth scrolling for the entire page */
+  overflow-y: scroll;
+  /* Hide both horizontal and vertical scrollbars */
+  height: 100vh;
+  /* Ensure full height */
+  scroll-behavior: smooth;
+  /* Smooth scrolling for the entire page */
 }
 
 /* For Webkit browsers (Chrome, Safari) */
 body::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar */
+  display: none;
+  /* Hide the scrollbar */
 }
 
 /* For Firefox */
 html {
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* For IE/Edge */
 body {
-  -ms-overflow-style: none; /* IE/Edge */
+  -ms-overflow-style: none;
+  /* IE/Edge */
 }
 
 
@@ -63,25 +70,80 @@ body {
 
 
 .section-one {
-  background-image: url('./images/Header.jpg'); /* First section background */
+  background-image: url('./images/Header.jpg');
+  /* First section background */
 }
 
 .section-two {
-  background-image: url('./images/What to Wear.jpg'); /* Second section background */
+  background-image: url('./images/What to Wear.jpg');
+  /* Second section background */
 }
 
 .section-three {
-  background-image: url('./images/How to get there.jpg'); /* Third section background */
+  background-image: url('./images/How to get there.jpg');
+  /* Third section background */
 }
 
 .section-four {
-  background-image: url('./images/Schdule.jpg'); /* Fourth section background */
+  background-image: url('./images/Schdule.jpg');
+  /* Fourth section background */
 }
 
 .section-five {
-  background-image: url('./images/Rsvp.jpg'); /* Fourth section background */
+  background-image: url('./images/Rsvp.jpg');
+  /* Fourth section background */
 }
 
+/* Transparent Button */
+.transparent-trigger1 {
+  position: absolute;
+  top: 28%;
+  /* Adjust to desired position */
+  left: 56%;
+  /* Adjust to desired position */
+  width: 458px;
+  /* Set the width */
+  height: 458px;
+  /* Set the height */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
+
+/* Transparent Button */
+.transparent-trigger2 {
+  position: absolute;
+  top: 37%;
+  /* Adjust to desired position */
+  left: 59%;
+  /* Adjust to desired position */
+  width: 458px;
+  /* Set the width */
+  height: 458px;
+  /* Set the height */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* IMAGE Modal Content (new) */
+.modal-content-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  /* No background for image modal */
+  border: none;
+}
 
 /* Fireflies animation styling */
 /* Fireflies container */
@@ -186,7 +248,8 @@ body {
   position: absolute;
   top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the button */
+  transform: translate(-50%, -50%);
+  /* Centers the button */
   z-index: 1;
 }
 
@@ -505,23 +568,28 @@ button.rsvp-button:hover {
 @media (max-width: 1024px) {
 
   .section-one {
-    background-image: url('./images/S&JMobile\ -\ 1024px/Header.jpg'); /* First section background */
+    background-image: url('./images/S&JMobile\ -\ 1024px/Header.jpg');
+    /* First section background */
   }
-  
+
   .section-two {
-    background-image: url('./images/S&JMobile\ -\ 1024px/What\ to\ Wear.jpg'); /* Second section background */
+    background-image: url('./images/S&JMobile\ -\ 1024px/What\ to\ Wear.jpg');
+    /* Second section background */
   }
-  
+
   .section-three {
-    background-image: url('./images/S&JMobile\ -\ 1024px/How\ to\ get\ there.jpg'); /* Third section background */
+    background-image: url('./images/S&JMobile\ -\ 1024px/How\ to\ get\ there.jpg');
+    /* Third section background */
   }
-  
+
   .section-four {
-    background-image: url('./images/S&JMobile\ -\ 1024px/Schdule.jpg'); /* Fourth section background */
+    background-image: url('./images/S&JMobile\ -\ 1024px/Schdule.jpg');
+    /* Fourth section background */
   }
-  
+
   .section-five {
-    background-image: url('./images/S&JMobile\ -\ 1024px/Rsvp.jpg'); /* Fourth section background */
+    background-image: url('./images/S&JMobile\ -\ 1024px/Rsvp.jpg');
+    /* Fourth section background */
   }
 
 
@@ -538,7 +606,7 @@ button.rsvp-button:hover {
   .rsvp-button-container {
     top: 70%;
   }
-  
+
 
   button.rsvp-button {
     padding: 10px 40px;
@@ -565,6 +633,38 @@ button.rsvp-button:hover {
     /* Reduce icon size */
   }
 
+  /* Transparent Button */
+  .transparent-trigger1 {
+    top: 48%;
+    /* Adjust to desired position */
+    left: 28%;
+    /* Adjust to desired position */
+    width: 500px;
+    /* Set the width */
+    height: 500px;
+    /* Set the height */
+  }
+
+  /* Transparent Button */
+  .transparent-trigger2 {
+    top: 60%;
+    /* Adjust to desired position */
+    left: 28%;
+    /* Adjust to desired position */
+    width: 450px;
+    /* Set the width */
+    height: 450px;
+    /* Set the height */
+  }
+
+  /* Image inside modal */
+  #modalImage1 {
+    width: 250%;
+    height: auto;
+    border-radius: 10px;
+
+  }
+
 }
 
 
@@ -572,23 +672,28 @@ button.rsvp-button:hover {
 @media (max-width: 768px) {
 
   .section-one {
-    background-image: url('./images/S&JMobile\ -\ 768px/Header.jpg'); /* First section background */
+    background-image: url('./images/S&JMobile\ -\ 768px/Header.jpg');
+    /* First section background */
   }
-  
+
   .section-two {
-    background-image: url('./images/S&JMobile\ -\ 768px/What\ to\ Wear.jpg'); /* Second section background */
+    background-image: url('./images/S&JMobile\ -\ 768px/What\ to\ Wear.jpg');
+    /* Second section background */
   }
-  
+
   .section-three {
-    background-image: url('./images/S&JMobile\ -\ 768px/How\ to\ get\ there.jpg'); /* Third section background */
+    background-image: url('./images/S&JMobile\ -\ 768px/How\ to\ get\ there.jpg');
+    /* Third section background */
   }
-  
+
   .section-four {
-    background-image: url('./images/S&JMobile\ -\ 768px/Schdule.jpg'); /* Fourth section background */
+    background-image: url('./images/S&JMobile\ -\ 768px/Schdule.jpg');
+    /* Fourth section background */
   }
-  
+
   .section-five {
-    background-image: url('./images/S&JMobile\ -\ 768px/Rsvp.jpg'); /* Fourth section background */
+    background-image: url('./images/S&JMobile\ -\ 768px/Rsvp.jpg');
+    /* Fourth section background */
   }
 
 
@@ -597,7 +702,7 @@ button.rsvp-button:hover {
     height: 1.5px;
     background-color: rgba(255, 255, 0, 0.685);
     box-shadow: 0 0 15px 15px rgba(255, 255, 0, 0.548);
-    
+
   }
 
   .orange-firefly {
@@ -607,15 +712,47 @@ button.rsvp-button:hover {
     box-shadow: 0 0 15px 15px rgba(255, 153, 51, 0.6);
   }
 
-    .rsvp-button-container {
+  .rsvp-button-container {
     top: 70%;
   }
-  
+
 
   button.rsvp-button {
     padding: 5px 35px;
     font-size: 25px;
   }
+
+  /* Transparent Button */
+  .transparent-trigger1 {
+    top: 50%;
+    /* Adjust to desired position */
+    left: 28%;
+    /* Adjust to desired position */
+    width: 358px;
+    /* Set the width */
+    height: 358px;
+    /* Set the height */
+  }
+
+  .transparent-trigger2 {
+    top: 62%;
+    /* Adjust to desired position */
+    left: 20%;
+    /* Adjust to desired position */
+    width: 258px;
+    /* Set the width */
+    height: 258px;
+    /* Set the height */
+  }
+
+  /* Image inside modal */
+  #modalImage1 {
+    width: 200%;
+    height: auto;
+    border-radius: 10px;
+
+  }
+
 
 
 
@@ -624,23 +761,28 @@ button.rsvp-button:hover {
 @media (max-width: 480px) {
 
   .section-one {
-    background-image: url('./images/S&JMobile\ -\ 480px/Header.jpg'); /* First section background */
+    background-image: url('./images/S&JMobile\ -\ 480px/Header.jpg');
+    /* First section background */
   }
-  
+
   .section-two {
-    background-image: url('./images/S&JMobile\ -\ 480px/What\ to\ Wear.jpg'); /* Second section background */
+    background-image: url('./images/S&JMobile\ -\ 480px/What\ to\ Wear.jpg');
+    /* Second section background */
   }
-  
+
   .section-three {
-    background-image: url('./images/S&JMobile\ -\ 480px/How\ to\ get\ there.jpg'); /* Third section background */
+    background-image: url('./images/S&JMobile\ -\ 480px/How\ to\ get\ there.jpg');
+    /* Third section background */
   }
-  
+
   .section-four {
-    background-image: url('./images/S&JMobile\ -\ 480px/Schdule.jpg'); /* Fourth section background */
+    background-image: url('./images/S&JMobile\ -\ 480px/Schdule.jpg');
+    /* Fourth section background */
   }
-  
+
   .section-five {
-    background-image: url('./images/S&JMobile\ -\ 480px/Rsvp.jpg'); /* Fourth section background */
+    background-image: url('./images/S&JMobile\ -\ 480px/Rsvp.jpg');
+    /* Fourth section background */
   }
 
   .modal-content {
@@ -658,7 +800,7 @@ button.rsvp-button:hover {
     height: 1.5px;
     background-color: rgba(255, 255, 0, 0.685);
     box-shadow: 0 0 15px 10px rgba(255, 255, 0, 0.548);
-    
+
   }
 
   .orange-firefly {
@@ -667,5 +809,53 @@ button.rsvp-button:hover {
     background-color: rgba(255, 183, 77, 0.9);
     box-shadow: 0 0 15px 10px rgba(255, 153, 51, 0.6);
   }
+
+
+  /* Transparent Button */
+  .transparent-trigger1 {
+    top: 50%;
+    /* Adjust to desired position */
+    left: 20%;
+    /* Adjust to desired position */
+    width: 258px;
+    /* Set the width */
+    height: 280px;
+    /* Set the height */
+  }
+
+
+  /* Image inside modal */
+  #modalImage1 {
+    width: 250%;
+    height: auto;
+    border-radius: 10px;
+
+  }
+
+
+}
+
+@media (max-width: 380px) {
+
+  /* Transparent Button */
+  .transparent-trigger1 {
+    width: 245px;
+    /* Set the width */
+    height: 245px;
+    /* Set the height */
+  }
+
+  .transparent-trigger2 {
+    top: 62%;
+    /* Adjust to desired position */
+    left: 30%;
+    /* Adjust to desired position */
+    width: 160px;
+    /* Set the width */
+    height: 178px;
+    /* Set the height */
+  }
+
+
 
 }
