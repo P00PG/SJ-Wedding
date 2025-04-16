@@ -31,31 +31,28 @@
     </section>
 
     <section class="section section-two">
-        <div id="gallery--individual">
+        <div id="gallery--individual-1"> <!-- Updated ID -->
             <a href="./images/ModalImages/What to Wear.png" data-pswp-width="800" data-pswp-height="600">
-                <img class="photoswipe-trigger" src="./images/ModalImages/Transaparent.png" alt="What to Wear" ">
+                <img class="photoswipe-trigger" src="./images/ModalImages/Transaparent.png" alt="What to Wear">
             </a>
-          </div>      
-      </section>      
-      
-
-      <section class=" section section-three">
-                <div id="gallery--individual">
-                    <a href="./images/ModalImages/Howtogetthere.png" data-pswp-width="800" data-pswp-height="600">
-                        <img class="photoswipe-trigger" src="./images/ModalImages/Transaparent.png" alt="What to Wear" ">
+        </div>      
+    </section>      
+    
+    <section class="section section-three">
+        <div id="gallery--individual-2"> <!-- Updated ID -->
+            <a href="./images/ModalImages/Howtogetthere.png" data-pswp-width="800" data-pswp-height="600">
+                <img class="photoswipe-trigger" src="./images/ModalImages/Transaparent.png" alt="How to get there">
             </a>
-          </div>      
-      </section>  
-
-      <section class=" section section-four">
-                        <div id="gallery--individual">
-                            <a href="./images/ModalImages/SchdeuleModal.png" data-pswp-width="800"
-                                data-pswp-height="600">
-                                <img class="photoswipe-trigger" src="./images/ModalImages/Transaparent.png"
-                                    alt="What to Wear" ">
+        </div>      
+    </section>  
+    
+    <section class="section section-four">
+        <div id="gallery--individual-3"> <!-- Updated ID -->
+            <a href="./images/ModalImages/ScheduleModal.png" data-pswp-width="800" data-pswp-height="600">
+                <img class="photoswipe-trigger" src="./images/ModalImages/Transaparent.png" alt="Schedule">
             </a>
-          </div>      
-      </section>  
+        </div>      
+    </section>
 
     <section class=" section section-five">
                                 <!-- RSVP Button with SVG Icons -->
@@ -106,19 +103,29 @@
 
     <script type="module">
         import PhotoSwipeLightbox from '/PhotoSwipe/photoswipe-lightbox.esm.js';
+    
         const options = {
-            gallery: '#gallery--individual a',
-            showHideAnimationType: 'fade',
-            mouseMovePan: true,
-
-            initialZoomLevel: 'fit',
-            secondaryZoomLevel: 2,
-            maxZoomLevel: 1,
-            pswpModule: () => import('/Photoswipe/photoSwipe.esm.js')
+            gallery: '#gallery--individual-1 a', // Updated gallery ID for section one
+            pswpModule: () => import('/PhotoSwipe/photoswipe.esm.js')
         };
-        const lightbox = new PhotoSwipeLightbox(options);
-        lightbox.init();
+        const lightbox1 = new PhotoSwipeLightbox(options);
+        lightbox1.init();
+    
+        const options2 = {
+            gallery: '#gallery--individual-2 a', // Updated gallery ID for section two
+            pswpModule: () => import('/PhotoSwipe/photoswipe.esm.js')
+        };
+        const lightbox2 = new PhotoSwipeLightbox(options2);
+        lightbox2.init();
+    
+        const options3 = {
+            gallery: '#gallery--individual-3 a', // Updated gallery ID for section three
+            pswpModule: () => import('/PhotoSwipe/photoswipe.esm.js')
+        };
+        const lightbox3 = new PhotoSwipeLightbox(options3);
+        lightbox3.init();
     </script>
+    
 
     <script src="script.js" defer></script>
 

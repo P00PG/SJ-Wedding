@@ -546,19 +546,19 @@ button.rsvp-button:hover {
 }
 
 /* Position tweaks for each section */
-.section-two #gallery--individual img {
+.section-two #gallery--individual-1 img {
   margin-left: 600px;
   margin-top: 20px;
   transform: rotate(-15deg);
 }
 
-.section-three #gallery--individual img  {
+.section-three #gallery--individual-2 img  {
   margin-right: 1000px;
   margin-top: 50px;
   transform: rotate(5deg); /* just as an example */
 }
 
-.section-four #gallery--individual img  {
+.section-four #gallery--individual-3 img  {
   margin-left: 300px;
   margin-top: 80px;
   transform: rotate(-10deg); /* another example */
