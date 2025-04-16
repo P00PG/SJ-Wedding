@@ -541,6 +541,28 @@ button.rsvp-button:hover {
   cursor: pointer;
 }
 
+#gallery--individual {
+  position: relative;
+}
+
+/* Position tweaks for each section */
+.section-two #gallery--individual img {
+  margin-left: 600px;
+  margin-top: 20px;
+  transform: rotate(-15deg);
+}
+
+.section-three #gallery--individual img  {
+  margin-right: 1000px;
+  margin-top: 50px;
+  transform: rotate(5deg); /* just as an example */
+}
+
+.section-four #gallery--individual img  {
+  margin-left: 300px;
+  margin-top: 80px;
+  transform: rotate(-10deg); /* another example */
+}
 
 /*laptops*/
 @media (min-width: 1024px) and (max-width: 1440px) and (max-height: 1080px) {
@@ -633,37 +655,25 @@ button.rsvp-button:hover {
     /* Reduce icon size */
   }
 
-  /* Transparent Button */
-  .transparent-trigger1 {
-    top: 48%;
-    /* Adjust to desired position */
-    left: 28%;
-    /* Adjust to desired position */
-    width: 500px;
-    /* Set the width */
-    height: 500px;
-    /* Set the height */
+  .section-two .photoswipe-trigger {
+    max-width: 700px;
+    margin-right: 600px;
+    margin-bottom: -300px;
+  }
+  
+  .section-three .photoswipe-trigger {
+    max-width: 400px;
+    margin-left: 700px;
+    margin-bottom: -400px;
+  
+  }
+  
+  .section-four .photoswipe-trigger {
+    max-width: 500px;
+    margin-right: 400px;
+    margin-bottom: -500px;
   }
 
-  /* Transparent Button */
-  .transparent-trigger2 {
-    top: 60%;
-    /* Adjust to desired position */
-    left: 28%;
-    /* Adjust to desired position */
-    width: 450px;
-    /* Set the width */
-    height: 450px;
-    /* Set the height */
-  }
-
-  /* Image inside modal */
-  #modalImage1 {
-    width: 250%;
-    height: auto;
-    border-radius: 10px;
-
-  }
 
 }
 
@@ -722,35 +732,23 @@ button.rsvp-button:hover {
     font-size: 25px;
   }
 
-  /* Transparent Button */
-  .transparent-trigger1 {
-    top: 50%;
-    /* Adjust to desired position */
-    left: 28%;
-    /* Adjust to desired position */
-    width: 358px;
-    /* Set the width */
-    height: 358px;
-    /* Set the height */
+  .section-two .photoswipe-trigger {
+    max-width: 600px;
+    margin-right: 600px;
+    margin-bottom: -300px;
   }
-
-  .transparent-trigger2 {
-    top: 62%;
-    /* Adjust to desired position */
-    left: 20%;
-    /* Adjust to desired position */
-    width: 258px;
-    /* Set the width */
-    height: 258px;
-    /* Set the height */
+  
+  .section-three .photoswipe-trigger {
+    max-width: 400px;
+    margin-left: 750px;
+    margin-bottom: -400px;
+  
   }
-
-  /* Image inside modal */
-  #modalImage1 {
-    width: 200%;
-    height: auto;
-    border-radius: 10px;
-
+  
+  .section-four .photoswipe-trigger {
+    max-width: 450px;
+    margin-right: 400px;
+    margin-bottom: -450px;
   }
 
 
@@ -811,50 +809,50 @@ button.rsvp-button:hover {
   }
 
 
-  /* Transparent Button */
-  .transparent-trigger1 {
-    top: 50%;
-    /* Adjust to desired position */
-    left: 20%;
-    /* Adjust to desired position */
-    width: 258px;
-    /* Set the width */
-    height: 280px;
-    /* Set the height */
+  .section-two .photoswipe-trigger {
+    max-width: 500px;
+    margin-right: 600px;
+    margin-bottom: -200px;
+  }
+  
+  .section-three .photoswipe-trigger {
+    max-width: 300px;
+    margin-left: 800px;
+    margin-bottom: -300px;
+  
+  }
+  
+  .section-four .photoswipe-trigger {
+    max-width: 400px;
+    margin-right: 400px;
+    margin-bottom: -360px;
   }
 
-
-  /* Image inside modal */
-  #modalImage1 {
-    width: 250%;
-    height: auto;
-    border-radius: 10px;
-
-  }
 
 
 }
 
 @media (max-width: 380px) {
 
-  /* Transparent Button */
-  .transparent-trigger1 {
-    width: 245px;
-    /* Set the width */
-    height: 245px;
-    /* Set the height */
+  .section-two .photoswipe-trigger {
+    max-width: 400px;
+    margin-right: 600px;
+    margin-bottom: -150px;
+  }
+  
+  .section-three .photoswipe-trigger {
+    max-width: 200px;
+    margin-left: 850px;
+    margin-bottom: -200px;
+  
+  }
+  
+  .section-four .photoswipe-trigger {
+    max-width: 300px;
+    margin-right: 350px;
+    margin-bottom: -250px;
   }
 
-  .transparent-trigger2 {
-    top: 62%;
-    /* Adjust to desired position */
-    left: 30%;
-    /* Adjust to desired position */
-    width: 160px;
-    /* Set the width */
-    height: 178px;
-    /* Set the height */
-  }
 
 
 
