@@ -624,20 +624,20 @@ button.rsvp-button:hover {
     /* Reduce icon size */
   }
 
-  .section-two .photoswipe-trigger {
+  .section-two .pswp-gallery img {
     max-width: 700px;
     margin-right: 600px;
     margin-bottom: -300px;
   }
   
-  .section-three .photoswipe-trigger {
+  .section-three .pswp-gallery img{
     max-width: 400px;
     margin-left: 700px;
     margin-bottom: -400px;
   
   }
   
-  .section-four .photoswipe-trigger {
+  .section-four .pswp-gallery img {
     max-width: 500px;
     margin-right: 400px;
     margin-bottom: -500px;
@@ -701,20 +701,20 @@ button.rsvp-button:hover {
     font-size: 25px;
   }
 
-  .section-two .photoswipe-trigger {
+  .section-two .pswp-gallery img {
     max-width: 600px;
     margin-right: 600px;
     margin-bottom: -300px;
   }
   
-  .section-three .photoswipe-trigger {
+  .section-three .pswp-gallery img {
     max-width: 400px;
     margin-left: 750px;
     margin-bottom: -400px;
   
   }
   
-  .section-four .photoswipe-trigger {
+  .section-four .pswp-gallery img {
     max-width: 450px;
     margin-right: 400px;
     margin-bottom: -450px;
@@ -778,20 +778,20 @@ button.rsvp-button:hover {
   }
 
 
-  .section-two .photoswipe-trigger {
+  .section-two .pswp-gallery img {
     max-width: 500px;
     margin-right: 600px;
     margin-bottom: -200px;
   }
   
-  .section-three .photoswipe-trigger {
+  .section-three .pswp-gallery img{
     max-width: 300px;
     margin-left: 800px;
     margin-bottom: -300px;
   
   }
   
-  .section-four .photoswipe-trigger {
+  .section-four .pswp-gallery img {
     max-width: 400px;
     margin-right: 400px;
     margin-bottom: -360px;
@@ -803,20 +803,20 @@ button.rsvp-button:hover {
 
 @media (max-width: 380px) {
 
-  .section-two .photoswipe-trigger {
+  .section-two .pswp-gallery img{
     max-width: 400px;
     margin-right: 600px;
     margin-bottom: -150px;
   }
   
-  .section-three .photoswipe-trigger {
+  .section-three .pswp-gallery img {
     max-width: 200px;
     margin-left: 850px;
     margin-bottom: -200px;
   
   }
   
-  .section-four .photoswipe-trigger {
+  .section-four .pswp-gallery img {
     max-width: 300px;
     margin-right: 350px;
     margin-bottom: -250px;
