@@ -108,13 +108,17 @@
         import PhotoSwipeLightbox from '/PhotoSwipe/photoswipe-lightbox.esm.js';
         const options = {
             gallery: '#gallery--individual a',
-            pswpModule: () => import('/Photoswipe/photoswipe.esm.js')
+            showHideAnimationType: 'fade',
+            mouseMovePan: true,
+
+            initialZoomLevel: 'fit',
+            secondaryZoomLevel: 2,
+            maxZoomLevel: 1,
+            pswpModule: () => import('/Photoswipe/photoSwipe.esm.js')
         };
         const lightbox = new PhotoSwipeLightbox(options);
         lightbox.init();
     </script>
-    <script src="/PhotoSwipe/photoswipe.min.js"></script>
-    <script src="/PhotoSwipe/photoswipe-lightbox.esm.min.js" type="module"></script>
 
     <script src="script.js" defer></script>
 
