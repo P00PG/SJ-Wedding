@@ -102,7 +102,7 @@ function GameLoop() {
 // Function to check if the clicked element is an interactive button
 function shouldIgnoreClick(target) {
     return target.closest(
-      '.rsvp-button, .photoswipe-trigger, .close-btn, .modal-content, .pswp, .pswp__img, .pswp__button, .pswp__container'
+      '.rsvp-button, .pswp-gallery, .close-btn, .modal-content, .pswp, .pswp__img, .pswp__button, .pswp__container'
     );
   }
   
