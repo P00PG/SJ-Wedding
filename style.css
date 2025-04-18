@@ -534,7 +534,7 @@ button.rsvp-button:hover {
 .section-four .pswp-gallery img {
   max-width: 400px;
   height: 400px;
-  transform: translateX(300px) translateY(80px) rotate(-10deg);
+  transform: translateX(350px) translateY(10px) rotate(-10deg);
 }
 
 
@@ -556,6 +556,29 @@ button.rsvp-button:hover {
     top: 2%;
     /* Adjust this value to move the button higher */
     right: -5%;
+  }
+
+}
+/*laptop*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+ 
+  .section-two .pswp-gallery img {
+    max-width: 250px;
+    max-height: 300px;
+    transform:  translateX(190px) translateY(5px) rotate(-10deg);
+  }
+  
+  .section-three .pswp-gallery img{
+    max-width: 200px;
+    max-height: 250px;
+    transform:  translateX(-330px) translateY(-30px) rotate(15deg);
+  
+  }
+  
+  .section-four .pswp-gallery img {
+    max-width: 250px;
+    max-height: 300px;
+    transform:  translateX(200px) translateY(50px) rotate(-10deg);
   }
 
 }
@@ -645,8 +668,8 @@ button.rsvp-button:hover {
   
   .section-four .pswp-gallery img {
     max-width: 300px;
-    max-height: 450px;
-    transform:  translateX(-20px) translateY(300px) rotate(-10deg);
+    max-height: 410px;
+    transform:  translateX(-70px) translateY(350px) rotate(-10deg);
   }
 
 
@@ -723,7 +746,7 @@ button.rsvp-button:hover {
   .section-four .pswp-gallery img {
     max-width: 250px;
     max-height: 300px;
-    transform:  translateX(-20px) translateY(300px) rotate(-10deg);
+    transform:  translateX(-90px) translateY(300px) rotate(-10deg);
   }
 
 
@@ -798,9 +821,9 @@ button.rsvp-button:hover {
   }
   
   .section-four .pswp-gallery img {
-    max-width: 250px;
-    max-height: 280px;
-    transform:  translateX(-20px) translateY(250px) rotate(-10deg);
+    max-width: 200px;
+    max-height: 210px;
+    transform:  translateX(-60px) translateY(210px) rotate(-10deg);
   }
 
 
