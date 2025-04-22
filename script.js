@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.innerHeight <= 1080;
 
     if (isMobile) {
-        maxFireflies = 85;
+        maxFireflies = 65;
     }
 
     else if (isLaptop) {
