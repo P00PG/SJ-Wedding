@@ -563,6 +563,10 @@ button.rsvp-button:hover {
 /*laptop*/
 @media (min-width: 1025px) and (max-width: 1440px) {
 
+  meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no";
+  }
+
   .section-two .pswp-gallery img {
     max-width: 250px;
     max-height: 300px;
@@ -587,6 +591,10 @@ button.rsvp-button:hover {
 
 /*moblie*/
 @media (max-width: 1024px) {
+
+  meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes";
+  }
 
   .section-one {
     background-image: url('./images/S&JMobile\ -\ 1024px/Header.jpg');
