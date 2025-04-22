@@ -1,11 +1,18 @@
 /* Define the custom font using @font-face */
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('Madelyn/madelyn/madelyn/Madelyn.otf') format('opentype'),
+  src: url('fonts/Madelyn/Madelyn.otf') format('opentype'),
     /* OpenType file */
-    url('Madelyn/madelyn/madelyn/MadelynDoodles.otf') format('opentype'),
-    url('Madelyn/madelyn/madelyn/MadelynFill.otf') format('opentype');
+    url('fonts/Madelyn/MadelynDoodles.otf') format('opentype'),
+    url('fonts/Madelyn/MadelynFill.otf') format('opentype');
   /* You can specify multiple formats for better browser support */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hsf';
+  src: url('fonts/hsf/sucaijishikangkangti Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -509,11 +516,13 @@ button.rsvp-button:hover {
 
 .pswp-gallery {
   position: relative;
-  pointer-events: none; /* Disable pointer events on container */
+  pointer-events: none;
+  /* Disable pointer events on container */
 }
 
 .pswp-gallery img {
-  pointer-events: auto; /* Enable pointer events only on the image */
+  pointer-events: auto;
+  /* Enable pointer events only on the image */
 }
 
 /* Section Two - What to Wear */
@@ -559,26 +568,27 @@ button.rsvp-button:hover {
   }
 
 }
+
 /*laptop*/
 @media (min-width: 1025px) and (max-width: 1440px) {
- 
+
   .section-two .pswp-gallery img {
     max-width: 250px;
     max-height: 300px;
-    transform:  translateX(190px) translateY(5px) rotate(-10deg);
+    transform: translateX(190px) translateY(5px) rotate(-10deg);
   }
-  
-  .section-three .pswp-gallery img{
+
+  .section-three .pswp-gallery img {
     max-width: 200px;
     max-height: 250px;
-    transform:  translateX(-330px) translateY(-30px) rotate(15deg);
-  
+    transform: translateX(-330px) translateY(-30px) rotate(15deg);
+
   }
-  
+
   .section-four .pswp-gallery img {
     max-width: 250px;
     max-height: 300px;
-    transform:  translateX(200px) translateY(50px) rotate(-10deg);
+    transform: translateX(200px) translateY(50px) rotate(-10deg);
   }
 
 }
@@ -656,26 +666,182 @@ button.rsvp-button:hover {
   .section-two .pswp-gallery img {
     max-width: 350px;
     max-height: 450px;
-    transform:  translateY(200px) rotate(-10deg);
+    transform: translateY(200px) rotate(-10deg);
   }
-  
-  .section-three .pswp-gallery img{
+
+  .section-three .pswp-gallery img {
     max-width: 200px;
     max-height: 150px;
-    transform:  translateX(-160px) translateY(300px) rotate(15deg);
-  
+    transform: translateX(-160px) translateY(300px) rotate(15deg);
+
   }
-  
+
   .section-four .pswp-gallery img {
     max-width: 300px;
     max-height: 410px;
-    transform:  translateX(-70px) translateY(350px) rotate(-10deg);
+    transform: translateX(-70px) translateY(350px) rotate(-10deg);
+  }
+
+  /*Swipe animation*/
+  .swipe-hint {
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    background: rgba(0, 0, 0, 0);
+    font-family: 'MyCustomFont';
+    color: #fff;
+    /* white fill */
+    text-shadow:
+      -2px -2px 0 #000,
+      /* top-left */
+      2px -2px 0 #000,
+      /* top-right */
+      -2px 2px 0 #000,
+      /* bottom-left */
+      2px 2px 0 #000;
+    /* bottom-right */
+    font-size: 50px;
+    z-index: 999999;
+    display: none;
+    /* Hidden by default */
+    text-align: center;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* 1. Fade In */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* 2. Fade Out */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
   }
 
 
+  @keyframes sway {
+    0% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-10px);
+    }
+
+    50% {
+      transform: translateX(0);
+    }
+
+    75% {
+      transform: translateX(10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Apply when fading in */
+  .swipe-hint.fade-in {
+    animation: fadeIn 0.5s forwards;
+  }
+
+  /* Swipe animation */
+  .swipe-hint {
+    position: fixed;
+    top: 75%;
+    left: 40%;
+    background: rgba(0, 0, 0, 0);
+    font-family: 'MyCustomFont';
+    color: #fff;
+    text-shadow:
+      -2px -2px 0 #000,
+      /* top-left */
+      2px -2px 0 #000,
+      /* top-right */
+      -2px 2px 0 #000,
+      /* bottom-left */
+      2px 2px 0 #000;
+    /* bottom-right */
+    font-size: 65px;
+    z-index: 999999;
+    display: none;
+    /* Hidden by default */
+    text-align: center;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Fade-out animation */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  /* Sway animation */
+  @keyframes sway {
+    0% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-10px);
+    }
+
+    50% {
+      transform: translateX(0);
+    }
+
+    75% {
+      transform: translateX(10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Apply fade-in animation */
+  .swipe-hint.fade-in {
+    animation: fadeIn 0.5s forwards;
+  }
+
+  /* Apply sway animation that loops infinitely */
+  .swipe-hint.swaying {
+    animation: sway 1.5s linear infinite, fadeOut 2s forwards 3.5s;
+    /* Fade-out starts after 6 seconds */
+  }
+
 }
-
-
 
 @media (max-width: 768px) {
 
@@ -733,21 +899,24 @@ button.rsvp-button:hover {
   .section-two .pswp-gallery img {
     max-width: 349px;
     max-height: 350px;
-    transform:  translateY(150px) rotate(-10deg);
+    transform: translateY(150px) rotate(-10deg);
   }
-  
-  .section-three .pswp-gallery img{
+
+  .section-three .pswp-gallery img {
     max-width: 200px;
     max-height: 250px;
-    transform:  translateX(-150px) translateY(250px) rotate(15deg);
-  
+    transform: translateX(-150px) translateY(250px) rotate(15deg);
+
   }
-  
+
   .section-four .pswp-gallery img {
     max-width: 250px;
     max-height: 300px;
-    transform:  translateX(-90px) translateY(300px) rotate(-10deg);
+    transform: translateX(-90px) translateY(300px) rotate(-10deg);
   }
+
+
+
 
 
 
@@ -812,21 +981,26 @@ button.rsvp-button:hover {
     max-height: 300px;
     transform: translateX(-30px) translateY(100px) rotate(-10deg);
   }
-  
-  .section-three .pswp-gallery img{
+
+  .section-three .pswp-gallery img {
     max-width: 150px;
     max-height: 150px;
-    transform:  translateX(-100px) translateY(180px) rotate(20deg);
-  
+    transform: translateX(-100px) translateY(180px) rotate(20deg);
+
   }
-  
+
   .section-four .pswp-gallery img {
     max-width: 200px;
     max-height: 210px;
-    transform:  translateX(-60px) translateY(210px) rotate(-10deg);
+    transform: translateX(-60px) translateY(210px) rotate(-10deg);
   }
 
-
+  /*Swipe animation*/
+  .swipe-hint {
+    font-size: 45px;
+    top: 65%;
+    left: 40%;
+  }
 
 }
 
@@ -837,18 +1011,25 @@ button.rsvp-button:hover {
     max-height: 200px;
     transform: translateX(-10px) translateY(80px) rotate(-10deg);
   }
-  
-  .section-three .pswp-gallery img{
+
+  .section-three .pswp-gallery img {
     max-width: 100px;
     max-height: 100px;
-    transform:  translateX(-80px) translateY(120px) rotate(20deg);
-  
+    transform: translateX(-80px) translateY(120px) rotate(20deg);
+
   }
-  
+
   .section-four .pswp-gallery img {
     max-width: 150px;
     max-height: 180px;
-    transform:  translateX(-20px) translateY(170px) rotate(-10deg);
+    transform: translateX(-20px) translateY(170px) rotate(-10deg);
+  }
+
+  /*Swipe animation*/
+  .swipe-hint {
+    font-size: 40px;
+    top: 70%;
+    left: 40%;
   }
 
 
