@@ -1,9 +1,4 @@
-window.addEventListener("scroll", function () {
-    document.querySelectorAll(".parallax").forEach((el) => {
-        let scrollPos = window.scrollY;
-        el.style.transform = `translateY(${scrollPos * 0.3}px)`;
-    });
-});
+
 
 //firefly script
 document.addEventListener('DOMContentLoaded', () => {
@@ -149,6 +144,7 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
 
 
 
