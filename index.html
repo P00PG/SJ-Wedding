@@ -40,9 +40,6 @@
             <a href="./images/ModalImages/What to Wear.png" data-pswp-width="800" data-pswp-height="600">
                 <img src="./images/ModalImages/Transaparent.png" alt="What to Wear">
             </a>
-            <!-- Hidden second image for zoom -->
-            <a href="./images/ModalImages/NoteModal.png" data-pswp-width="600" data-pswp-height="450"
-                style="display: none;"></a>
         </div>
     </section>
 
@@ -128,57 +125,9 @@
             pswpModule: () => PhotoSwipe
         });
 
-        let hintShown = false;
-
-        lightbox.on('change', () => {
-            const currSlide = lightbox.pswp.currSlide;
-            const origLink = currSlide?.data?.element;
-            const isFromSectionTwo = origLink?.closest('.section-two');
-
-            if (isFromSectionTwo && !hintShown) {
-                hintShown = true;
-
-                // Get or create the hint
-                const pswpContainer = document.querySelector('.pswp');
-                let hint = document.getElementById('swipeHint');
-                if (!hint) {
-                    hint = document.createElement('div');
-                    hint.id = 'swipeHint';
-                    hint.className = 'swipe-hint';
-                    hint.innerHTML = '<span>← Swipe →</span>';
-                    pswpContainer.appendChild(hint);
-                }
-
-                // Show the swipe hint and trigger fade-in
-                hint.style.display = 'block';
-                hint.classList.add('fade-in');
-
-                // After fade-in, start the swaying animation with fade-out after delay
-                setTimeout(() => {
-                    hint.classList.remove('fade-in');
-                    hint.classList.add('swaying');
-                }, 350);  // Wait until fade-in finishes before starting sway animation
-            }
-        });
-
-        // Reset the hint when closing the lightbox
-        lightbox.on('close', () => {
-            hintShown = false;
-
-            const hint = document.getElementById('swipeHint');
-            if (hint) {
-                hint.classList.remove('swaying');
-                hint.style.display = 'none';
-            }
-        });
-
-
         lightbox.init();
     </script>
-    <div class="swipe-hint" id="swipeHint" style="display: none;">
-        <span>Swipe > </span>
-    </div>
-
+    
 </body>
 
 </html>
